@@ -24,10 +24,10 @@ Route::middleware('globaladmincheck')->group(function (){
         Route::post('/action/admin','crud@tambahadmin');
         Route::post('/action/update/admin','crud@editadmin');
         Route::get('/admin/edit/{id}','page@editadmin');
+        Route::view('/admin','page.admin.index');
+        Route::post('/table/admin','table@admin');
+        Route::post('/action/chgstadmin','crud@chgstadmin');
     });
-
-    Route::view('/admin','page.admin.index');
-    Route::post('/table/admin','table@admin');
 
     Route::view('/manager','page.manager.index');
     Route::post('/table/manager','table@manager');
@@ -38,6 +38,8 @@ Route::middleware('globaladmincheck')->group(function (){
     Route::view('/merchants','page.merchants.index');
     Route::view('/merchants/tambah','page.merchants.tambah');
     Route::get('/merchants/edit/{id}','page@editmerchants');
+    Route::post('/action/merchants','crud@tambahmerchants');
+    Route::post('/action/update/merchants','crud@editmerchants');
     Route::post('/table/merchants','table@merchants');
 });
 

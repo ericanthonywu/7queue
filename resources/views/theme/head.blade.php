@@ -15,7 +15,10 @@
     <script>
         WebFont.load({
             google: {
-                "families": ["Poppins:300,400,500,600,700", "Roboto:300,400,500,600,700"]
+                "families": [
+                    "Poppins:300,400,500,600,700",
+                    "Roboto:300,400,500,600,700"
+                ]
             },
             active: () => {
                 sessionStorage.fonts = true;

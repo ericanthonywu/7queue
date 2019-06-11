@@ -57,7 +57,7 @@ $(document).ready(function () {
             {
                 field: 'email',
                 title: 'Email',
-                template: (t,e,a)=>{
+                template: (t, e, a) => {
                     return t.email ? `<a class="kt-link" href="mailto:${t}">
                                 ${t.email}
                             </a>` : ``
@@ -70,7 +70,7 @@ $(document).ready(function () {
                 width: 110,
                 overflow: 'visible',
                 autoHide: false,
-                template: (t,e,a) => {
+                template: (t, e, a) => {
                     return `
 						<div class="dropdown">
 							<a href="javascript:;" class="btn btn-sm btn-clean btn-icon btn-icon-sm" data-toggle="dropdown">
@@ -78,14 +78,14 @@ $(document).ready(function () {
                             </a>
 						  	<div class="dropdown-menu dropdown-menu-right">
 						    	<a class="dropdown-item toggleuser" data-status="1" data-table="admin"><i class="fa fa-user-slash"></i> Block </a>
-						    	${t.status === 2 ? 
-                                    ` <a class="dropdown-item toggleuser" 
+						    	${t.status === 2 ?
+                        ` <a class="dropdown-item toggleuser" 
                                         data-status="2" data-action="ignore" data-table="admin" 
-                                        data-id="${t.id}" href="#"><i class="fa fa-user-check"></i> Unsuspend </a>` 
-                                     : 
-                                    `<a class="dropdown-item toggleuser" 
+                                        data-id="${t.id}" href="#"><i class="fa fa-user-check"></i> Unsuspend </a>`
+                        :
+                        `<a class="dropdown-item toggleuser" 
                                         data-status="2" data-table="admin" 
-                                        data-id="${t.id}" href="#"><i class="fa fa-user-times"></i> Suspend </a>` }
+                                        data-id="${t.id}" href="#"><i class="fa fa-user-times"></i> Suspend </a>`}
 						  	</div>
 						</div>
 					`
@@ -151,7 +151,7 @@ $(document).ready(function () {
             {
                 field: 'email',
                 title: 'Email',
-                template: (t,e,a)=>{
+                template: (t, e, a) => {
                     return `<a class="kt-link" href="mailto:${t}">${t.email} </a>`
                 }
             },
@@ -162,7 +162,7 @@ $(document).ready(function () {
                 width: 110,
                 overflow: 'visible',
                 autoHide: false,
-                template: (t,e,a) => {
+                template: (t, e, a) => {
                     return `
                     ${
                         t.readedit ? `
@@ -255,7 +255,7 @@ $(document).ready(function () {
             {
                 field: 'email',
                 title: 'Email',
-                template: (t,e,a)=>{
+                template: (t, e, a) => {
                     return `<a class="kt-link" href="mailto:${t}">
                                 ${t.email}
                             </a>`
@@ -268,7 +268,7 @@ $(document).ready(function () {
                 width: 110,
                 overflow: 'visible',
                 autoHide: false,
-                template: (t,e,a) => {
+                template: (t, e, a) => {
                     return `
                     ${
                         t.status === 1 ? `
@@ -361,7 +361,7 @@ $(document).ready(function () {
             {
                 field: 'email',
                 title: 'Email',
-                template: (t,e,a)=>{
+                template: (t, e, a) => {
                     return `<a class="kt-link" href="mailto:${t}">${t.email}</a>`
                 }
             },
@@ -372,7 +372,8 @@ $(document).ready(function () {
                 width: 110,
                 overflow: 'visible',
                 autoHide: false,
-                template: (t,e,a) => {
+                template: (t, e, a) => {
+                    $('[data-toggle="kt-tooltip"]').tooltip();
                     return `
                     ${
                         t.access ? `
@@ -388,7 +389,7 @@ $(document).ready(function () {
                                                 <path d="M8,17.9148182 L8,5.96685884 C8,5.56391781 8.16211443,5.17792052 8.44982609,4.89581508 L10.965708,2.42895648 C11.5426798,1.86322723 12.4640974,1.85620921 13.0496196,2.41308426 L15.5337377,4.77566479 C15.8314604,5.0588212 16,5.45170806 16,5.86258077 L16,17.9148182 C16,18.7432453 15.3284271,19.4148182 14.5,19.4148182 L9.5,19.4148182 C8.67157288,19.4148182 8,18.7432453 8,17.9148182 Z" id="Path-11" fill="#000000" fill-rule="nonzero" transform="translate(12.000000, 10.707409) rotate(-135.000000) translate(-12.000000, -10.707409) "/>
                                                 <rect id="Rectangle" fill="#000000" opacity="0.3" x="5" y="20" width="15" height="2" rx="1"/>
                                             </g>
-                                        </svg> Edit </a>
+                                        </svg> &nbsp; Edit </a>
                                <a class="dropdown-item btn-del" data-table="admin" data-id="${t.id}" href="#">
                                         <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1" class="kt-svg-icon">
                                             <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
@@ -396,10 +397,10 @@ $(document).ready(function () {
                                                 <path d="M6,8 L6,20.5 C6,21.3284271 6.67157288,22 7.5,22 L16.5,22 C17.3284271,22 18,21.3284271 18,20.5 L18,8 L6,8 Z" id="round" fill="#000000" fill-rule="nonzero"/>
                                                 <path d="M14,4.5 L14,4 C14,3.44771525 13.5522847,3 13,3 L11,3 C10.4477153,3 10,3.44771525 10,4 L10,4.5 L5.5,4.5 C5.22385763,4.5 5,4.72385763 5,5 L5,5.5 C5,5.77614237 5.22385763,6 5.5,6 L18.5,6 C18.7761424,6 19,5.77614237 19,5.5 L19,5 C19,4.72385763 18.7761424,4.5 18.5,4.5 L14,4.5 Z" id="Shape" fill="#000000" opacity="0.3"/>
                                             </g>
-                                        </svg> Delete </a>          
+                                        </svg> &nbsp; Delete </a>          
                                 </div>
                             </div>
-                            <a title="Block Admin" class="btn btn-sm btn-clean btn-icon btn-icon-md"><i class="la la-edit"></i></a>
+                            <button title="${t.status ? "Unblock" : "Block"} Admin" data-id="${t.id}" data-status="${t.status ? 0 : 1}" class="btn btn-sm btn-clean btn-icon btn-icon-md btn-block-admin" data-toggle="kt-tooltip" data-placement="top" data-skin="dark"><i class="fa ${t.status ? "fa-user-check" : "fa-user-alt-slash"}"></i></button>
                                 ` :
                             ""
                         }
@@ -443,7 +444,7 @@ $(document).ready(function () {
 
     //----------tambah edit delete----------------------------
     $(document).on('submit', 'form', function (e) {
-        console.log('dapet')
+        console.log('dapet');
         e.preventDefault();
         const data = new FormData(this);
         const action = $(this).data('action');
@@ -491,40 +492,59 @@ $(document).ready(function () {
         e.preventDefault();
         const table = $(this).data('table'),
             id = $(this).data('id');
-        console.log(table+id);
-        $.ajax({
-            data: {
-                id: id,
-                table: table,
-            },
-            type:'DELETE',
-            url: `${base_url}delete/table`,
-            success: res => {
-                if (res) {
-                    toastr.error(res, "Error");
-                } else {
-                    switch (table) {
-                        case "admin":
-                            admin.ajax.reload()
-                            break;
-                    }
-                }
-            },
-        })
+        swal.fire({
+            title: 'Apakah anda yakin akan menghapus data ini?',
+            text: "Anda tidak bisa mengembalikan data yang sudah di hapus secara permanen",
+            type: 'warning',
+            showCancelButton: true,
+            confirmButtonText: 'Ya, Hapus saja!',
+            cancelButtonText: 'Batalkan',
+            reverseButtons: true
+        }).then(function (result) {
+            if (result.value) {
+                $.ajax({
+                    data: {
+                        id: id,
+                        table: table,
+                    },
+                    type: 'DELETE',
+                    url: `${base_url}delete/table`,
+                    success: res => {
+                        if (res) {
+                            toastr.error(res, "Error");
+                        } else {
+                            swal.fire(
+                                'Sukses! Data telah di hapus',
+                                '',
+                                'success'
+                            );
+                            switch (table) {
+                                case "manager":
+                                    admin.reload();
+                                    break;
+                                default:
+                                    $('#' + table).KTDatatable().reload();
+                                    break
+                            }
+                        }
+                    },
+                })
+            }
+        });
     });
-    $(document).on('click','.toggleuser',function () {
-        const action = $(this).data('action') || ""
-        const status = $(this).data('status')
-        const table = $(this).data('table')
-        const id = $(this).data('id')
+    $(document).on('click', '.toggleuser', function () {
+        const action = $(this).data('action') || "";
+        const status = $(this).data('status');
+        const table = $(this).data('table');
+        const id = $(this).data('id');
 
         $.ajax({
-            url:`${base_url}action/toggleuser`,
-            data:{
-                action:action,
-                status:status,
-                table:table,
-                id:id,
+            url: `${base_url}action/toggleuser`,
+            data: {
+                action: action,
+                status: status,
+                table: table,
+                id: id,
             },
             success: res => {
 

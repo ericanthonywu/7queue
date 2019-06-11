@@ -53,4 +53,9 @@ class crud extends Controller
         }
         Admin::find($r->id)->update($req);
     }
+    function chgstadmin(Request $r){
+        Admin::find($r->id)->update([
+            "status"=>$r->status
+        ]);
+    }
 }

@@ -54,7 +54,7 @@
 </body>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.2.0/anime.min.js"></script>
 <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-<script src="{{url('js/jquery.js')}}"></script>
+<script src="{{asset('js/jquery.js')}}"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js" integrity="sha256-3blsJd4Hli/7wCQ+bmgXfOdK7p/ZUMtPXY08jmxSSgk=" crossorigin="anonymous"></script>
-<script src="{{url('js/login.js')}}"></script>
+<script src="{{asset('js/login.js')}}"></script>
 </html>

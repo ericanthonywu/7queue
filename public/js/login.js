@@ -99,7 +99,6 @@ $(document).ready(() => {
                         })
                     } else {
                         location.href =  sessionStorage.getItem('nextURL') == null ? `${base_url}dashboard` : sessionStorage.getItem('nextURL') ;
-                        sessionStorage.setItem('nextURL',null);
                     }
                 },
                 error: xhr => {

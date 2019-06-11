@@ -28,7 +28,6 @@
 <script src="{{asset('assets/js/demo1/pages/components/extended/toastr.js')}}" type="text/javascript"></script>
 <script src="{{asset('assets/js/demo1/pages/components/extended/sweetalert2.js')}}" type="text/javascript"></script>
 <script src="{{asset('assets/vendors/custom/jquery-ui/jquery-ui.bundle.js')}}" type="text/javascript"></script>
-
 <!--end::Page Vendors -->
 
 <!--begin::Page Scripts(used by this page) -->
@@ -36,3 +35,4 @@
 <script src="{{asset('js/datatable.js')}}"></script>
 <script src="{{asset('js/sortable.js')}}"></script>
 <script src="{{asset('js/plugin.js')}}"></script>
+<script src="{{asset('js/custom_script.js')}}"></script>

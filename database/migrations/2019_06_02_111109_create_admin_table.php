@@ -20,7 +20,7 @@ class CreateAdminTable extends Migration
             $table->string('email')->unique()->nullable();
             $table->unsignedTinyInteger('level');
             $table->string('password');
-            $table->string('status');
+            $table->unsignedTinyInteger('status')->default(0);
             $table->timestamp('suspend_time')->nullable();
             $table->timestamps();
         });

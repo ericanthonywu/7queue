@@ -67,32 +67,9 @@
                     <h4 class="kt-menu__section-text">Manage User</h4>
                     <i class="kt-menu__section-icon flaticon-more-v2"></i>
                 </li>
-                <li class="kt-menu__item  kt-menu__item--submenu {{Request::url() == url('/manager') || Request::url() == url('/merchants') || Request::url() == url('/customers') || Request::url() == url('/admin') ? " kt-menu__item--open" : ""}}" aria-haspopup="true" data-ktmenu-submenu-toggle="hover"><a href="javascript:;" class="kt-menu__link kt-menu__toggle"><span class="kt-menu__link-icon"><svg xmlns="http://www.w3.org/2000/svg"
-                                                                                                                                                                                                                             xmlns:xlink="http://www.w3.org/1999/xlink" width="24px"
-                                                                                                                                                                                                                             height="24px" viewBox="0 0 24 24" version="1.1"
-                                                                                                                                                                                                                             class="kt-svg-icon">
-                    <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-                        <polygon id="Shape" points="0 0 24 0 24 24 0 24"/>
-                        <path d="M12,11 C9.790861,11 8,9.209139 8,7 C8,4.790861 9.790861,3 12,3 C14.209139,3 16,4.790861 16,7 C16,9.209139 14.209139,11 12,11 Z"
-                              id="Mask" fill="#000000" fill-rule="nonzero" opacity="0.3"/>
-                        <path d="M3.00065168,20.1992055 C3.38825852,15.4265159 7.26191235,13 11.9833413,13 C16.7712164,13 20.7048837,15.2931929 20.9979143,20.2 C21.0095879,20.3954741 20.9979143,21 20.2466999,21 C16.541124,21 11.0347247,21 3.72750223,21 C3.47671215,21 2.97953825,20.45918 3.00065168,20.1992055 Z"
-                              id="Mask-Copy" fill="#000000" fill-rule="nonzero"/>
-                    </g>
-                </svg></span><span class="kt-menu__link-text">Manage User</span><i class="kt-menu__ver-arrow la la-angle-right"></i></a>
-                    <div class="kt-menu__submenu "><span class="kt-menu__arrow"></span>
-                        <ul class="kt-menu__subnav">
-                            <li class="kt-menu__item  kt-menu__item--parent kt-menu__item--here" aria-haspopup="true"><span class="kt-menu__link"><span class="kt-menu__link-text">Manager User</span></span></li>
-                            @if(Session::get('level') == 3)
-                                <li class="kt-menu__item {{Request::url() == url('/admin') ? "kt-menu__item--active" : ""}}" aria-haspopup="true"><a href="{{url('/admin')}}" class="kt-menu__link "><i class="kt-menu__link-bullet kt-menu__link-bullet--dot"><span></span></i><span class="kt-menu__link-text">Admin</span></a></li>
-                            @endif
-                            <li class="kt-menu__item {{Request::url() == url('/manager') ? "kt-menu__item--active" : ""}}" aria-haspopup="true"><a href="{{url('/manager')}}" class="kt-menu__link "><i class="kt-menu__link-bullet kt-menu__link-bullet--dot"><span></span></i><span class="kt-menu__link-text">Manager</span></a></li>
-                            <li class="kt-menu__item {{Request::url() == url('/merchants') ? "kt-menu__item--active" : ""}}" aria-haspopup="true"><a href="{{url('/merchants')}}" class="kt-menu__link "><i class="kt-menu__link-bullet kt-menu__link-bullet--dot"><span></span></i><span class="kt-menu__link-text">Merchants</span></a></li>
-                            <li class="kt-menu__item {{Request::url() == url('/customers') ? "kt-menu__item--active" : ""}}" aria-haspopup="true"><a href="{{url('/customers')}}" class="kt-menu__link "><i class="kt-menu__link-bullet kt-menu__link-bullet--dot"><span></span></i><span class="kt-menu__link-text">Customers</span></a></li>
-                        </ul>
-                    </div>
-                </li>
-                <li class="kt-menu__item {{Request::url() == "/admin/clients" ? "kt-menu__item--active" : ""}}"
-                    aria-haspopup="true"><a href="{{url('/admin/clients')}}" class="kt-menu__link "><span
+                <li class="kt-menu__item  kt-menu__item--submenu {{Request::url() == url('/manager') || Request::url() == url('/merchants') || Request::url() == url('/customers') || Request::url() == url('/admin') ? " kt-menu__item--open" : ""}}"
+                    aria-haspopup="true" data-ktmenu-submenu-toggle="hover"><a href="javascript:"
+                                                                               class="kt-menu__link kt-menu__toggle"><span
                                 class="kt-menu__link-icon"><svg xmlns="http://www.w3.org/2000/svg"
                                                                 xmlns:xlink="http://www.w3.org/1999/xlink" width="24px"
                                                                 height="24px" viewBox="0 0 24 24" version="1.1"
@@ -104,22 +81,61 @@
                         <path d="M3.00065168,20.1992055 C3.38825852,15.4265159 7.26191235,13 11.9833413,13 C16.7712164,13 20.7048837,15.2931929 20.9979143,20.2 C21.0095879,20.3954741 20.9979143,21 20.2466999,21 C16.541124,21 11.0347247,21 3.72750223,21 C3.47671215,21 2.97953825,20.45918 3.00065168,20.1992055 Z"
                               id="Mask-Copy" fill="#000000" fill-rule="nonzero"/>
                     </g>
-                </svg></span>
-                        <span class="kt-menu__link-text"> Clients</span></a></li>
+                </svg></span><span class="kt-menu__link-text">Manage User</span><i
+                                class="kt-menu__ver-arrow la la-angle-right"></i></a>
+                    <div class="kt-menu__submenu "><span class="kt-menu__arrow"></span>
+                        <ul class="kt-menu__subnav">
+                            <li class="kt-menu__item  kt-menu__item--parent kt-menu__item--here" aria-haspopup="true">
+                                <span class="kt-menu__link"><span class="kt-menu__link-text">Manager User</span></span>
+                            </li>
+                            @if(Session::get('level') == 3)
+                                <li class="kt-menu__item {{Request::url() == url('/admin') ? "kt-menu__item--active" : ""}}"
+                                    aria-haspopup="true"><a href="{{url('/admin')}}" class="kt-menu__link "><i
+                                                class="kt-menu__link-bullet kt-menu__link-bullet--dot"><span></span></i><span
+                                                class="kt-menu__link-text">Admin</span></a></li>
+                            @endif
+                            <li class="kt-menu__item {{Request::url() == url('/manager') ? "kt-menu__item--active" : ""}}"
+                                aria-haspopup="true"><a href="{{url('/manager')}}" class="kt-menu__link "><i
+                                            class="kt-menu__link-bullet kt-menu__link-bullet--dot"><span></span></i><span
+                                            class="kt-menu__link-text">Manager</span></a></li>
+                            <li class="kt-menu__item {{Request::url() == url('/merchants') ? "kt-menu__item--active" : ""}}"
+                                aria-haspopup="true"><a href="{{url('/merchants')}}" class="kt-menu__link "><i
+                                            class="kt-menu__link-bullet kt-menu__link-bullet--dot"><span></span></i><span
+                                            class="kt-menu__link-text">Merchants</span></a></li>
+                            <li class="kt-menu__item {{Request::url() == url('/customers') ? "kt-menu__item--active" : ""}}"
+                                aria-haspopup="true"><a href="{{url('/customers')}}" class="kt-menu__link "><i
+                                            class="kt-menu__link-bullet kt-menu__link-bullet--dot"><span></span></i><span
+                                            class="kt-menu__link-text">Customers</span></a></li>
+                        </ul>
+                    </div>
+                </li>
+                <li class="kt-menu__item {{Request::url() == "/banner" ? "kt-menu__item--active" : ""}}"
+                    aria-haspopup="true"><a href="{{url('/banner')}}" class="kt-menu__link "><span
+                                class="kt-menu__link-icon"><svg xmlns="http://www.w3.org/2000/svg"
+                                                                xmlns:xlink="http://www.w3.org/1999/xlink" width="24px"
+                                                                height="24px" viewBox="0 0 24 24" version="1.1"
+                                                                class="kt-svg-icon">
+                            <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                                <rect id="bound" x="0" y="0" width="24" height="24"/>
+                                <path d="M3.5,21 L20.5,21 C21.3284271,21 22,20.3284271 22,19.5 L22,8.5 C22,7.67157288 21.3284271,7 20.5,7 L10,7 L7.43933983,4.43933983 C7.15803526,4.15803526 6.77650439,4 6.37867966,4 L3.5,4 C2.67157288,4 2,4.67157288 2,5.5 L2,19.5 C2,20.3284271 2.67157288,21 3.5,21 Z"
+                                      id="Combined-Shape" fill="#000000"/>
+                            </g>
+                        </svg></span>
+                        <span class="kt-menu__link-text"> Banner</span></a></li>
                 <li class="kt-menu__item {{Request::url() == "/admin/experiences" ? "kt-menu__item--active" : ""}}"
                     aria-haspopup="true"><a href="{{url('/admin/experiences')}}" class="kt-menu__link "><span
                                 class="kt-menu__link-icon"><svg xmlns="http://www.w3.org/2000/svg"
                                                                 xmlns:xlink="http://www.w3.org/1999/xlink" width="24px"
                                                                 height="24px" viewBox="0 0 24 24" version="1.1"
                                                                 class="kt-svg-icon">
-    <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-        <rect id="bound" x="0" y="0" width="24" height="24"/>
-        <path d="M4,16 L5,16 C5.55228475,16 6,16.4477153 6,17 C6,17.5522847 5.55228475,18 5,18 L4,18 C3.44771525,18 3,17.5522847 3,17 C3,16.4477153 3.44771525,16 4,16 Z M1,11 L5,11 C5.55228475,11 6,11.4477153 6,12 C6,12.5522847 5.55228475,13 5,13 L1,13 C0.44771525,13 6.76353751e-17,12.5522847 0,12 C-6.76353751e-17,11.4477153 0.44771525,11 1,11 Z M3,6 L5,6 C5.55228475,6 6,6.44771525 6,7 C6,7.55228475 5.55228475,8 5,8 L3,8 C2.44771525,8 2,7.55228475 2,7 C2,6.44771525 2.44771525,6 3,6 Z"
-              id="Combined-Shape" fill="#000000" opacity="0.3"/>
-        <path d="M10,6 L22,6 C23.1045695,6 24,6.8954305 24,8 L24,16 C24,17.1045695 23.1045695,18 22,18 L10,18 C8.8954305,18 8,17.1045695 8,16 L8,8 C8,6.8954305 8.8954305,6 10,6 Z M21.0849395,8.0718316 L16,10.7185839 L10.9150605,8.0718316 C10.6132433,7.91473331 10.2368262,8.02389331 10.0743092,8.31564728 C9.91179228,8.60740125 10.0247174,8.9712679 10.3265346,9.12836619 L15.705737,11.9282847 C15.8894428,12.0239051 16.1105572,12.0239051 16.294263,11.9282847 L21.6734654,9.12836619 C21.9752826,8.9712679 22.0882077,8.60740125 21.9256908,8.31564728 C21.7631738,8.02389331 21.3867567,7.91473331 21.0849395,8.0718316 Z"
-              id="Combined-Shape" fill="#000000"/>
-    </g>
-</svg></span>
+                            <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                                <rect id="bound" x="0" y="0" width="24" height="24"/>
+                                <path d="M4,16 L5,16 C5.55228475,16 6,16.4477153 6,17 C6,17.5522847 5.55228475,18 5,18 L4,18 C3.44771525,18 3,17.5522847 3,17 C3,16.4477153 3.44771525,16 4,16 Z M1,11 L5,11 C5.55228475,11 6,11.4477153 6,12 C6,12.5522847 5.55228475,13 5,13 L1,13 C0.44771525,13 6.76353751e-17,12.5522847 0,12 C-6.76353751e-17,11.4477153 0.44771525,11 1,11 Z M3,6 L5,6 C5.55228475,6 6,6.44771525 6,7 C6,7.55228475 5.55228475,8 5,8 L3,8 C2.44771525,8 2,7.55228475 2,7 C2,6.44771525 2.44771525,6 3,6 Z"
+                                      id="Combined-Shape" fill="#000000" opacity="0.3"/>
+                                <path d="M10,6 L22,6 C23.1045695,6 24,6.8954305 24,8 L24,16 C24,17.1045695 23.1045695,18 22,18 L10,18 C8.8954305,18 8,17.1045695 8,16 L8,8 C8,6.8954305 8.8954305,6 10,6 Z M21.0849395,8.0718316 L16,10.7185839 L10.9150605,8.0718316 C10.6132433,7.91473331 10.2368262,8.02389331 10.0743092,8.31564728 C9.91179228,8.60740125 10.0247174,8.9712679 10.3265346,9.12836619 L15.705737,11.9282847 C15.8894428,12.0239051 16.1105572,12.0239051 16.294263,11.9282847 L21.6734654,9.12836619 C21.9752826,8.9712679 22.0882077,8.60740125 21.9256908,8.31564728 C21.7631738,8.02389331 21.3867567,7.91473331 21.0849395,8.0718316 Z"
+                                      id="Combined-Shape" fill="#000000"/>
+                            </g>
+                        </svg></span>
                         <span class="kt-menu__link-text"> Message</span></a></li>
                 <li class="kt-menu__item {{Request::url() == "/admin/experiences" ? "kt-menu__item--active" : ""}}"
                     aria-haspopup="true"><a href="{{url('/admin/experiences')}}" class="kt-menu__link "><span
@@ -141,14 +157,14 @@
                                                                 xmlns:xlink="http://www.w3.org/1999/xlink" width="24px"
                                                                 height="24px" viewBox="0 0 24 24" version="1.1"
                                                                 class="kt-svg-icon">
-    <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-        <polygon id="Shape" points="0 0 24 0 24 24 0 24"/>
-        <path d="M12,11 C9.790861,11 8,9.209139 8,7 C8,4.790861 9.790861,3 12,3 C14.209139,3 16,4.790861 16,7 C16,9.209139 14.209139,11 12,11 Z"
-              id="Mask" fill="#000000" fill-rule="nonzero" opacity="0.3"/>
-        <path d="M3.00065168,20.1992055 C3.38825852,15.4265159 7.26191235,13 11.9833413,13 C16.7712164,13 20.7048837,15.2931929 20.9979143,20.2 C21.0095879,20.3954741 20.9979143,21 20.2466999,21 C16.541124,21 11.0347247,21 3.72750223,21 C3.47671215,21 2.97953825,20.45918 3.00065168,20.1992055 Z"
-              id="Mask-Copy" fill="#000000" fill-rule="nonzero"/>
-    </g>
-</svg></span><span class="kt-menu__link-text"> Visitor</span></a></li>
+                        <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                            <polygon id="Shape" points="0 0 24 0 24 24 0 24"/>
+                            <path d="M12,11 C9.790861,11 8,9.209139 8,7 C8,4.790861 9.790861,3 12,3 C14.209139,3 16,4.790861 16,7 C16,9.209139 14.209139,11 12,11 Z"
+                                  id="Mask" fill="#000000" fill-rule="nonzero" opacity="0.3"/>
+                            <path d="M3.00065168,20.1992055 C3.38825852,15.4265159 7.26191235,13 11.9833413,13 C16.7712164,13 20.7048837,15.2931929 20.9979143,20.2 C21.0095879,20.3954741 20.9979143,21 20.2466999,21 C16.541124,21 11.0347247,21 3.72750223,21 C3.47671215,21 2.97953825,20.45918 3.00065168,20.1992055 Z"
+                                  id="Mask-Copy" fill="#000000" fill-rule="nonzero"/>
+                        </g>
+                    </svg></span><span class="kt-menu__link-text"> Visitor</span></a></li>
             </ul>
         </div>
     </div>

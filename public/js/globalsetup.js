@@ -4,6 +4,7 @@ KTApp.blockPage({
     state: 'primary',
     message: 'Processing...'
 });
+sessionStorage.removeItem('nextURL')
 $(window).bind('beforeunload', () => {
     KTApp.blockPage({
         overlayColor: '#000000',
@@ -20,7 +21,7 @@ $(document).ready(function () {
     const base_image = window.location.origin + "/uploads/";
     const base_table = window.location.origin + "/table/";
 
-    $('.btn-data').tooltip();
+    $('.btn-tooltip').tooltip();
 
 //Global Default Toastr
     toastr.options = {

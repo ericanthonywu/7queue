@@ -117,6 +117,7 @@ License: You must have a valid license purchased only from themeforest(the above
                             <div class="kt-datatable" id="tbladmin"></div>
                             <!--end: Datatable -->
                         </div>
+
                     </div>
                 </div>
 

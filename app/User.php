@@ -32,8 +32,10 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
  * @mixin \Eloquent
  * @property string|null $suspend_time
  * @method static \Illuminate\Database\Eloquent\Builder|\App\User whereSuspendTime($value)
+ * @property int $created_by
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\User whereCreatedBy($value)
  */
-class User extends Authenticatable
+class  User extends Authenticatable
 {
     use Notifiable;
 

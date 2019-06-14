@@ -58,7 +58,7 @@ License: You must have a valid license purchased only from themeforest(the above
                             <a href="{{url('/merchants')}}" class="kt-subheader__breadcrumbs-link">
                                 Merchants </a>
                             <span class="kt-subheader__breadcrumbs-separator"></span>
-                            <a href="{{url('/merchants/tambah')}}" class="kt-subheader__breadcrumbs-link">
+                            <a href="{{Request::url()}}" class="kt-subheader__breadcrumbs-link">
                                 Tambah </a>
                             <span class="kt-subheader__breadcrumbs-separator"></span>
                             <!-- <span class="kt-subheader__breadcrumbs-link kt-subheader__breadcrumbs-link--active">Active link</span> -->
@@ -83,7 +83,7 @@ License: You must have a valid license purchased only from themeforest(the above
                         </div>
 
                         <!--begin::Form-->
-                        <form class="kt-form" data-action="admin">
+                        <form class="kt-form" data-action="merchants">
                             <input type="hidden" value="0" name="status">
                             <div class="kt-portlet__body">
                                 <div class="kt-section kt-section--first">
@@ -97,7 +97,7 @@ License: You must have a valid license purchased only from themeforest(the above
                                     <div class="form-group row">
                                         <label class="col-lg-3 col-form-label">Nickname:</label>
                                         <div class="col-lg-6">
-                                            <input type="text" class="form-control" name="name" placeholder="Masukkan Nickname Merchants" required>
+                                            <input type="text" class="form-control" name="nickname" placeholder="Masukkan Nickname Merchants" required>
                                             <span class="form-text text-muted">Masukkan Nickname</span>
                                         </div>
                                     </div>

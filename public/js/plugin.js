@@ -94,10 +94,10 @@ $(document).ready(function () {
                 .replace(/\B(?=(\d{3})+(?!\d))/g, ",")
                 ;
         });
-        var id = $(this).data("id");
+        var selector = $(this).data("selector");
         var value = $(this).val();
         var noCommas = value.replace(/,/g, "");
-        $('#' + id).val(noCommas);
+        $(selector).val(noCommas);
     });
     $('.validate-input').bind("blur keyup", function validate_input() {
         var value = $(this).val();
@@ -195,7 +195,7 @@ $(document).ready(function () {
         CSV += ReportTitle + '\r\n\n';
 
         //This condition will generate the Label/Header
-        if (ShowLabel) {
+        if (ShowLabel) { 
             let row = "";
 
             //This loop will extract the label from 1st index of on array

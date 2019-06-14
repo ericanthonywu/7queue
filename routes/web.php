@@ -11,13 +11,15 @@
 |
 */
 
-Route::view('/', 'login');
+Route::get('/', 'page@manager');
 Route::post('/login','auth@login');
 Route::get('/logout','auth@logout');
 Route::middleware('globaladmincheck')->group(function (){
     Route::delete('/delete/table',"crud@delete");
 
     Route::view('/dashboard','page.index');
+
+    Route::get('/chart/piechart','chart@piechart');
 
     Route::middleware('superadmincheck')->group(function (){
         Route::view('/admin/tambah','page.admin.tambah');
@@ -29,17 +31,56 @@ Route::middleware('globaladmincheck')->group(function (){
         Route::post('/action/chgstadmin','crud@chgstadmin');
     });
 
+    Route::view('/merchants','page.merchants.index');
+    Route::post('/table/merchants','table@merchants');
+
+    Route::middleware('managercheck')->group(function (){
+        Route::view('/merchants/tambah','page.merchants.tambah');
+        Route::get('/merchants/edit/{id}','page@editmerchants');
+        Route::post('/action/merchants','crud@tambahmerchants');
+        Route::post('/action/update/merchants','crud@editmerchants');
+    });
+
     Route::view('/manager','page.manager.index');
     Route::post('/table/manager','table@manager');
 
     Route::view('/customers','page.customers.index');
     Route::post('/table/customers','table@customers');
+    Route::middleware('managercheck')->group(function (){
+        Route::view('/customers/tambah','page.customers.tambah');
+        Route::get('/customers/edit/{id}','page@editcustomers');
+        Route::post('/action/customers','crud@tambahcustomers');
+        Route::post('/action/update/customers','crud@editcustomers');
+    });
 
-    Route::view('/merchants','page.merchants.index');
-    Route::view('/merchants/tambah','page.merchants.tambah');
-    Route::get('/merchants/edit/{id}','page@editmerchants');
-    Route::post('/action/merchants','crud@tambahmerchants');
-    Route::post('/action/update/merchants','crud@editmerchants');
-    Route::post('/table/merchants','table@merchants');
+    Route::view('/banner','page.banner.index');
+    Route::post('/table/banner','table@banner');
+    Route::middleware('managercheck')->group(function (){
+        Route::view('/banner/tambah','page.banner.tambah');
+        Route::get('/banner/edit/{id}','page@editbanner');
+        Route::post('/action/banner','crud@tambahbanner');
+        Route::post('/action/update/banner','crud@editbanner');
+    });
+
+    Route::middleware('managercheck')->group(function () {
+        Route::post('/table/kategoriproduk', 'table@kategoriproduk');
+        Route::post('/action/kategoriproduk', 'crud@tambahkategoriproduk');
+        Route::post('/action/update/kategoriproduk', 'crud@editkategoriproduk');
+    });
+
+    Route::view('/products','page.products.index');
+    Route::post('/table/products','table@products');
+    Route::middleware('managercheck')->group(function (){
+        Route::get('/products/tambah','page@tambahproducts');
+        Route::get('/products/edit/{id}','page@editproducts');
+        Route::post('/action/products','crud@tambahproducts');
+        Route::post('/action/update/products','crud@editproducts');
+    });
+    Route::view('/settings','page.settings.index');
+
+    Route::post('/toggleuser','crud@toggleuser');
+    Route::get('/getkategori','page@kategori');
+
+
 });
 

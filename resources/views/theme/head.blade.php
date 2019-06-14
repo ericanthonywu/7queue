@@ -46,5 +46,5 @@
     <link href="{{asset('assets/css/demo1/skins/aside/dark.css')}}" rel="stylesheet" type="text/css" />
 
     <!--end::Layout Skins -->
-    <link rel="shortcut icon" href="{{asset('assets_user/images/dfusionlogo.png')}}" />
+    <link rel="shortcut icon" href="{{asset('assets_user/images/logo-7queue.png')}}" />
 </head>

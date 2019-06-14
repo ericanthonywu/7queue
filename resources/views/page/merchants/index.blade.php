@@ -83,10 +83,12 @@ License: You must have a valid license purchased only from themeforest(the above
                             <div class="kt-portlet__head-toolbar">
                                 <div class="kt-portlet__head-wrapper">
                                     <div class="kt-portlet__head-actions">
+                                        @if(Session::get('level') == 1)
                                         <a href="{{url('/merchants/tambah')}}" class="btn btn-brand btn-elevate btn-icon-sm">
                                             <i class="la la-plus"></i>
                                             Tambah Merchants
                                         </a>
+                                            @endif
                                     </div>
                                 </div>
                             </div>

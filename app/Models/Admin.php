@@ -2,7 +2,7 @@
 
 /**
  * Created by Reliese Model.
- * Date: Mon, 03 Jun 2019 10:51:39 +0000.
+ * Date: Fri, 14 Jun 2019 11:31:30 +0000.
  */
 
 namespace App\Models;
@@ -14,11 +14,11 @@ use Reliese\Database\Eloquent\Model as Eloquent;
  *
  * @property int $id
  * @property string $username
- * @property string $name
+ * @property string $nickname
  * @property string $email
  * @property int $level
  * @property string $password
- * @property string $status
+ * @property int $status
  * @property \Carbon\Carbon $suspend_time
  * @property \Carbon\Carbon $created_at
  * @property \Carbon\Carbon $updated_at
@@ -30,7 +30,7 @@ use Reliese\Database\Eloquent\Model as Eloquent;
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Admin whereEmail($value)
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Admin whereId($value)
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Admin whereLevel($value)
- * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Admin whereName($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Admin whereNickname($value)
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Admin wherePassword($value)
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Admin whereStatus($value)
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Admin whereSuspendTime($value)
@@ -43,7 +43,8 @@ class Admin extends Eloquent
 	protected $table = 'admin';
 
 	protected $casts = [
-		'level' => 'int'
+		'level' => 'int',
+		'status' => 'int'
 	];
 
 	protected $dates = [
@@ -56,7 +57,7 @@ class Admin extends Eloquent
 
 	protected $fillable = [
 		'username',
-		'name',
+		'nickname',
 		'email',
 		'level',
 		'password',

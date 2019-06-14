@@ -1,5 +1,5 @@
 let current = null;
-const base_url = window.location.origin+"/"
+const base_url = window.location.origin + "/";
 document.querySelector('#username').addEventListener('focus', () => {
     if (current) current.pause();
     current = anime({
@@ -16,7 +16,7 @@ document.querySelector('#username').addEventListener('focus', () => {
         }
     });
 });
-document.querySelector('#password').addEventListener('focus', ()=> {
+document.querySelector('#password').addEventListener('focus', () => {
     if (current) current.pause();
     current = anime({
         targets: 'path',
@@ -32,7 +32,7 @@ document.querySelector('#password').addEventListener('focus', ()=> {
         }
     });
 });
-document.querySelector('#submit').addEventListener('focus', ()=> {
+document.querySelector('#submit').addEventListener('focus', () => {
     if (current) current.pause();
     current = anime({
         targets: 'path',
@@ -49,7 +49,7 @@ document.querySelector('#submit').addEventListener('focus', ()=> {
     });
 });
 $(document).ready(() => {
-    if(sessionStorage.getItem('nextURL')){
+    if (sessionStorage.getItem('nextURL')) {
         toastr.options = {
             "closeButton": true,
             "debug": false,
@@ -67,7 +67,7 @@ $(document).ready(() => {
             "showMethod": "fadeIn",
             "hideMethod": "fadeOut"
         };
-        toastr.error("Session Has Expired <br> Your Last Url is Saved.. <br> Please Login Again",'Error')
+        toastr.error("Session Has Expired <br> Your Last Url is Saved.. <br> Please Login Again", 'Error')
     }
     $('#username,#password').keypress(e => {
         if (e.keyCode === 13) {
@@ -98,7 +98,8 @@ $(document).ready(() => {
                             $('#username').focus()
                         })
                     } else {
-                        location.href =  sessionStorage.getItem('nextURL') == null ? `${base_url}dashboard` : sessionStorage.getItem('nextURL') ;
+                        sessionStorage.setItem('status', 'admin');
+                        location.href = sessionStorage.getItem('nextURL') == null ? `${base_url}dashboard` : sessionStorage.getItem('nextURL');
                     }
                 },
                 error: xhr => {

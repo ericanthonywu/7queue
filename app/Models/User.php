@@ -2,7 +2,7 @@
 
 /**
  * Created by Reliese Model.
- * Date: Mon, 03 Jun 2019 10:51:39 +0000.
+ * Date: Fri, 14 Jun 2019 11:31:30 +0000.
  */
 
 namespace App\Models;
@@ -18,6 +18,7 @@ use Reliese\Database\Eloquent\Model as Eloquent;
  * @property string $email
  * @property string $password
  * @property int $status
+ * @property int $created_by
  * @property \Carbon\Carbon $suspend_time
  * @property \Carbon\Carbon $created_at
  * @property \Carbon\Carbon $updated_at
@@ -26,6 +27,7 @@ use Reliese\Database\Eloquent\Model as Eloquent;
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\User newQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\User query()
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\User whereCreatedAt($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\User whereCreatedBy($value)
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\User whereEmail($value)
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\User whereId($value)
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\User whereNickname($value)
@@ -39,7 +41,8 @@ use Reliese\Database\Eloquent\Model as Eloquent;
 class User extends Eloquent
 {
 	protected $casts = [
-		'status' => 'int'
+		'status' => 'int',
+		'created_by' => 'int'
 	];
 
 	protected $dates = [
@@ -56,6 +59,7 @@ class User extends Eloquent
 		'email',
 		'password',
 		'status',
+		'created_by',
 		'suspend_time'
 	];
 }

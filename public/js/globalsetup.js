@@ -15,6 +15,7 @@ $(window).bind('beforeunload', () => {
 });
 $(document).ready(function () {
     KTApp.unblockPage();
+    $('.kt-selectpicker').selectpicker();
 });
 // Global Variable
     const base_url = window.location.origin + "/";
@@ -66,7 +67,7 @@ $(document).ready(function () {
         },
         complete: xhr => {
             if (xhr.status === 419) {
-                location.href = base_url;
+                location.href = sessionStorage.getItem('status') === "admin" ? base_url+"/admin" : base_url;
                 sessionStorage.setItem('nextURL', window.location.href);
             } else {
                 KTApp.unblockPage();

@@ -15,12 +15,12 @@ class CreateAdminTable extends Migration
     {
         Schema::create('admin', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('username')->unique();
-            $table->string('name')->unique();
-            $table->string('email')->unique()->nullable();
-            $table->unsignedTinyInteger('level');
+            $table->string('username')->unique()->index();
+            $table->string('nickname')->unique()->index();
+            $table->string('email')->unique()->nullable()->index();
+            $table->unsignedTinyInteger('level')->index();
             $table->string('password');
-            $table->unsignedTinyInteger('status')->default(0);
+            $table->unsignedTinyInteger('status')->default(0)->index();
             $table->timestamp('suspend_time')->nullable();
             $table->timestamps();
         });

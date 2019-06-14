@@ -54,8 +54,6 @@ class Kernel extends HttpKernel
         'auth' => \App\Http\Middleware\Authenticate::class,
         'admincheck' => \App\Http\Middleware\admincheck::class,
         'superadmincheck' => \App\Http\Middleware\superadmincheck::class,
-        'usercheck' => \App\Http\Middleware\usercheck::class,
-        'merchantcheck' => \App\Http\Middleware\merchantcheck::class,
         'globaladmincheck' => \App\Http\Middleware\globaladmincheck::class,
         'managercheck' => \App\Http\Middleware\managercheck::class,
         'oauthcheck' => \App\Http\Middleware\oauthcheck::class,

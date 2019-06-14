@@ -15,6 +15,10 @@ class globaladmincheck
      */
     public function handle($request, Closure $next)
     {
-        return \Session::get('name') && \Session::get('id') ? $next($request) : redirect('/');
+        if(\Request::url() == url('/admin')){
+            return \Session::get('level') == 3 ? $next($request) : response()->view('admin',[],200);
+        }else {
+            return \Session::get('name') && \Session::get('level') ? $next($request) : response()->view('error.404', [], 404);
+        }
     }
 }

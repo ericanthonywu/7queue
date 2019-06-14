@@ -52,7 +52,7 @@ License: You must have a valid license purchased only from themeforest(the above
 
                         <span class="kt-subheader__separator kt-hidden"></span>
                         <div class="kt-subheader__breadcrumbs">
-                            <a href="{{url('/admin/')}}" class="kt-subheader__breadcrumbs-home"><i
+                            <a href="{{url('/')}}" class="kt-subheader__breadcrumbs-home"><i
                                         class="flaticon2-shelter"></i></a>
                             <span class="kt-subheader__breadcrumbs-separator"></span>
                             <a href="{{url('/merchants')}}" class="kt-subheader__breadcrumbs-link">
@@ -83,36 +83,36 @@ License: You must have a valid license purchased only from themeforest(the above
                         </div>
 
                         <!--begin::Form-->
-                        <form class="kt-form" data-action="admin">
-                            <input type="hidden" value="{{$admin['status']}}" name="status">
+                        <form class="kt-form" data-action="merchants">
+                            <input type="hidden" value="{{$merchants['id']}}" name="id">
                             <div class="kt-portlet__body">
                                 <div class="kt-section kt-section--first">
                                     <div class="form-group row">
                                         <label class="col-lg-3 col-form-label">Username:</label>
                                         <div class="col-lg-6">
-                                            <input type="text" class="form-control" name="username" value="{{$admin['username']}}" placeholder="Masukkan Username Admin" required>
+                                            <input type="text" class="form-control" name="username" value="{{$merchants['username']}}" placeholder="Masukkan Username Admin" required>
                                             <span class="form-text text-muted">Masukkan Username</span>
                                         </div>
                                     </div>
                                     <div class="form-group row">
                                         <label class="col-lg-3 col-form-label">Nickname:</label>
                                         <div class="col-lg-6">
-                                            <input type="text" class="form-control" name="name" value="{{$admin['name']}}" placeholder="Masukkan Nickname Admin" required>
+                                            <input type="text" class="form-control" name="nickname" value="{{$merchants['nickname']}}" placeholder="Masukkan Nickname Admin" required>
                                             <span class="form-text text-muted">Masukkan Nickname</span>
                                         </div>
                                     </div>
                                     <div class="form-group row">
                                         <label class="col-lg-3 col-form-label">Email:</label>
                                         <div class="col-lg-6">
-                                            <input type="email" aria-describedby="emailHelp" value="{{$admin['email']}}" class="form-control" name="email" placeholder="Masukkan Email Admin" required>
+                                            <input type="email" aria-describedby="emailHelp" value="{{$merchants['email']}}" class="form-control" name="email" placeholder="Masukkan Email Admin" required>
                                             <span class="form-text text-muted">Masukkan Email</span>
                                         </div>
                                     </div>
                                     <div class="form-group row">
                                         <label class="col-lg-3 col-form-label">Password:</label>
                                         <div class="col-lg-6">
-                                            <input type="password" class="form-control" name="password" placeholder="Masukkan Password Baru Admin">
-                                            <span class="form-text text-muted">Password Admin tidak akan di tampilkan. Jika ingin mengubah password mohon input password baru.</span>
+                                            <input type="password" class="form-control" name="password" placeholder="Masukkan Password Baru Merchants">
+                                            <span class="form-text text-muted">Password Merchants tidak akan di tampilkan. Jika ingin mengubah password mohon input password baru.</span>
                                         </div>
                                     </div>
                                 </div>

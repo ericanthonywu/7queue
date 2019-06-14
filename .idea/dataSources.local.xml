@@ -11,5 +11,10 @@
       <user-name>root</user-name>
       <introspection-schemas>*:@</introspection-schemas>
     </data-source>
+    <data-source name="jdbc:mysql://http://7queue.net:3306/7queue" uuid="55deb5eb-703f-427e-ae38-327e677f7561">
+      <database-info product="" version="" jdbc-version="" driver-name="" driver-version="" dbms="MYSQL" exact-version="0" />
+      <secret-storage>master_key</secret-storage>
+      <user-name>sevenQueue</user-name>
+    </data-source>
   </component>
 </project>

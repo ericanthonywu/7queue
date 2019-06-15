@@ -42,6 +42,7 @@
             </svg>
             <form class="form" autocomplete="off" id="formlogin">
                 {{csrf_field()}}
+                <input type="hidden" name="status" value="admin">
                 <label for="username">Username</label>
                 <input type="text" id="username" name="username">
                 <label for="password">Password</label>

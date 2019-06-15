@@ -1,4 +1,26 @@
 $(function() {
+    const base_url = window.location.origin+"/"
+
+    if (sessionStorage.getItem('nextURL')) {
+        toastr.options = {
+            "closeButton": true,
+            "debug": false,
+            "newestOnTop": false,
+            "progressBar": false,
+            "positionClass": "toast-top-right",
+            "preventDuplicates": false,
+            "onclick": null,
+            "showDuration": "300",
+            "hideDuration": "1000",
+            "timeOut": "0",
+            "extendedTimeOut": "0",
+            "showEasing": "swing",
+            "hideEasing": "linear",
+            "showMethod": "fadeIn",
+            "hideMethod": "fadeOut"
+        };
+        toastr.error("Session Has Expired <br> Your Last Url is Saved.. <br> Please Login Again", 'Error')
+    }
 
     $(".input input").focus(function() {
 
@@ -31,21 +53,84 @@ $(function() {
     });
 
     $(".button").click(function(e) {
-        var pX = e.pageX,
-            pY = e.pageY,
-            oX = parseInt($(this).offset().left),
-            oY = parseInt($(this).offset().top);
+        if($(this).hasClass('login')) {
+            const data = $('form#login').serialize();
+            $.ajax({
+                headers: {
+                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                },
+                url: `${base_url}login`,
+                data: data,
+                type: 'POST',
+                success: res => {
+                    if (res) {
+                        swal({
+                            icon: "error",
+                            title: "Error",
+                            text: res
+                        });
+                    } else {
+                        var pX = e.pageX,
+                            pY = e.pageY,
+                            oX = parseInt($(this).offset().left),
+                            oY = parseInt($(this).offset().top);
 
-        $(this).append('<span class="click-efect x-' + oX + ' y-' + oY + '" style="margin-left:' + (pX - oX) + 'px;margin-top:' + (pY - oY) + 'px;"></span>')
-        $('.x-' + oX + '.y-' + oY + '').animate({
-            "width": "500px",
-            "height": "500px",
-            "top": "-250px",
-            "left": "-250px",
+                        $(this).append('<span class="click-efect x-' + oX + ' y-' + oY + '" style="margin-left:' + (pX - oX) + 'px;margin-top:' + (pY - oY) + 'px;"></span>')
+                        $('.x-' + oX + '.y-' + oY + '').animate({
+                            "width": "500px",
+                            "height": "500px",
+                            "top": "-250px",
+                            "left": "-250px",
 
-        }, 600);
-        $("button", this).addClass('active');
+                        }, 600);
+                        $("button", this).addClass('active');
+                        sessionStorage.setItem('status', 'manager');
+                        location.href = sessionStorage.getItem('nextURL') == null ? `${base_url}dashboard` : sessionStorage.getItem('nextURL');
+                    }
+                },
+                error: xhr => {
+                    console.log(typeof xhr.responseJSON == "undefined" ? xhr.responseText : xhr.responseJSON.message)
+                }
+            })
+        }
+        else{
+            var pX = e.pageX,
+                pY = e.pageY,
+                oX = parseInt($(this).offset().left),
+                oY = parseInt($(this).offset().top);
+
+            $(this).append('<span class="click-efect x-' + oX + ' y-' + oY + '" style="margin-left:' + (pX - oX) + 'px;margin-top:' + (pY - oY) + 'px;"></span>')
+            $('.x-' + oX + '.y-' + oY + '').animate({
+                "width": "500px",
+                "height": "500px",
+                "top": "-250px",
+                "left": "-250px",
+
+            }, 600);
+            $("button", this).addClass('active');
+        }
+
     })
+    if($('#alert').html()){
+        toastr.options = {
+            "closeButton": true,
+            "debug": false,
+            "newestOnTop": false,
+            "progressBar": true,
+            "positionClass": "toast-top-right",
+            "preventDuplicates": false,
+            "onclick": null,
+            "showDuration": "300",
+            "hideDuration": "1000",
+            "timeOut": "0",
+            "extendedTimeOut": "3000",
+            "showEasing": "swing",
+            "hideEasing": "linear",
+            "showMethod": "fadeIn",
+            "hideMethod": "fadeOut"
+        };
+        toastr.info($('#alert').html())
+    }
 
     $(".alt-2").click(function() {
         if (!$(this).hasClass('material-button')) {
@@ -78,6 +163,18 @@ $(function() {
         }
 
     })
+
+    $('.toggle-input--text').click(function() {
+        const input = $('#regpass');
+        if(input.val() !== "") {
+            $(this).toggleClass('fa-eye-slash fa-eye');
+            if (input.attr('type') === 'password') {
+                input.attr('type', 'text');
+            } else {
+                input.attr('type', 'password');
+            }
+        }
+    });
 
     $(".material-button").click(function() {
 
@@ -115,13 +212,64 @@ $(function() {
         }
 
     });
-
-    $('form#login').submit(function () {
-        const data = $(this).serialize();
-        sessionStorage.setItem('status', 'manager');
+    $('form#login').submit(function (e) {
+        e.preventDefault();
     })
-    $('form#register').submit(function () {
+    $('form#register').submit(function (e) {
+        e.preventDefault()
         const data = $(this).serialize();
+        $.ajax({
+            headers: {
+                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+            },
+            url:`${base_url}register`,
+            data:data,
+            type:'POST',
+            beforeSend: xhr => {
+                $('#register_next').html('Please Wait &nbsp; <div class="lds-circle"><div></div></div>')
+            },
+            success: res => {
+                if (res) {
+                    swal({
+                        icon: "error",
+                        title: "Error",
+                        text: res
+                    });
+                } else {
+                    toastr.success('Register Successfull! Verified your email and you\'re done','Success');
+                    $('.alt-2').trigger('click')
+                    setTimeout(()=>{
+                        $('#regname').val("")
+                        $('#regpass').val("")
+                        $('#regemail').val("")
+                        $('#register_next').html('Next');
+
+                        $(".spin").css({
+                            "width": "0px"
+                        })
+                        $('.input input').parent(".input").each(function() {
+                            $("label", this).css({
+                                "line-height": "60px",
+                                "font-size": "24px",
+                                "font-weight": "300",
+                                "top": "10px"
+                            })
+                        });
+                    },600);
+                }
+            },
+            error: xhr => {
+                if(xhr.status !== 419) {
+                    toastr.error(typeof xhr.responseJSON == "undefined" ? xhr.responseText : xhr.responseJSON.message);
+                    console.log(typeof xhr.responseJSON == "undefined" ? xhr.responseText : xhr.responseJSON.message)
+                }else{
+                    window.reload()
+                }
+            },
+            complete: xhr => {
+                $('#register_next').html('You\'re Registered')
+            }
+        })
     })
 
 });

@@ -12,7 +12,9 @@
 */
 
 Route::get('/', 'page@manager');
+Route::get('/verify_email/{token}', 'auth@verify_email');
 Route::post('/login','auth@login');
+Route::post('/register','auth@register');
 Route::get('/logout','auth@logout');
 Route::middleware('globaladmincheck')->group(function (){
     Route::delete('/delete/table',"crud@delete");

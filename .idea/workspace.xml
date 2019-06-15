@@ -1,639 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="f91e0e37-603b-40fe-b975-6df174a888fb" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/deployment.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/webServers.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/amcharts4/CHANGELOG.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/amcharts4/LICENSE" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/amcharts4/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/amcharts4/charts.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/amcharts4/charts.js.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/amcharts4/core.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/amcharts4/core.js.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/amcharts4/deps/canvg.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/amcharts4/deps/canvg.js.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/amcharts4/deps/pdfmake.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/amcharts4/deps/pdfmake.js.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/amcharts4/deps/xlsx.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/amcharts4/deps/xlsx.js.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/amcharts4/examples/javascript/100%-stacked-column-chart/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/amcharts4/examples/javascript/100%-stacked-column-chart/index.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/amcharts4/examples/javascript/100%-stacked-column-chart/index.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/amcharts4/examples/javascript/100%-stacked-column-chart/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/amcharts4/examples/javascript/adding-live-data/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/amcharts4/examples/javascript/adding-live-data/index.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/amcharts4/examples/javascript/adding-live-data/index.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/amcharts4/examples/javascript/adding-live-data/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/amcharts4/examples/javascript/amcharts3/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/amcharts4/examples/javascript/amcharts3/index.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/amcharts4/examples/javascript/amcharts3/index.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/amcharts4/examples/javascript/amcharts3/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/amcharts4/examples/javascript/amcharts3/v3.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/amcharts4/examples/javascript/animating-along-the-line-series/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/amcharts4/examples/javascript/animating-along-the-line-series/index.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/amcharts4/examples/javascript/animating-along-the-line-series/index.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/amcharts4/examples/javascript/animating-along-the-line-series/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/amcharts4/examples/javascript/bubble-chart/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/amcharts4/examples/javascript/bubble-chart/index.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/amcharts4/examples/javascript/bubble-chart/index.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/amcharts4/examples/javascript/bubble-chart/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/amcharts4/examples/javascript/candlestick-chart/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/amcharts4/examples/javascript/candlestick-chart/index.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/amcharts4/examples/javascript/candlestick-chart/index.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/amcharts4/examples/javascript/candlestick-chart/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/amcharts4/examples/javascript/changing-series-apppearance/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/amcharts4/examples/javascript/changing-series-apppearance/index.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/amcharts4/examples/javascript/changing-series-apppearance/index.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/amcharts4/examples/javascript/changing-series-apppearance/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/amcharts4/examples/javascript/changing-tree-map-data/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/amcharts4/examples/javascript/changing-tree-map-data/index.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/amcharts4/examples/javascript/changing-tree-map-data/index.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/amcharts4/examples/javascript/changing-tree-map-data/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/amcharts4/examples/javascript/chord-diagram-non-ribbon/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/amcharts4/examples/javascript/chord-diagram-non-ribbon/index.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/amcharts4/examples/javascript/chord-diagram-non-ribbon/index.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/amcharts4/examples/javascript/chord-diagram-non-ribbon/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/amcharts4/examples/javascript/chord-diagram/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/amcharts4/examples/javascript/chord-diagram/index.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/amcharts4/examples/javascript/chord-diagram/index.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/amcharts4/examples/javascript/chord-diagram/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/amcharts4/examples/javascript/chord-friends-kisses/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/amcharts4/examples/javascript/chord-friends-kisses/index.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/amcharts4/examples/javascript/chord-friends-kisses/index.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/amcharts4/examples/javascript/chord-friends-kisses/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/amcharts4/examples/javascript/chord-friends-kisses/whokissed.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/amcharts4/examples/javascript/clock/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/amcharts4/examples/javascript/clock/index.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/amcharts4/examples/javascript/clock/index.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/amcharts4/examples/javascript/clock/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/amcharts4/examples/javascript/column-chart-with-axis-break/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/amcharts4/examples/javascript/column-chart-with-axis-break/index.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/amcharts4/examples/javascript/column-chart-with-axis-break/index.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/amcharts4/examples/javascript/column-chart-with-axis-break/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/amcharts4/examples/javascript/column-chart-with-images-as-bullets/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/amcharts4/examples/javascript/column-chart-with-images-as-bullets/chandler.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/amcharts4/examples/javascript/column-chart-with-images-as-bullets/index.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/amcharts4/examples/javascript/column-chart-with-images-as-bullets/index.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/amcharts4/examples/javascript/column-chart-with-images-as-bullets/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/amcharts4/examples/javascript/column-chart-with-images-as-bullets/joey.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/amcharts4/examples/javascript/column-chart-with-images-as-bullets/monica.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/amcharts4/examples/javascript/column-chart-with-images-as-bullets/phoebe.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/amcharts4/examples/javascript/column-chart-with-images-as-bullets/rachel.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/amcharts4/examples/javascript/column-chart-with-images-as-bullets/ross.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/amcharts4/examples/javascript/columns-with-pies-inside/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/amcharts4/examples/javascript/columns-with-pies-inside/index.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/amcharts4/examples/javascript/columns-with-pies-inside/index.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/amcharts4/examples/javascript/columns-with-pies-inside/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/amcharts4/examples/javascript/countries-morphing-to-pie-chart/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/amcharts4/examples/javascript/countries-morphing-to-pie-chart/index.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/amcharts4/examples/javascript/countries-morphing-to-pie-chart/index.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/amcharts4/examples/javascript/countries-morphing-to-pie-chart/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/amcharts4/examples/javascript/curved-column-chart/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/amcharts4/examples/javascript/curved-column-chart/index.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/amcharts4/examples/javascript/curved-column-chart/index.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/amcharts4/examples/javascript/curved-column-chart/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/amcharts4/examples/javascript/cylinder-chart/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/amcharts4/examples/javascript/cylinder-chart/index.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/amcharts4/examples/javascript/cylinder-chart/index.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/amcharts4/examples/javascript/cylinder-chart/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/amcharts4/examples/javascript/date-based-radar/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/amcharts4/examples/javascript/date-based-radar/index.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/amcharts4/examples/javascript/date-based-radar/index.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/amcharts4/examples/javascript/date-based-radar/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/amcharts4/examples/javascript/day-night-map/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/amcharts4/examples/javascript/day-night-map/index.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/amcharts4/examples/javascript/day-night-map/index.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/amcharts4/examples/javascript/day-night-map/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/amcharts4/examples/javascript/donut-chart/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/amcharts4/examples/javascript/donut-chart/index.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/amcharts4/examples/javascript/donut-chart/index.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/amcharts4/examples/javascript/donut-chart/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/amcharts4/examples/javascript/drag-and-change-values/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/amcharts4/examples/javascript/drag-and-change-values/index.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/amcharts4/examples/javascript/drag-and-change-values/index.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/amcharts4/examples/javascript/drag-and-change-values/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/amcharts4/examples/javascript/dragging-pie-slices/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/amcharts4/examples/javascript/dragging-pie-slices/index.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/amcharts4/examples/javascript/dragging-pie-slices/index.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/amcharts4/examples/javascript/dragging-pie-slices/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/amcharts4/examples/javascript/drill-down-map/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/amcharts4/examples/javascript/drill-down-map/index.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/amcharts4/examples/javascript/drill-down-map/index.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/amcharts4/examples/javascript/drill-down-map/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/amcharts4/examples/javascript/drill-down-tree-map/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/amcharts4/examples/javascript/drill-down-tree-map/index.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/amcharts4/examples/javascript/drill-down-tree-map/index.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/amcharts4/examples/javascript/drill-down-tree-map/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/amcharts4/examples/javascript/drill-down-tree-map/logos/acura.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/amcharts4/examples/javascript/drill-down-tree-map/logos/audi.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/amcharts4/examples/javascript/drill-down-tree-map/logos/bmw.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/amcharts4/examples/javascript/drill-down-tree-map/logos/buick.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/amcharts4/examples/javascript/drill-down-tree-map/logos/cadillac.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/amcharts4/examples/javascript/drill-down-tree-map/logos/chevrolet.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/amcharts4/examples/javascript/drill-down-tree-map/logos/chrysler.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/amcharts4/examples/javascript/drill-down-tree-map/logos/dodge.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/amcharts4/examples/javascript/drill-down-tree-map/logos/ford.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/amcharts4/examples/javascript/drill-down-tree-map/logos/gmc.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/amcharts4/examples/javascript/drill-down-tree-map/logos/honda.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/amcharts4/examples/javascript/drill-down-tree-map/logos/hyundai.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/amcharts4/examples/javascript/drill-down-tree-map/logos/infiniti.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/amcharts4/examples/javascript/drill-down-tree-map/logos/jeep.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/amcharts4/examples/javascript/drill-down-tree-map/logos/kia.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/amcharts4/examples/javascript/drill-down-tree-map/logos/lexus.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/amcharts4/examples/javascript/drill-down-tree-map/logos/lincoln.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/amcharts4/examples/javascript/drill-down-tree-map/logos/mazda.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/amcharts4/examples/javascript/drill-down-tree-map/logos/mercedes-benz.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/amcharts4/examples/javascript/drill-down-tree-map/logos/mitsubishi.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/amcharts4/examples/javascript/drill-down-tree-map/logos/nissan.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/amcharts4/examples/javascript/drill-down-tree-map/logos/other.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/amcharts4/examples/javascript/drill-down-tree-map/logos/subaru.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/amcharts4/examples/javascript/drill-down-tree-map/logos/toyota.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/amcharts4/examples/javascript/drill-down-tree-map/logos/volkswagen.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/amcharts4/examples/javascript/dumbbell-plot-horizontal/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/amcharts4/examples/javascript/dumbbell-plot-horizontal/index.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/amcharts4/examples/javascript/dumbbell-plot-horizontal/index.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/amcharts4/examples/javascript/dumbbell-plot-horizontal/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/amcharts4/examples/javascript/dumbbell-plot/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/amcharts4/examples/javascript/dumbbell-plot/index.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/amcharts4/examples/javascript/dumbbell-plot/index.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/amcharts4/examples/javascript/dumbbell-plot/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/amcharts4/examples/javascript/duration-axis/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/amcharts4/examples/javascript/duration-axis/index.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/amcharts4/examples/javascript/duration-axis/index.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/amcharts4/examples/javascript/duration-axis/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/amcharts4/examples/javascript/error-chart/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/amcharts4/examples/javascript/error-chart/index.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/amcharts4/examples/javascript/error-chart/index.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/amcharts4/examples/javascript/error-chart/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/amcharts4/examples/javascript/fill-between-lines-chart/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/amcharts4/examples/javascript/fill-between-lines-chart/index.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/amcharts4/examples/javascript/fill-between-lines-chart/index.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/amcharts4/examples/javascript/fill-between-lines-chart/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/amcharts4/examples/javascript/force-directed-network/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/amcharts4/examples/javascript/force-directed-network/index.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/amcharts4/examples/javascript/force-directed-network/index.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/amcharts4/examples/javascript/force-directed-network/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/amcharts4/examples/javascript/force-directed-tree-expandable/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/amcharts4/examples/javascript/force-directed-tree-expandable/index.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/amcharts4/examples/javascript/force-directed-tree-expandable/index.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/amcharts4/examples/javascript/force-directed-tree-expandable/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/amcharts4/examples/javascript/force-directed-tree/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/amcharts4/examples/javascript/force-directed-tree/index.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/amcharts4/examples/javascript/force-directed-tree/index.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/amcharts4/examples/javascript/force-directed-tree/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/amcharts4/examples/javascript/funnel-chart-horizontal/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/amcharts4/examples/javascript/funnel-chart-horizontal/index.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/amcharts4/examples/javascript/funnel-chart-horizontal/index.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/amcharts4/examples/javascript/funnel-chart-horizontal/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/amcharts4/examples/javascript/funnel-chart/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/amcharts4/examples/javascript/funnel-chart/index.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/amcharts4/examples/javascript/funnel-chart/index.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/amcharts4/examples/javascript/funnel-chart/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/amcharts4/examples/javascript/gantt-chart/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/amcharts4/examples/javascript/gantt-chart/index.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/amcharts4/examples/javascript/gantt-chart/index.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/amcharts4/examples/javascript/gantt-chart/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/amcharts4/examples/javascript/geo-heat-map/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/amcharts4/examples/javascript/geo-heat-map/index.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/amcharts4/examples/javascript/geo-heat-map/index.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/amcharts4/examples/javascript/geo-heat-map/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/amcharts4/examples/javascript/heat-map-circles/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/amcharts4/examples/javascript/heat-map-circles/index.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/amcharts4/examples/javascript/heat-map-circles/index.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/amcharts4/examples/javascript/heat-map-circles/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/amcharts4/examples/javascript/heat-map/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/amcharts4/examples/javascript/heat-map/index.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/amcharts4/examples/javascript/heat-map/index.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/amcharts4/examples/javascript/heat-map/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/amcharts4/examples/javascript/horizontally-stacked-axes/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/amcharts4/examples/javascript/horizontally-stacked-axes/index.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/amcharts4/examples/javascript/horizontally-stacked-axes/index.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/amcharts4/examples/javascript/horizontally-stacked-axes/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/amcharts4/examples/javascript/line-different-ups-downs/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/amcharts4/examples/javascript/line-different-ups-downs/index.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/amcharts4/examples/javascript/line-different-ups-downs/index.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/amcharts4/examples/javascript/line-different-ups-downs/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/amcharts4/examples/javascript/map-line-gauge-mix/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/amcharts4/examples/javascript/map-line-gauge-mix/bang.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/amcharts4/examples/javascript/map-line-gauge-mix/index.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/amcharts4/examples/javascript/map-line-gauge-mix/index.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/amcharts4/examples/javascript/map-line-gauge-mix/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/amcharts4/examples/javascript/map-line-gauge-mix/rocket.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/amcharts4/examples/javascript/morphing-countries/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/amcharts4/examples/javascript/morphing-countries/index.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/amcharts4/examples/javascript/morphing-countries/index.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/amcharts4/examples/javascript/morphing-countries/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/amcharts4/examples/javascript/multiple-axes-date-based-chart/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/amcharts4/examples/javascript/multiple-axes-date-based-chart/index.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/amcharts4/examples/javascript/multiple-axes-date-based-chart/index.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/amcharts4/examples/javascript/multiple-axes-date-based-chart/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/amcharts4/examples/javascript/multiple-series-map-chart/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/amcharts4/examples/javascript/multiple-series-map-chart/index.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/amcharts4/examples/javascript/multiple-series-map-chart/index.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/amcharts4/examples/javascript/multiple-series-map-chart/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/amcharts4/examples/javascript/non-chart-usage/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/amcharts4/examples/javascript/non-chart-usage/index.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/amcharts4/examples/javascript/non-chart-usage/index.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/amcharts4/examples/javascript/non-chart-usage/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/amcharts4/examples/javascript/ohlc-chart/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/amcharts4/examples/javascript/ohlc-chart/index.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/amcharts4/examples/javascript/ohlc-chart/index.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/amcharts4/examples/javascript/ohlc-chart/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/amcharts4/examples/javascript/packed-circles/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/amcharts4/examples/javascript/packed-circles/index.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/amcharts4/examples/javascript/packed-circles/index.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/amcharts4/examples/javascript/packed-circles/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/amcharts4/examples/javascript/pictorial-bar-chart/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/amcharts4/examples/javascript/pictorial-bar-chart/index.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/amcharts4/examples/javascript/pictorial-bar-chart/index.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/amcharts4/examples/javascript/pictorial-bar-chart/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/amcharts4/examples/javascript/pictorial-chart/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/amcharts4/examples/javascript/pictorial-chart/index.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/amcharts4/examples/javascript/pictorial-chart/index.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/amcharts4/examples/javascript/pictorial-chart/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/amcharts4/examples/javascript/pictorial-stacked-chart-horizontal/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/amcharts4/examples/javascript/pictorial-stacked-chart-horizontal/index.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/amcharts4/examples/javascript/pictorial-stacked-chart-horizontal/index.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/amcharts4/examples/javascript/pictorial-stacked-chart-horizontal/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/amcharts4/examples/javascript/pictorial-stacked-chart/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/amcharts4/examples/javascript/pictorial-stacked-chart/index.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/amcharts4/examples/javascript/pictorial-stacked-chart/index.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/amcharts4/examples/javascript/pictorial-stacked-chart/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/amcharts4/examples/javascript/polar-area-chart/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/amcharts4/examples/javascript/polar-area-chart/index.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/amcharts4/examples/javascript/polar-area-chart/index.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/amcharts4/examples/javascript/polar-area-chart/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/amcharts4/examples/javascript/population-pyramid/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/amcharts4/examples/javascript/population-pyramid/index.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/amcharts4/examples/javascript/population-pyramid/index.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/amcharts4/examples/javascript/population-pyramid/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/amcharts4/examples/javascript/pyramid-chart/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/amcharts4/examples/javascript/pyramid-chart/index.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/amcharts4/examples/javascript/pyramid-chart/index.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/amcharts4/examples/javascript/pyramid-chart/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/amcharts4/examples/javascript/radar-chart-with-axis-break/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/amcharts4/examples/javascript/radar-chart-with-axis-break/index.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/amcharts4/examples/javascript/radar-chart-with-axis-break/index.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/amcharts4/examples/javascript/radar-chart-with-axis-break/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/amcharts4/examples/javascript/radar-timeline-chart/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/amcharts4/examples/javascript/radar-timeline-chart/index.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/amcharts4/examples/javascript/radar-timeline-chart/index.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/amcharts4/examples/javascript/radar-timeline-chart/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/amcharts4/examples/javascript/radial-bar-chart/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/amcharts4/examples/javascript/radial-bar-chart/index.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/amcharts4/examples/javascript/radial-bar-chart/index.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/amcharts4/examples/javascript/radial-bar-chart/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/amcharts4/examples/javascript/rotating-globe-with-circles/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/amcharts4/examples/javascript/rotating-globe-with-circles/index.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/amcharts4/examples/javascript/rotating-globe-with-circles/index.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/amcharts4/examples/javascript/rotating-globe-with-circles/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/amcharts4/examples/javascript/rotating-globe/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/amcharts4/examples/javascript/rotating-globe/index.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/amcharts4/examples/javascript/rotating-globe/index.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/amcharts4/examples/javascript/rotating-globe/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/amcharts4/examples/javascript/sankey-diagram-with-animated-bullets/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/amcharts4/examples/javascript/sankey-diagram-with-animated-bullets/index.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/amcharts4/examples/javascript/sankey-diagram-with-animated-bullets/index.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/amcharts4/examples/javascript/sankey-diagram-with-animated-bullets/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/amcharts4/examples/javascript/semi-circle-donut-chart/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/amcharts4/examples/javascript/semi-circle-donut-chart/index.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/amcharts4/examples/javascript/semi-circle-donut-chart/index.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/amcharts4/examples/javascript/semi-circle-donut-chart/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/amcharts4/examples/javascript/simple-3D-pie-chart/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/amcharts4/examples/javascript/simple-3D-pie-chart/index.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/amcharts4/examples/javascript/simple-3D-pie-chart/index.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/amcharts4/examples/javascript/simple-3D-pie-chart/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/amcharts4/examples/javascript/simple-bar-chart/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/amcharts4/examples/javascript/simple-bar-chart/index.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/amcharts4/examples/javascript/simple-bar-chart/index.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/amcharts4/examples/javascript/simple-bar-chart/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/amcharts4/examples/javascript/simple-column-chart/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/amcharts4/examples/javascript/simple-column-chart/index.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/amcharts4/examples/javascript/simple-column-chart/index.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/amcharts4/examples/javascript/simple-column-chart/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/amcharts4/examples/javascript/simple-gauge/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/amcharts4/examples/javascript/simple-gauge/index.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/amcharts4/examples/javascript/simple-gauge/index.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/amcharts4/examples/javascript/simple-gauge/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/amcharts4/examples/javascript/simple-line-chart/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/amcharts4/examples/javascript/simple-line-chart/index.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/amcharts4/examples/javascript/simple-line-chart/index.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/amcharts4/examples/javascript/simple-line-chart/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/amcharts4/examples/javascript/simple-map-chart/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/amcharts4/examples/javascript/simple-map-chart/index.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/amcharts4/examples/javascript/simple-map-chart/index.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/amcharts4/examples/javascript/simple-map-chart/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/amcharts4/examples/javascript/simple-pie-chart/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/amcharts4/examples/javascript/simple-pie-chart/index.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/amcharts4/examples/javascript/simple-pie-chart/index.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/amcharts4/examples/javascript/simple-pie-chart/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/amcharts4/examples/javascript/simple-radar-chart/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/amcharts4/examples/javascript/simple-radar-chart/index.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/amcharts4/examples/javascript/simple-radar-chart/index.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/amcharts4/examples/javascript/simple-radar-chart/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/amcharts4/examples/javascript/simple-sankey-diagram/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/amcharts4/examples/javascript/simple-sankey-diagram/index.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/amcharts4/examples/javascript/simple-sankey-diagram/index.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/amcharts4/examples/javascript/simple-sankey-diagram/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/amcharts4/examples/javascript/simple-tree-map/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/amcharts4/examples/javascript/simple-tree-map/index.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/amcharts4/examples/javascript/simple-tree-map/index.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/amcharts4/examples/javascript/simple-tree-map/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/amcharts4/examples/javascript/stacked-3D-column-chart/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/amcharts4/examples/javascript/stacked-3D-column-chart/index.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/amcharts4/examples/javascript/stacked-3D-column-chart/index.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/amcharts4/examples/javascript/stacked-3D-column-chart/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/amcharts4/examples/javascript/stacked-area-radar-chart/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/amcharts4/examples/javascript/stacked-area-radar-chart/index.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/amcharts4/examples/javascript/stacked-area-radar-chart/index.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/amcharts4/examples/javascript/stacked-area-radar-chart/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/amcharts4/examples/javascript/stacked-column-chart/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/amcharts4/examples/javascript/stacked-column-chart/index.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/amcharts4/examples/javascript/stacked-column-chart/index.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/amcharts4/examples/javascript/stacked-column-chart/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/amcharts4/examples/javascript/step-count-chart/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/amcharts4/examples/javascript/step-count-chart/index.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/amcharts4/examples/javascript/step-count-chart/index.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/amcharts4/examples/javascript/step-count-chart/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/amcharts4/examples/javascript/step-line-chart/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/amcharts4/examples/javascript/step-line-chart/index.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/amcharts4/examples/javascript/step-line-chart/index.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/amcharts4/examples/javascript/step-line-chart/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/amcharts4/examples/javascript/step-line-no-risers-chart/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/amcharts4/examples/javascript/step-line-no-risers-chart/index.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/amcharts4/examples/javascript/step-line-no-risers-chart/index.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/amcharts4/examples/javascript/step-line-no-risers-chart/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/amcharts4/examples/javascript/sunburst/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/amcharts4/examples/javascript/sunburst/index.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/amcharts4/examples/javascript/sunburst/index.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/amcharts4/examples/javascript/sunburst/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/amcharts4/examples/javascript/syncing-cursors-and-zoom/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/amcharts4/examples/javascript/syncing-cursors-and-zoom/index.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/amcharts4/examples/javascript/syncing-cursors-and-zoom/index.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/amcharts4/examples/javascript/syncing-cursors-and-zoom/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/amcharts4/examples/javascript/triangle-column-chart/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/amcharts4/examples/javascript/triangle-column-chart/index.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/amcharts4/examples/javascript/triangle-column-chart/index.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/amcharts4/examples/javascript/triangle-column-chart/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/amcharts4/examples/javascript/variable-angle-radar-chart/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/amcharts4/examples/javascript/variable-angle-radar-chart/index.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/amcharts4/examples/javascript/variable-angle-radar-chart/index.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/amcharts4/examples/javascript/variable-angle-radar-chart/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/amcharts4/examples/javascript/variable-height-3D-pie-chart/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/amcharts4/examples/javascript/variable-height-3D-pie-chart/index.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/amcharts4/examples/javascript/variable-height-3D-pie-chart/index.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/amcharts4/examples/javascript/variable-height-3D-pie-chart/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/amcharts4/examples/javascript/variable-radius-pie-chart/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/amcharts4/examples/javascript/variable-radius-pie-chart/index.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/amcharts4/examples/javascript/variable-radius-pie-chart/index.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/amcharts4/examples/javascript/variable-radius-pie-chart/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/amcharts4/examples/javascript/vertical-sankey-diagram/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/amcharts4/examples/javascript/vertical-sankey-diagram/index.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/amcharts4/examples/javascript/vertical-sankey-diagram/index.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/amcharts4/examples/javascript/vertical-sankey-diagram/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/amcharts4/examples/javascript/vertically-stacked-axes/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/amcharts4/examples/javascript/vertically-stacked-axes/index.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/amcharts4/examples/javascript/vertically-stacked-axes/index.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/amcharts4/examples/javascript/vertically-stacked-axes/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/amcharts4/examples/javascript/waterfall-chart/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/amcharts4/examples/javascript/waterfall-chart/index.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/amcharts4/examples/javascript/waterfall-chart/index.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/amcharts4/examples/javascript/waterfall-chart/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/amcharts4/examples/javascript/word-cloud-changing-data/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/amcharts4/examples/javascript/word-cloud-changing-data/index.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/amcharts4/examples/javascript/word-cloud-changing-data/index.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/amcharts4/examples/javascript/word-cloud-changing-data/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/amcharts4/examples/javascript/word-cloud/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/amcharts4/examples/javascript/word-cloud/index.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/amcharts4/examples/javascript/word-cloud/index.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/amcharts4/examples/javascript/word-cloud/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/amcharts4/examples/javascript/xy-error-chart/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/amcharts4/examples/javascript/xy-error-chart/index.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/amcharts4/examples/javascript/xy-error-chart/index.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/amcharts4/examples/javascript/xy-error-chart/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/amcharts4/examples/json/candlestick-series/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/amcharts4/examples/json/candlestick-series/index.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/amcharts4/examples/json/candlestick-series/index.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/amcharts4/examples/json/candlestick-series/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/amcharts4/examples/json/changing-series-apppearance/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/amcharts4/examples/json/changing-series-apppearance/index.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/amcharts4/examples/json/changing-series-apppearance/index.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/amcharts4/examples/json/changing-series-apppearance/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/amcharts4/examples/json/columns-with-pies-inside/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/amcharts4/examples/json/columns-with-pies-inside/index.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/amcharts4/examples/json/columns-with-pies-inside/index.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/amcharts4/examples/json/columns-with-pies-inside/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/amcharts4/examples/json/multiple-series-map-chart/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/amcharts4/examples/json/multiple-series-map-chart/index.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/amcharts4/examples/json/multiple-series-map-chart/index.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/amcharts4/examples/json/multiple-series-map-chart/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/amcharts4/examples/json/simple-3D-pie-chart/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/amcharts4/examples/json/simple-3D-pie-chart/index.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/amcharts4/examples/json/simple-3D-pie-chart/index.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/amcharts4/examples/json/simple-3D-pie-chart/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/amcharts4/examples/json/simple-bar-chart/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/amcharts4/examples/json/simple-bar-chart/index.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/amcharts4/examples/json/simple-bar-chart/index.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/amcharts4/examples/json/simple-bar-chart/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/amcharts4/examples/json/simple-column-chart/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/amcharts4/examples/json/simple-column-chart/index.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/amcharts4/examples/json/simple-column-chart/index.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/amcharts4/examples/json/simple-column-chart/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/amcharts4/examples/json/simple-gauge/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/amcharts4/examples/json/simple-gauge/index.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/amcharts4/examples/json/simple-gauge/index.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/amcharts4/examples/json/simple-gauge/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/amcharts4/examples/json/simple-line-chart/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/amcharts4/examples/json/simple-line-chart/index.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/amcharts4/examples/json/simple-line-chart/index.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/amcharts4/examples/json/simple-line-chart/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/amcharts4/examples/json/simple-map-chart/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/amcharts4/examples/json/simple-map-chart/index.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/amcharts4/examples/json/simple-map-chart/index.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/amcharts4/examples/json/simple-map-chart/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/amcharts4/examples/json/simple-pie-chart-rounded-corners/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/amcharts4/examples/json/simple-pie-chart-rounded-corners/index.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/amcharts4/examples/json/simple-pie-chart-rounded-corners/index.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/amcharts4/examples/json/simple-pie-chart-rounded-corners/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/amcharts4/examples/json/simple-pie-chart/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/amcharts4/examples/json/simple-pie-chart/index.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/amcharts4/examples/json/simple-pie-chart/index.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/amcharts4/examples/json/simple-pie-chart/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/amcharts4/examples/json/simple-radar-chart/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/amcharts4/examples/json/simple-radar-chart/index.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/amcharts4/examples/json/simple-radar-chart/index.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/amcharts4/examples/json/simple-radar-chart/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/amcharts4/examples/json/simple-sankey-diagram/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/amcharts4/examples/json/simple-sankey-diagram/index.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/amcharts4/examples/json/simple-sankey-diagram/index.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/amcharts4/examples/json/simple-sankey-diagram/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/amcharts4/examples/json/simple-tree-map/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/amcharts4/examples/json/simple-tree-map/index.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/amcharts4/examples/json/simple-tree-map/index.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/amcharts4/examples/json/simple-tree-map/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/amcharts4/lang/ar.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/amcharts4/lang/ar.js.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/amcharts4/lang/bs_BA.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/amcharts4/lang/bs_BA.js.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/amcharts4/lang/ca_ES.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/amcharts4/lang/ca_ES.js.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/amcharts4/lang/cs_CZ.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/amcharts4/lang/cs_CZ.js.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/amcharts4/lang/da_DK.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/amcharts4/lang/da_DK.js.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/amcharts4/lang/de_CH.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/amcharts4/lang/de_CH.js.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/amcharts4/lang/de_DE.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/amcharts4/lang/de_DE.js.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/amcharts4/lang/el_GR.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/amcharts4/lang/el_GR.js.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/amcharts4/lang/en.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/amcharts4/lang/en.js.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/amcharts4/lang/en_CA.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/amcharts4/lang/en_CA.js.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/amcharts4/lang/en_US.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/amcharts4/lang/en_US.js.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/amcharts4/lang/es_ES.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/amcharts4/lang/es_ES.js.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/amcharts4/lang/et_EE.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/amcharts4/lang/et_EE.js.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/amcharts4/lang/fi_FI.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/amcharts4/lang/fi_FI.js.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/amcharts4/lang/fr_FR.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/amcharts4/lang/fr_FR.js.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/amcharts4/lang/he_IL.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/amcharts4/lang/he_IL.js.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/amcharts4/lang/hi_IN.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/amcharts4/lang/hi_IN.js.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/amcharts4/lang/hr_HR.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/amcharts4/lang/hr_HR.js.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/amcharts4/lang/hu_HU.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/amcharts4/lang/hu_HU.js.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/amcharts4/lang/id_ID.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/amcharts4/lang/id_ID.js.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/amcharts4/lang/it_IT.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/amcharts4/lang/it_IT.js.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/amcharts4/lang/ja_JP.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/amcharts4/lang/ja_JP.js.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/amcharts4/lang/ko_KR.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/amcharts4/lang/ko_KR.js.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/amcharts4/lang/lt_LT.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/amcharts4/lang/lt_LT.js.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/amcharts4/lang/lv_LV.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/amcharts4/lang/lv_LV.js.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/amcharts4/lang/nb_NO.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/amcharts4/lang/nb_NO.js.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/amcharts4/lang/nl_NL.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/amcharts4/lang/nl_NL.js.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/amcharts4/lang/pl_PL.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/amcharts4/lang/pl_PL.js.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/amcharts4/lang/pt_BR.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/amcharts4/lang/pt_BR.js.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/amcharts4/lang/pt_PT.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/amcharts4/lang/pt_PT.js.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/amcharts4/lang/ro_RO.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/amcharts4/lang/ro_RO.js.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/amcharts4/lang/ru_RU.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/amcharts4/lang/ru_RU.js.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/amcharts4/lang/sl_SL.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/amcharts4/lang/sl_SL.js.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/amcharts4/lang/sr_RS.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/amcharts4/lang/sr_RS.js.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/amcharts4/lang/sv_SE.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/amcharts4/lang/sv_SE.js.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/amcharts4/lang/th_TH.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/amcharts4/lang/th_TH.js.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/amcharts4/lang/tr_TR.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/amcharts4/lang/tr_TR.js.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/amcharts4/lang/vi_VN.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/amcharts4/lang/vi_VN.js.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/amcharts4/lang/zh_Hans.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/amcharts4/lang/zh_Hans.js.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/amcharts4/lang/zh_Hant.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/amcharts4/lang/zh_Hant.js.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/amcharts4/maps.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/amcharts4/maps.js.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/amcharts4/plugins/forceDirected.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/amcharts4/plugins/forceDirected.js.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/amcharts4/plugins/regression.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/amcharts4/plugins/regression.js.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/amcharts4/plugins/sliceGrouper.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/amcharts4/plugins/sliceGrouper.js.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/amcharts4/plugins/sunburst.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/amcharts4/plugins/sunburst.js.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/amcharts4/plugins/wordCloud.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/amcharts4/plugins/wordCloud.js.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/amcharts4/themes/amcharts.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/amcharts4/themes/amcharts.js.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/amcharts4/themes/amchartsdark.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/amcharts4/themes/amchartsdark.js.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/amcharts4/themes/animated.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/amcharts4/themes/animated.js.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/amcharts4/themes/dark.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/amcharts4/themes/dark.js.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/amcharts4/themes/dataviz.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/amcharts4/themes/dataviz.js.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/amcharts4/themes/frozen.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/amcharts4/themes/frozen.js.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/amcharts4/themes/kelly.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/amcharts4/themes/kelly.js.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/amcharts4/themes/material.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/amcharts4/themes/material.js.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/amcharts4/themes/moonrisekingdom.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/amcharts4/themes/moonrisekingdom.js.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/amcharts4/themes/spiritedaway.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/amcharts4/themes/spiritedaway.js.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/css/manager.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/js/chart.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/js/manager.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/manager.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/page/banner/edit.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/page/banner/index.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/page/banner/tambah.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/page/products/edit.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/page/products/index.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/page/products/tambah.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/page/settings/index.blade.php" afterDir="false" />
+    <list default="true" id="b09d26cf-3c41-4c1e-b4c5-85872292bee9" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/resources/views/emails/konfemail.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/7queue.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/7queue.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/dataSources/167abffd-8d4b-4c62-985a-59e0240dad37.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/167abffd-8d4b-4c62-985a-59e0240dad37.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/deployment.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/deployment.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/auth.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/auth.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/crud.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/crud.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/page.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/page.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/table.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Kernel.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Kernel.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Middleware/admincheck.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Middleware/admincheck.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Middleware/globaladmincheck.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Middleware/globaladmincheck.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Middleware/managercheck.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Middleware/managercheck.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Middleware/merchantcheck.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Middleware/superadmincheck.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Middleware/superadmincheck.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Middleware/usercheck.php" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Models/Admin.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Admin.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/Banner.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Banner.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/KategoriProduk.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/KategoriProduk.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/Manager.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Manager.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Models/Merchant.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Merchant.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/Product.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Product.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Models/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/User.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/User.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/filesystems.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/filesystems.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2014_10_12_000000_create_users_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2014_10_12_000000_create_users_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2019_06_02_111109_create_admin_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2019_06_02_111109_create_admin_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2019_06_02_111612_create_merchants_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2019_06_02_111612_create_merchants_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/seeds/DatabaseSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeds/DatabaseSeeder.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/vendors/global/vendors.bundle.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/vendors/global/vendors.bundle.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/custom_script.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/custom_script.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/datatable.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/datatable.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/globalsetup.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/globalsetup.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/login.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/login.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/plugin.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/plugin.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/login.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/page/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/page/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/page/merchants/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/page/merchants/edit.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/page/merchants/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/page/merchants/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/page/merchants/tambah.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/page/merchants/tambah.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/template.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/theme/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/theme/head.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/theme/head.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/theme/leftaside.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/theme/leftaside.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2019_06_14_095958_create_manager_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2019_06_14_095958_create_manager_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/css/manager.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/manager.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/manager.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/manager.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/manager.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/manager.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -659,86 +47,55 @@
     <option name="HIDDEN_KINDS">
       <set />
     </option>
-    <expand />
+    <expand>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="7queue@localhost" type="feb32156:DbDataSourceImpl" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="7queue@localhost" type="feb32156:DbDataSourceImpl" />
+        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="7queue@localhost" type="feb32156:DbDataSourceImpl" />
+        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
+        <item name="7queue: schema" type="76f4a085:MysqlImplModel$Schema" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="7queue@localhost" type="feb32156:DbDataSourceImpl" />
+        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
+        <item name="7queue: schema" type="76f4a085:MysqlImplModel$Schema" />
+        <item name="manager: table" type="285a2a93:MysqlImplModel$Table" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="7queue@localhost" type="feb32156:DbDataSourceImpl" />
+        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
+        <item name="7queue: schema" type="76f4a085:MysqlImplModel$Schema" />
+        <item name="users: table" type="285a2a93:MysqlImplModel$Table" />
+      </path>
+    </expand>
     <select />
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/resources/views/page/merchants/edit.blade.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="192">
-              <caret line="114" column="97" selection-start-line="114" selection-start-column="97" selection-end-line="114" selection-end-column="97" />
-              <caret line="113" column="149" selection-start-line="113" selection-start-column="149" selection-end-line="113" selection-end-column="149" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/routes/web.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="17">
-              <caret line="13" column="29" selection-start-line="13" selection-start-column="29" selection-end-line="13" selection-end-column="29" />
+            <state relative-caret-position="85">
+              <caret line="14" column="23" selection-start-line="14" selection-start-column="23" selection-end-line="14" selection-end-column="23" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/Http/Kernel.php">
+        <entry file="file://$PROJECT_DIR$/app/Http/Controllers/page.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="379">
-              <caret line="58" column="50" selection-start-line="58" selection-start-column="50" selection-end-line="58" selection-end-column="50" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/resources/views/manager.blade.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1209">
-              <caret line="83" column="184" selection-start-line="83" selection-start-column="184" selection-end-line="83" selection-end-column="184" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/public/js/manager.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="376">
-              <caret line="120" column="49" selection-start-line="120" selection-start-column="49" selection-end-line="120" selection-end-column="49" />
-              <folding>
-                <element signature="e#863#1414#0" />
-                <element signature="n#style#0;n#span#0;n#!!top" expanded="true" />
-                <element signature="e#1450#2268#0" />
-                <element signature="e#2314#3324#0" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/public/js/login.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="300">
-              <caret line="100" column="24" selection-start-line="100" selection-start-column="24" selection-end-line="100" selection-end-column="66" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/public/js/globalsetup.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="206">
-              <caret line="66" column="10" selection-start-line="66" selection-start-column="10" selection-end-line="66" selection-end-column="10" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/Http/Controllers/crud.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="991">
-              <caret line="74" column="5" selection-start-line="74" selection-start-column="5" selection-end-line="74" selection-end-column="5" />
+            <state relative-caret-position="162">
+              <caret line="16" column="28" lean-forward="true" selection-start-line="16" selection-start-column="28" selection-end-line="16" selection-end-column="28" />
               <folding>
                 <element signature="e#40#61#0#PHP" expanded="true" />
               </folding>
@@ -747,116 +104,162 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/resources/views/manager.blade.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-12">
+              <caret line="62" column="78" selection-start-line="62" selection-start-column="78" selection-end-line="62" selection-end-column="78" />
+              <folding>
+                <element signature="n#style#0;n#p#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#span#0;n#label#0;n#div#4;n#form#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/public/js/manager.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="89">
+              <caret line="166" column="46" selection-start-line="166" selection-start-column="46" selection-end-line="166" selection-end-column="46" />
+              <folding>
+                <element signature="n#style#0;n#span#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#span#0;n#!!top" expanded="true" />
+                <element signature="e#3282#3298#0" />
+                <element signature="e#4137#5147#0" />
+                <element signature="e#12#18#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/public/css/manager.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="68">
+              <caret line="30" selection-start-line="30" selection-end-line="30" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/Http/Controllers/auth.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="561">
-              <caret line="36" column="58" selection-start-line="36" selection-start-column="58" selection-end-line="36" selection-end-column="58" />
+            <state relative-caret-position="164">
+              <caret line="68" column="20" selection-start-line="68" selection-start-column="20" selection-end-line="68" selection-end-column="20" />
+              <folding>
+                <element signature="e#40#61#0#PHP" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/resources/views/admin.blade.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="96">
+              <caret line="35" column="59" lean-forward="true" selection-start-line="35" selection-start-column="59" selection-end-line="35" selection-end-column="59" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="das://167abffd-8d4b-4c62-985a-59e0240dad37/schema/7queue/table/manager">
+          <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+            <state projectRestartId="f10f6bda-e06a-4200-80fb-cf48cb04f3a9">
+              <filtering>
+                <filter text="" />
+              </filtering>
             </state>
           </provider>
         </entry>
       </file>
     </leaf>
   </component>
-  <component name="FileTemplateManagerImpl">
-    <option name="RECENT_TEMPLATES">
-      <list>
-        <option value="CSS File" />
-        <option value="JavaScript File" />
-      </list>
-    </option>
-  </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>$uri</find>
+      <find>Dashboard</find>
+      <find>Clients</find>
+      <find>manager use</find>
+      <find>toggleuser</find>
+      <find>btndel</find>
+      <find>del</find>
+      <find>client</find>
+      <find>ajax</find>
+      <find>merchant</find>
+      <find>block</find>
+      <find>Block</find>
+      <find>name</find>
+      <find>Sean{{</find>
+      <find>Signo</find>
       <find>clients</find>
-      <find>merchants</find>
-      <find>$admin</find>
-      <find>customer</find>
-      <find>banner</find>
-      <find>Activity</find>
-      <find>eric a</find>
-      <find>chart</find>
-      <find>products</find>
+      <find>status</find>
+      <find>$client</find>
       <find>Admin</find>
       <find>admin</find>
-      <find>select</find>
-      <find>ribuan</find>
-      <find>number</find>
-      <find>btn-edit</find>
-      <find>declare</find>
+      <find>user</find>
+      <find>focus</find>
       <find>manager</find>
-      <find>toggleuser</find>
-      <find>data-nama</find>
-      <find>kt-select</find>
-      <find>kt-selectpicker</find>
-      <find>fkateg</find>
-      <find>forgot</find>
-      <find>regpass</find>
+      <find>login</find>
+      <find>button</find>
+      <find>.button</find>
+      <find>filter</find>
+      <find>blur</find>
+      <find>alt-2</find>
+      <find>register</find>
     </findStrings>
-    <dirStrings>
-      <dir>D:\web\7queue\public\assets</dir>
-    </dirStrings>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/public/assets/vendors/global/vendors.bundle.js" root0="FORCE_HIGHLIGHTING" />
-  </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/resources/views/page/admin/index.blade.php" />
-        <option value="$PROJECT_DIR$/resources/views/login.blade.php" />
-        <option value="$PROJECT_DIR$/resources/views/theme/script.blade.php" />
-        <option value="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Support/Facades/Route.php" />
-        <option value="$PROJECT_DIR$/resources/views/page/merchants/tambah.blade.php" />
-        <option value="$PROJECT_DIR$/app/Models/User.php" />
-        <option value="$PROJECT_DIR$/app/User.php" />
-        <option value="$PROJECT_DIR$/resources/views/page/merchants/index.blade.php" />
-        <option value="$PROJECT_DIR$/resources/views/page/banner/index.blade.php" />
-        <option value="$PROJECT_DIR$/public/chart.js" />
-        <option value="$PROJECT_DIR$/app/Http/Controllers/chart.php" />
-        <option value="$PROJECT_DIR$/resources/views/page/settings/index.blade.php" />
-        <option value="$PROJECT_DIR$/resources/views/page/index.blade.php" />
-        <option value="$PROJECT_DIR$/public/js/chart.js" />
-        <option value="$PROJECT_DIR$/database/migrations/2019_06_12_114759_create_kategori_produk.php" />
-        <option value="$PROJECT_DIR$/database/migrations/2019_06_11_091148_create_banner.php" />
-        <option value="$PROJECT_DIR$/database/migrations/2019_06_02_111612_create_merchants_table.php" />
-        <option value="$PROJECT_DIR$/database/migrations/2014_10_12_000000_create_users_table.php" />
-        <option value="$PROJECT_DIR$/database/migrations/2019_06_11_101929_create_products.php" />
-        <option value="$PROJECT_DIR$/config/filesystems.php" />
-        <option value="$PROJECT_DIR$/resources/views/page/products/edit.blade.php" />
-        <option value="$PROJECT_DIR$/public/js/custom_script.js" />
-        <option value="$PROJECT_DIR$/public/assets/js/demo11/pages/crud/metronic-datatable/base/data-ajax.js" />
-        <option value="$PROJECT_DIR$/resources/views/page/products/index.blade.php" />
-        <option value="$PROJECT_DIR$/public/assets/vendors/global/vendors.bundle.js" />
-        <option value="$PROJECT_DIR$/app/Http/Controllers/crud.php" />
-        <option value="$PROJECT_DIR$/resources/views/page/products/tambah.blade.php" />
-        <option value="$PROJECT_DIR$/public/js/datatable.js" />
-        <option value="$PROJECT_DIR$/public/js/plugin.js" />
-        <option value="$PROJECT_DIR$/resources/views/page/merchants/edit.blade.php" />
-        <option value="$PROJECT_DIR$/app/Http/Controllers/table.php" />
-        <option value="$PROJECT_DIR$/database/migrations/2019_06_14_095958_create_manager_table.php" />
-        <option value="$PROJECT_DIR$/database/migrations/2019_06_02_111109_create_admin_table.php" />
-        <option value="$PROJECT_DIR$/database/seeds/DatabaseSeeder.php" />
-        <option value="$PROJECT_DIR$/.env" />
-        <option value="$PROJECT_DIR$/public/css/manager.css" />
-        <option value="$PROJECT_DIR$/resources/views/register.blade.php" />
-        <option value="$PROJECT_DIR$/resources/views/theme/head.blade.php" />
-        <option value="$PROJECT_DIR$/resources/views/theme/leftaside.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/error/404.blade.php" />
+        <option value="$PROJECT_DIR$/app/Providers/AppServiceProvider.php" />
+        <option value="$PROJECT_DIR$/config/app.php" />
+        <option value="$PROJECT_DIR$/public/css/login.css" />
+        <option value="$PROJECT_DIR$/app/Exceptions/Handler.php" />
         <option value="$PROJECT_DIR$/app/Http/Kernel.php" />
-        <option value="$PROJECT_DIR$/routes/web.php" />
-        <option value="$PROJECT_DIR$/app/Http/Middleware/admincheck.php" />
-        <option value="$PROJECT_DIR$/app/Http/Middleware/managercheck.php" />
-        <option value="$PROJECT_DIR$/app/Http/Controllers/page.php" />
         <option value="$PROJECT_DIR$/app/Http/Middleware/superadmincheck.php" />
         <option value="$PROJECT_DIR$/app/Http/Middleware/globaladmincheck.php" />
-        <option value="$PROJECT_DIR$/app/Http/Controllers/auth.php" />
-        <option value="$PROJECT_DIR$/resources/views/manager.blade.php" />
+        <option value="$PROJECT_DIR$/database/seeds/DatabaseSeeder.php" />
+        <option value="$PROJECT_DIR$/database/migrations/2014_10_12_000000_create_users_table.php" />
+        <option value="$PROJECT_DIR$/database/migrations/2019_06_02_111109_create_admin_table.php" />
+        <option value="$PROJECT_DIR$/resources/views/theme/script.blade.php" />
+        <option value="$PROJECT_DIR$/app/Models/Merchant.php" />
+        <option value="$PROJECT_DIR$/database/migrations/2019_06_02_111612_create_merchants_table.php" />
+        <option value="$PROJECT_DIR$/app/Http/Middleware/VerifyCsrfToken.php" />
+        <option value="$PROJECT_DIR$/resources/views/theme/header.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/theme/header_mobile.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/page/manager/index.blade.php" />
+        <option value="$PROJECT_DIR$/public/js/plugin.js" />
+        <option value="$PROJECT_DIR$/resources/views/page/merchants/index.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/page/admin/index.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/page/customers/index.blade.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/page.php" />
+        <option value="$PROJECT_DIR$/resources/views/page/admin/tambah.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/page/admin/edit.blade.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/crud.php" />
+        <option value="$PROJECT_DIR$/resources/views/login.blade.php" />
         <option value="$PROJECT_DIR$/public/js/login.js" />
-        <option value="$PROJECT_DIR$/public/js/manager.js" />
+        <option value="$PROJECT_DIR$/resources/views/theme/head.blade.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/table.php" />
+        <option value="$PROJECT_DIR$/resources/views/page/merchants/tambah.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/page/merchants/edit.blade.php" />
         <option value="$PROJECT_DIR$/public/js/globalsetup.js" />
+        <option value="$PROJECT_DIR$/resources/views/theme/leftaside.blade.php" />
+        <option value="$PROJECT_DIR$/public/js/datatable.js" />
+        <option value="$PROJECT_DIR$/resources/views/admin.blade.php" />
+        <option value="$PROJECT_DIR$/.env" />
+        <option value="$PROJECT_DIR$/database/migrations/2019_06_14_095958_create_manager_table.php" />
+        <option value="$PROJECT_DIR$/resources/views/emails/konfemail.blade.php" />
+        <option value="$PROJECT_DIR$/routes/web.php" />
+        <option value="$APPLICATION_CONFIG_DIR$/consoles/.datagrid/cell" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/auth.php" />
+        <option value="$PROJECT_DIR$/public/css/manager.css" />
+        <option value="$PROJECT_DIR$/resources/views/manager.blade.php" />
+        <option value="$PROJECT_DIR$/public/js/manager.js" />
+        <option value="&lt;5dd0f89a-7305-40dc-8b54-f4e9a80396e6&gt;/.env" />
       </list>
     </option>
   </component>
@@ -962,13 +365,10 @@
     </include_path>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="493" />
-    <option name="y" value="29" />
+    <option name="x" value="-8" />
+    <option name="y" value="-8" />
     <option name="width" value="542" />
     <option name="height" value="735" />
-  </component>
-  <component name="ProjectLevelVcsManager">
-    <ConfirmationsSetting value="2" id="Add" />
   </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
@@ -979,13 +379,81 @@
         <subPane>
           <expand>
             <path>
-              <item name="7queuee" type="b2602c69:ProjectViewProjectNode" />
-              <item name="7queuee" type="462c0819:PsiDirectoryNode" />
+              <item name="7queue" type="b2602c69:ProjectViewProjectNode" />
+              <item name="7queue" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="7queuee" type="b2602c69:ProjectViewProjectNode" />
-              <item name="7queuee" type="462c0819:PsiDirectoryNode" />
-              <item name="vendor" type="462c0819:PsiDirectoryNode" />
+              <item name="7queue" type="b2602c69:ProjectViewProjectNode" />
+              <item name="7queue" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="7queue" type="b2602c69:ProjectViewProjectNode" />
+              <item name="7queue" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="Exceptions" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="7queue" type="b2602c69:ProjectViewProjectNode" />
+              <item name="7queue" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="Http" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="7queue" type="b2602c69:ProjectViewProjectNode" />
+              <item name="7queue" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="Http" type="462c0819:PsiDirectoryNode" />
+              <item name="Controllers" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="7queue" type="b2602c69:ProjectViewProjectNode" />
+              <item name="7queue" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="Http" type="462c0819:PsiDirectoryNode" />
+              <item name="Middleware" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="7queue" type="b2602c69:ProjectViewProjectNode" />
+              <item name="7queue" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="Models" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="7queue" type="b2602c69:ProjectViewProjectNode" />
+              <item name="7queue" type="462c0819:PsiDirectoryNode" />
+              <item name="database" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="7queue" type="b2602c69:ProjectViewProjectNode" />
+              <item name="7queue" type="462c0819:PsiDirectoryNode" />
+              <item name="database" type="462c0819:PsiDirectoryNode" />
+              <item name="migrations" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="7queue" type="b2602c69:ProjectViewProjectNode" />
+              <item name="7queue" type="462c0819:PsiDirectoryNode" />
+              <item name="public" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="7queue" type="b2602c69:ProjectViewProjectNode" />
+              <item name="7queue" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="7queue" type="b2602c69:ProjectViewProjectNode" />
+              <item name="7queue" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="views" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="7queue" type="b2602c69:ProjectViewProjectNode" />
+              <item name="7queue" type="462c0819:PsiDirectoryNode" />
+              <item name="routes" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="7queue" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="bcb0276e:PhpExternalLibrariesNodePatcher$PatchedExternalLibrariesNode" />
             </path>
           </expand>
           <select />
@@ -1004,35 +472,22 @@
     <property name="WebServerToolWindowPanel.toolwindow.show.permissions" value="false" />
     <property name="WebServerToolWindowPanel.toolwindow.show.size" value="false" />
     <property name="database.console.LAST_STATE" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="list.type.of.created.stylesheet" value="CSS" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/resources/views" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="nodejs_package_manager_path" value="npm" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="D:\web\7queue\resources\views" />
-      <recent name="D:\web\7queue\public\register_assets" />
-      <recent name="D:\web\7queue\resources\views\page\settings" />
-      <recent name="D:\web\7queue\public" />
-      <recent name="D:\web\7queue\resources\views\page" />
+      <recent name="C:\laragon\www\7queue\resources\views" />
+      <recent name="C:\laragon\www\7queue\resources\views\page\merchants" />
+      <recent name="C:\laragon\www\7queue\resources\views\page" />
+      <recent name="C:\laragon\www\7queue\public" />
     </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="D:\web\7queuee\resources\views\theme" />
-      <recent name="D:\web\7queue\public\js" />
-    </key>
-  </component>
-  <component name="RunAnythingCache">
-    <option name="myCommands">
-      <command value="php artisan migrate:refresh --seed" />
-      <command value="php artisan make:migration create_manager_table" />
-      <command value="dir" />
-      <command value="?" />
-    </option>
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -1046,445 +501,433 @@
       </list>
     </option>
   </component>
+  <component name="RunManager">
+    <configuration name="phpunit.xml" type="PHPUnitRunConfigurationType" factoryName="PHPUnit">
+      <TestRunner scope="XML" />
+      <method v="2" />
+    </configuration>
+  </component>
   <component name="SvnConfiguration">
     <configuration />
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="f91e0e37-603b-40fe-b975-6df174a888fb" name="Default Changelist" comment="" />
-      <created>1560144319754</created>
+      <changelist id="b09d26cf-3c41-4c1e-b4c5-85872292bee9" name="Default Changelist" comment="" />
+      <created>1559471628079</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1560144319754</updated>
-      <workItem from="1560144320859" duration="611000" />
-      <workItem from="1560167138718" duration="6678000" />
-      <workItem from="1560223466489" duration="16610000" />
-      <workItem from="1560312648313" duration="20095000" />
-      <workItem from="1560391328682" duration="22587000" />
-      <workItem from="1560487925678" duration="2851000" />
-      <workItem from="1560501522125" duration="12596000" />
+      <updated>1559471628079</updated>
+      <workItem from="1559471629307" duration="6801000" />
+      <workItem from="1559496626131" duration="13757000" />
+      <workItem from="1559547758324" duration="1996000" />
+      <workItem from="1559549786129" duration="752000" />
+      <workItem from="1559550968983" duration="3062000" />
+      <workItem from="1559555021580" duration="6879000" />
+      <workItem from="1559570874350" duration="4915000" />
+      <workItem from="1559577794623" duration="1329000" />
+      <workItem from="1559582000992" duration="20000" />
+      <workItem from="1560595417089" duration="7192000" />
+      <workItem from="1560603503615" duration="6150000" />
     </task>
-    <task id="LOCAL-00001" summary="asd">
-      <created>1560232580760</created>
-      <option name="number" value="00001" />
-      <option name="presentableId" value="LOCAL-00001" />
-      <option name="project" value="LOCAL" />
-      <updated>1560232580760</updated>
-    </task>
-    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="82028000" />
+    <option name="totallyTimeSpent" value="52853000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
+    <frame x="-8" y="-8" width="1382" height="744" extended-state="7" />
+    <editor active="true" />
     <layout>
-      <window_info id="npm" order="0" side_tool="true" />
-      <window_info active="true" content_ui="combo" id="Project" order="1" visible="true" weight="0.27155825" />
-      <window_info id="Structure" order="2" side_tool="true" weight="0.25" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.2193646" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info id="npm" order="2" side_tool="true" />
       <window_info id="Favorites" order="3" side_tool="true" />
-      <window_info anchor="bottom" id="File Transfer" sideWeight="0.49924356" visible="true" weight="0.3289689" />
+      <window_info anchor="bottom" id="File Transfer" weight="0.3289689" />
       <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.3289689" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.3289689" />
+      <window_info anchor="bottom" id="Find" order="1" />
+      <window_info anchor="bottom" id="Run" order="2" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Database Changes" order="8" />
-      <window_info anchor="bottom" id="Version Control" order="9" weight="0.3289689" />
-      <window_info anchor="bottom" id="Terminal" order="10" weight="0.3289689" />
-      <window_info anchor="bottom" id="Event Log" order="11" sideWeight="0.50075644" side_tool="true" weight="0.3289689" />
-      <window_info anchor="bottom" id="Database Console" order="12" weight="0.3289689" />
-      <window_info anchor="bottom" id="Messages" order="13" weight="0.3289689" />
-      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="bottom" id="Database Console" order="7" weight="0.3289689" />
+      <window_info anchor="bottom" id="Docker" order="8" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Version Control" order="9" />
+      <window_info anchor="bottom" id="Database Changes" order="10" />
+      <window_info anchor="bottom" id="Terminal" order="11" weight="0.3289689" />
+      <window_info anchor="bottom" id="Event Log" order="12" side_tool="true" weight="0.3289689" />
+      <window_info anchor="right" id="Remote Host" weight="0.32980332" />
+      <window_info anchor="right" id="Commander" order="0" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info anchor="right" id="Database" order="3" weight="0.26096824" />
-      <window_info anchor="right" id="Remote Host" order="4" visible="true" weight="0.20877458" />
+      <window_info active="true" anchor="right" id="Database" order="3" visible="true" weight="0.21331316" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
   </component>
-  <component name="Vcs.Log.History.Properties">
-    <option name="COLUMN_ORDER">
-      <list>
-        <option value="0" />
-        <option value="2" />
-        <option value="3" />
-        <option value="1" />
-      </list>
-    </option>
-  </component>
-  <component name="VcsManagerConfiguration">
-    <MESSAGE value="asd" />
-    <option name="LAST_COMMIT_MESSAGE" value="asd" />
-  </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/public/js/chart.js">
+    <entry file="file://$PROJECT_DIR$/public/assets/js/demo1/scripts.bundle.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="144">
-          <caret line="182" column="2" selection-start-line="182" selection-start-column="2" selection-end-line="182" selection-end-column="2" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/uploads/products/managerJXxEfkKBB8Grp9o4jqVW97wdr3oX4EojW2AC2fvvWmtPYSmBLOC1wQSvQ5auBd0HwuGlWumkaxvvE0TaD688EmHGqkrBNyzK1HZf1560343393.png" />
-    <entry file="file://$PROJECT_DIR$/resources/views/page/products/edit.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="243">
-          <caret line="136" column="115" selection-start-line="136" selection-start-column="115" selection-end-line="136" selection-end-column="115" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/jsLanguageServicesImpl/external/lib.es5.d.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="266" column="12" selection-start-line="266" selection-start-column="12" selection-end-line="266" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/jsLanguageServicesImpl/external/lib.es2019.symbol.d.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
+        <state relative-caret-position="-731">
+          <caret line="214" column="42" lean-forward="true" selection-start-line="214" selection-start-column="42" selection-end-line="214" selection-end-column="42" />
           <folding>
-            <element signature="n#!!doc" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="e#0#6#0" expanded="true" />
+            <element signature="e#0#6#0" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/jsLanguageServicesImpl/external/lib.es7.d.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="177">
-          <caret line="1446" column="7" selection-start-line="1446" selection-end-line="1446" selection-end-column="7" />
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/js/jquery.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-315">
-          <caret line="7967" column="9" lean-forward="true" selection-start-line="7967" selection-start-column="9" selection-end-line="7967" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/assets/js/demo11/pages/crud/metronic-datatable/base/data-ajax.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="118">
-          <caret line="7" column="27" selection-start-line="7" selection-start-column="26" selection-end-line="7" selection-end-column="27" />
-          <folding>
-            <element signature="e#193#3951#0" />
-            <element signature="e#55#61#1" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/js/custom_script.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="8" column="35" lean-forward="true" selection-start-line="8" selection-start-column="35" selection-end-line="8" selection-end-column="35" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/public/assets/vendors/global/vendors.bundle.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="142">
-          <caret line="25567" column="153" lean-forward="true" selection-start-line="25567" selection-start-column="153" selection-end-line="25567" selection-end-column="153" />
+        <state relative-caret-position="476">
+          <caret line="65337" column="4" selection-start-line="65337" selection-start-column="4" selection-end-line="65337" selection-end-column="4" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/page/products/tambah.blade.php">
+    <entry file="file://$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/jsLanguageServicesImpl/external/lib.dom.d.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1870">
-          <caret line="110" column="30" selection-start-line="110" selection-start-column="30" selection-end-line="110" selection-end-column="30" />
+        <state relative-caret-position="323">
+          <caret line="3382" column="4" selection-start-line="3382" selection-start-column="4" selection-end-line="3382" selection-end-column="4" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/page/products/index.blade.php">
+    <entry file="file://$PROJECT_DIR$/resources/views/theme/script.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2159">
-          <caret line="127" column="30" selection-start-line="100" selection-start-column="24" selection-end-line="127" selection-end-column="30" />
+        <state relative-caret-position="561">
+          <caret line="33" column="42" selection-start-line="33" selection-start-column="42" selection-end-line="33" selection-end-column="42" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/page/merchants/tambah.blade.php">
+    <entry file="file://$PROJECT_DIR$/app/Http/Middleware/VerifyCsrfToken.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="86" column="73" selection-start-line="86" selection-start-column="73" selection-end-line="86" selection-end-column="73" />
+        <state relative-caret-position="-148">
+          <caret column="5" lean-forward="true" selection-start-column="5" selection-end-column="5" />
         </state>
       </provider>
     </entry>
     <entry file="das://167abffd-8d4b-4c62-985a-59e0240dad37/schema/7queue/table/merchants">
       <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state projectRestartId="4af7c094-463e-493e-8e74-334fa6e0551d">
-          <filtering>
-            <filter text="" />
-          </filtering>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/js/datatable.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1649">
-          <caret line="97" column="28" selection-start-line="97" selection-start-column="28" selection-end-line="97" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/js/plugin.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3349">
-          <caret line="197" column="25" selection-start-line="197" selection-start-column="25" selection-end-line="197" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/2c969362-73ae-4429-a713-3b370d5b9201/console.sql">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/database/migrations/2019_06_14_095948_create_manage_table.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="6" column="6" selection-start-line="6" selection-start-column="6" selection-end-line="6" selection-end-column="6" />
+        <state projectRestartId="197cf242-4bd3-4c3a-8d55-fedcc4d04066">
+          <filtering />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/database/migrations/2019_06_02_111612_create_merchants_table.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="21" column="57" lean-forward="true" selection-start-line="21" selection-start-column="57" selection-end-line="21" selection-end-column="57" />
+        <state relative-caret-position="340">
+          <caret line="22" column="50" selection-start-line="22" selection-start-column="50" selection-end-line="22" selection-end-column="50" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$APPLICATION_HOME_DIR$/plugins/php/lib/php.jar!/stubs/standard/standard_1.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="195">
+          <caret line="13" column="9" selection-start-line="13" selection-start-column="9" selection-end-line="13" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/theme/header.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="243">
+          <caret line="932" column="24" lean-forward="true" selection-start-line="932" selection-start-column="24" selection-end-line="934" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/theme/header_mobile.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="12" selection-start-line="12" selection-end-line="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/page/manager/index.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="30" column="48" selection-start-line="30" selection-start-column="48" selection-end-line="30" selection-end-column="48" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/js/plugin.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret line="36" selection-start-line="36" selection-end-line="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/page/merchants/index.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="178">
+          <caret line="85" column="56" selection-start-line="85" selection-start-column="56" selection-end-line="85" selection-end-column="56" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/page/customers/index.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="116" column="69" selection-start-line="116" selection-start-column="69" selection-end-line="116" selection-end-column="69" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Models/Admin.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="49" column="21" selection-start-line="49" selection-start-column="9" selection-end-line="49" selection-end-column="21" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/database/migrations/2019_06_02_111109_create_admin_table.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="144">
-          <caret line="18" column="32" selection-start-line="18" selection-start-column="32" selection-end-line="18" selection-end-column="32" />
+        <state relative-caret-position="238">
+          <caret line="22" column="37" lean-forward="true" selection-start-line="22" selection-start-column="37" selection-end-line="22" selection-end-column="37" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/database/seeds/DatabaseSeeder.php">
+    <entry file="file://$PROJECT_DIR$/resources/views/page/admin/tambah.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="158">
-          <caret line="17" column="23" lean-forward="true" selection-start-line="17" selection-start-column="23" selection-end-line="17" selection-end-column="23" />
+        <state relative-caret-position="277">
+          <caret line="54" column="44" selection-start-line="54" selection-start-column="44" selection-end-line="54" selection-end-column="44" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/database/migrations/2019_06_14_095958_create_manager_table.php">
+    <entry file="jar://$APPLICATION_HOME_DIR$/plugins/php/lib/php.jar!/stubs/standard/_types.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="18" column="36" selection-start-line="18" selection-start-column="36" selection-end-line="18" selection-end-column="36" />
+        <state relative-caret-position="1955">
+          <caret line="115" column="13" selection-start-line="115" selection-start-column="13" selection-end-line="115" selection-end-column="13" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/table.php">
+    <entry file="file://$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Support/Facades/DB.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="433">
+          <caret line="29" column="6" selection-start-line="29" selection-start-column="6" selection-end-line="29" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/robots.txt">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/lang/en/pagination.php">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/lang/en/auth.php">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/sass/_variables.scss">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/welcome.blade.php" />
+    <entry file="file://$PROJECT_DIR$/resources/views/theme/head.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="39">
+          <caret line="10" column="53" lean-forward="true" selection-start-line="10" selection-start-column="53" selection-end-line="10" selection-end-column="53" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/login.blade.php" />
+    <entry file="file://$PROJECT_DIR$/resources/views/page/admin/edit.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="328">
-          <caret line="43" column="16" selection-start-line="43" selection-start-column="16" selection-end-line="43" selection-end-column="16" />
+          <caret line="122" column="53" selection-start-line="122" selection-start-column="53" selection-end-line="122" selection-end-column="53" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/theme/leftaside.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="69" column="16" selection-start-line="69" selection-start-column="16" selection-end-line="69" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/page/admin/index.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="328">
+          <caret line="116" column="66" selection-start-line="116" selection-start-column="66" selection-end-line="116" selection-end-column="66" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/page/merchants/edit.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="328">
+          <caret line="85" column="66" selection-start-line="85" selection-start-column="66" selection-end-line="85" selection-end-column="66" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/page/merchants/tambah.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="328">
+          <caret line="3" column="46" selection-start-line="3" selection-start-column="46" selection-end-line="3" selection-end-column="46" />
+          <caret line="50" column="45" selection-start-line="50" selection-start-column="45" selection-end-line="50" selection-end-column="45" />
+          <caret line="92" column="140" selection-start-line="92" selection-start-column="140" selection-end-line="92" selection-end-column="140" />
+          <caret line="99" column="140" selection-start-line="99" selection-start-column="140" selection-end-line="99" selection-end-column="140" />
+          <caret line="106" column="164" selection-start-line="106" selection-start-column="164" selection-end-line="106" selection-end-column="164" />
+          <caret line="113" column="144" selection-start-line="113" selection-start-column="144" selection-end-line="113" selection-end-column="144" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/js/jquery.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-2032">
+          <caret line="6661" column="26" lean-forward="true" selection-start-line="6661" selection-start-column="26" selection-end-line="6661" selection-end-column="26" />
         </state>
       </provider>
     </entry>
     <entry file="das://167abffd-8d4b-4c62-985a-59e0240dad37/schema/7queue/table/admin">
       <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state projectRestartId="2add4d19-9af5-4ba4-831e-fe7716c10482">
+        <state projectRestartId="4c95adc2-1ed0-4fa1-9da2-26cdc603bac9">
           <filtering>
             <filter text="" />
           </filtering>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/.env">
+    <entry file="file://$PROJECT_DIR$/public/js/login.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" column="22" selection-start-line="4" selection-start-column="22" selection-end-line="4" selection-end-column="22" />
+        <state relative-caret-position="53">
+          <caret line="59" column="28" lean-forward="true" selection-start-line="59" selection-start-column="28" selection-end-line="59" selection-end-column="28" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/register_assets/css/main.css">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/css/manager.css">
+    <entry file="file://$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Database/Schema/Blueprint.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="328">
-          <caret line="400" column="1" selection-start-line="400" selection-start-column="1" selection-end-line="400" selection-end-column="1" />
+        <state relative-caret-position="195">
+          <caret line="616" column="20" selection-start-line="616" selection-start-column="20" selection-end-line="616" selection-end-column="20" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/theme/head.blade.php">
+    <entry file="file://$PROJECT_DIR$/app/Models/Manager.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="48" column="79" selection-start-line="48" selection-start-column="79" selection-end-line="48" selection-end-column="79" />
+        <state relative-caret-position="-8">
+          <caret line="36" column="19" lean-forward="true" selection-start-line="36" selection-start-column="19" selection-end-line="36" selection-end-column="19" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/theme/leftaside.blade.php">
+    <entry file="file://$PROJECT_DIR$/public/js/globalsetup.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="119">
-          <caret line="7" column="98" selection-start-line="7" selection-start-column="98" selection-end-line="7" selection-end-column="98" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Middleware/merchantcheck.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="6" column="6" selection-start-line="6" selection-start-column="6" selection-end-line="6" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Middleware/usercheck.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="6" column="6" selection-start-line="6" selection-start-column="6" selection-end-line="6" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Middleware/EncryptCookies.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="6" column="6" selection-start-line="6" selection-start-column="6" selection-end-line="6" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/theme/index.blade.php">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/page/merchants/edit.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="192">
-          <caret line="114" column="97" selection-start-line="114" selection-start-column="97" selection-end-line="114" selection-end-column="97" />
-          <caret line="113" column="149" selection-start-line="113" selection-start-column="149" selection-end-line="113" selection-end-column="149" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Exceptions/Handler.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="50" column="62" lean-forward="true" selection-start-line="50" selection-start-column="23" selection-end-line="50" selection-end-column="62" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/routes/web.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="13" column="29" selection-start-line="13" selection-start-column="29" selection-end-line="13" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/page.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="9" column="28" lean-forward="true" selection-start-line="9" selection-start-column="28" selection-end-line="9" selection-end-column="28" />
-          <folding>
-            <element signature="e#40#61#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Middleware/oauthcheck.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="6" column="6" selection-start-line="6" selection-start-column="6" selection-end-line="6" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Middleware/managercheck.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="17" column="102" selection-start-line="17" selection-start-column="102" selection-end-line="17" selection-end-column="102" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Middleware/superadmincheck.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="23" column="47" selection-start-line="23" selection-start-column="47" selection-end-line="23" selection-end-column="47" />
-          <folding>
-            <element signature="e#39#51#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Middleware/admincheck.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="17" column="102" selection-start-line="17" selection-start-column="102" selection-end-line="17" selection-end-column="102" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Middleware/globaladmincheck.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="18" column="98" selection-start-line="18" selection-start-column="98" selection-end-line="18" selection-end-column="98" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Kernel.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="379">
-          <caret line="58" column="50" selection-start-line="58" selection-start-column="50" selection-end-line="58" selection-end-column="50" />
+          <caret line="49" column="10" lean-forward="true" selection-start-line="47" selection-start-column="8" selection-end-line="49" selection-end-column="10" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/crud.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="991">
-          <caret line="74" column="5" selection-start-line="74" selection-start-column="5" selection-end-line="74" selection-end-column="5" />
+        <state relative-caret-position="208">
+          <caret line="41" column="8" selection-start-line="41" selection-start-column="8" selection-end-line="43" selection-end-column="9" />
           <folding>
             <element signature="e#40#61#0#PHP" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/admin.blade.php">
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/table.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="413">
-          <caret line="57" selection-start-line="57" selection-end-line="57" selection-end-column="184" />
+        <state relative-caret-position="221">
+          <caret line="19" column="64" selection-start-line="19" selection-start-column="64" selection-end-line="19" selection-end-column="64" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/auth.php">
+    <entry file="file://$PROJECT_DIR$/public/js/datatable.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="561">
-          <caret line="36" column="58" selection-start-line="36" selection-start-column="58" selection-end-line="36" selection-end-column="58" />
+        <state relative-caret-position="345">
+          <caret line="923" selection-start-line="923" selection-end-line="923" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/database/migrations/2019_06_14_095958_create_manager_table.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="18" column="38" selection-start-line="18" selection-start-column="38" selection-end-line="18" selection-end-column="38" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/emails/konfemail.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-51">
+          <caret line="192" column="123" selection-start-line="192" selection-start-column="123" selection-end-line="192" selection-end-column="123" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/manager.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1209">
-          <caret line="83" column="184" selection-start-line="83" selection-start-column="184" selection-end-line="83" selection-end-column="184" />
+        <state relative-caret-position="-12">
+          <caret line="62" column="78" selection-start-line="62" selection-start-column="78" selection-end-line="62" selection-end-column="78" />
+          <folding>
+            <element signature="n#style#0;n#p#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#span#0;n#label#0;n#div#4;n#form#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/css/manager.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="30" selection-start-line="30" selection-end-line="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/routes/web.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="14" column="23" selection-start-line="14" selection-start-column="23" selection-end-line="14" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.env">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="25" selection-start-line="25" selection-end-line="37" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/admin.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="96">
+          <caret line="35" column="59" lean-forward="true" selection-start-line="35" selection-start-column="59" selection-end-line="35" selection-end-column="59" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/auth.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="164">
+          <caret line="68" column="20" selection-start-line="68" selection-start-column="20" selection-end-line="68" selection-end-column="20" />
+          <folding>
+            <element signature="e#40#61#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/page.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="162">
+          <caret line="16" column="28" lean-forward="true" selection-start-line="16" selection-start-column="28" selection-end-line="16" selection-end-column="28" />
+          <folding>
+            <element signature="e#40#61#0#PHP" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/public/js/manager.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="376">
-          <caret line="120" column="49" selection-start-line="120" selection-start-column="49" selection-end-line="120" selection-end-column="49" />
+        <state relative-caret-position="89">
+          <caret line="166" column="46" selection-start-line="166" selection-start-column="46" selection-end-line="166" selection-end-column="46" />
           <folding>
-            <element signature="e#863#1414#0" />
             <element signature="n#style#0;n#span#0;n#!!top" expanded="true" />
-            <element signature="e#1450#2268#0" />
-            <element signature="e#2314#3324#0" />
+            <element signature="n#style#0;n#span#0;n#!!top" expanded="true" />
+            <element signature="e#3282#3298#0" />
+            <element signature="e#4137#5147#0" />
+            <element signature="e#12#18#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/js/login.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="100" column="24" selection-start-line="100" selection-start-column="24" selection-end-line="100" selection-end-column="66" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/55deb5eb-703f-427e-ae38-327e677f7561/console.sql">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/js/globalsetup.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="206">
-          <caret line="66" column="10" selection-start-line="66" selection-start-column="10" selection-end-line="66" selection-end-column="10" />
+    <entry file="das://167abffd-8d4b-4c62-985a-59e0240dad37/schema/7queue/table/manager">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state projectRestartId="f10f6bda-e06a-4200-80fb-cf48cb04f3a9">
+          <filtering>
+            <filter text="" />
+          </filtering>
         </state>
       </provider>
     </entry>

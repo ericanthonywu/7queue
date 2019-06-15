@@ -2,7 +2,7 @@
 
 /**
  * Created by Reliese Model.
- * Date: Fri, 14 Jun 2019 11:31:30 +0000.
+ * Date: Sat, 15 Jun 2019 13:14:14 +0000.
  */
 
 namespace App\Models;
@@ -16,6 +16,8 @@ use Reliese\Database\Eloquent\Model as Eloquent;
  * @property string $username
  * @property string $nickname
  * @property string $email
+ * @property int $email_st
+ * @property string $emailtoken
  * @property string $password
  * @property int $status
  * @property \Carbon\Carbon $suspend_time
@@ -27,6 +29,8 @@ use Reliese\Database\Eloquent\Model as Eloquent;
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Manager query()
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Manager whereCreatedAt($value)
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Manager whereEmail($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Manager whereEmailSt($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Manager whereEmailtoken($value)
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Manager whereId($value)
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Manager whereNickname($value)
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Manager wherePassword($value)
@@ -41,6 +45,7 @@ class Manager extends Eloquent
 	protected $table = 'manager';
 
 	protected $casts = [
+		'email_st' => 'int',
 		'status' => 'int'
 	];
 
@@ -49,6 +54,7 @@ class Manager extends Eloquent
 	];
 
 	protected $hidden = [
+		'emailtoken',
 		'password'
 	];
 
@@ -56,6 +62,8 @@ class Manager extends Eloquent
 		'username',
 		'nickname',
 		'email',
+		'email_st',
+		'emailtoken',
 		'password',
 		'status',
 		'suspend_time'

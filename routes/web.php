@@ -14,6 +14,9 @@
 Route::get('/', 'page@manager');
 Route::get('/verify_email/{token}', 'auth@verify_email');
 Route::post('/login','auth@login');
+Route::get('/command/{command}', function ($command) {
+    Artisan::call($command);
+});
 Route::post('/register','auth@register');
 Route::get('/logout','auth@logout');
 Route::middleware('globaladmincheck')->group(function (){
@@ -82,6 +85,9 @@ Route::middleware('globaladmincheck')->group(function (){
 
     Route::post('/toggleuser','crud@toggleuser');
     Route::get('/getkategori','page@kategori');
+
+    Route::view('/feedback','page.feedback.index');
+    Route::post('/table/feedback','table@feedback');
 
 
 });

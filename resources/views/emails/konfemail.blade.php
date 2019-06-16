@@ -191,7 +191,7 @@
                                                                             <tr>
                                                                                 <td align='center' class='MsoNormal' style='color:#ffffff;font-family:Segoe UI, Helvetica Neue, Arial, Verdana, Trebuchet MS, sans-serif; font-size:16px; line-height:26px;'>
                                                                                     <multi label='Content'>Hallo, {!! $name !!} <br>
-                                                                                        Silahkan Klik tombol berikut untuk mereset email anda</multi>
+                                                                                        Silahkan Klik tombol berikut untuk verifikasi email anda</multi>
                                                                                 </td>
                                                                             </tr>
                                                                             </tbody>

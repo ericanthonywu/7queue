@@ -15,11 +15,11 @@
         <property name="yearIsDateType" value="false" />
       </driver-properties>
     </data-source>
-    <data-source source="LOCAL" name="jdbc:mysql://http://7queue.net:3306/7queue" uuid="55deb5eb-703f-427e-ae38-327e677f7561">
+    <data-source source="LOCAL" name="7queue deployment" uuid="5fc882f4-b67a-4fc0-bf0d-dc063279f237">
       <driver-ref>mysql.8</driver-ref>
       <synchronize>true</synchronize>
       <jdbc-driver>com.mysql.cj.jdbc.Driver</jdbc-driver>
-      <jdbc-url>jdbc:mysql://http://7queue.net:3306/7queue</jdbc-url>
+      <jdbc-url>jdbc:mysql://7queue.net:3306/7queue</jdbc-url>
       <driver-properties>
         <property name="autoReconnect" value="true" />
         <property name="zeroDateTimeBehavior" value="CONVERT_TO_NULL" />

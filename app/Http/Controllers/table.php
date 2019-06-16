@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Admin;
 use App\Models\Banner;
+use App\Models\Feedback;
 use App\Models\KategoriProduk;
 use App\Models\Merchant;
 use App\Models\Product;
@@ -89,6 +90,18 @@ class table extends Controller
         $no = 1;
         foreach ($data as $key => $value){
             $data[$key]['no'] = $no;
+            $no++;
+        }
+        return response()->json([
+            "data"=>$data
+        ]);
+    }
+    function feedback(){
+        $data = Feedback::all();
+        $no = 1;
+        foreach ($data as $key => $value){
+            $data[$key]['no'] = $no;
+            $data[$key]['tgl_dibuat'] = $v['created_at']->format('D, d M Y H:i');
             $no++;
         }
         return response()->json([

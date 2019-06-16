@@ -44,7 +44,7 @@ class auth extends Controller
         $emailcheck = Manager::whereEmail($r->email)->exists();
         $usernamecheck = Manager::whereUsername($r->username)->exists();
         if($usernamecheck && $emailcheck){
-            return "Username dan Email sudah tersedia Mungkin anda sudah mendaftarkannya";
+            return "Username dan Email sudah tersedia. <br> Mungkin anda sudah mendaftarkannya";
         }
         if($usernamecheck){
             return "Username sudah tersedia";
@@ -69,19 +69,22 @@ class auth extends Controller
         if(empty($token)){
             return response()->view('error.404',[],404);
         }
-        $data = Manager::whereEmailtoken($token);
-        if($data->exists()){
-            $data = $data->first();
+        $check = Manager::where('emailtoken',$token);
+        if($check->exists()){
+            if($check->first()['email_st'] == 1){
+                \Session::put('alertemail','Your email already verified! You can login now');
+                return redirect('/');
+            }
+            $data = Manager::where('emailtoken',$token);
             $data->update([
-                "email_st"=>1
-            ]);
-            \Session::put('alertemail','Your email has been verified! You can login now');
-            $data->update([
+                "email_st"=>1,
                 "emailtoken"=>null
             ]);
+            \Session::put('alertemail','Your email has been verified! You can login now');
             return redirect('/');
+        }else{
+            return response()->view('error.404',[],404);
         }
-        return response()->view('error.404',[],404);
     }
     function logout(Request $r){
         $lvl = \Session::get('level');

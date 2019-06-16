@@ -5,9 +5,9 @@
     <!-- Required meta tags-->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="Colorlib Templates">
+    <meta name="description" content="7Queue's Admin">
     <meta name="author" content="Eric Anthony">
-    <meta name="keywords" content="Colorlib Templates">
+    <meta name="keywords" content="7Queue's admin">
 
     <!-- Title Page-->
     <title>7Queue's Manager</title>
@@ -28,19 +28,19 @@ Session::remove('alertemail')
 ?>
 <div class="materialContainer">
     <div class="box">
-        <form id="login" autocomplete="off">
+        <form id="login" autocomplete="off" >
             <input type="hidden" name="status" value="manager">
             <div class="title">LOGIN</div>
 
             <div class="input">
                 <label for="name">Username / Email</label>
-                <input type="text" name="username" id="name" autocomplete="off" required>
+                <input type="text" name="username" id="name" autocomplete="false" required>
                 <span class="spin"></span>
             </div>
 
             <div class="input">
                 <label for="pass">Password</label>
-                <input type="password" name="password" id="pass" autocomplete="off" required>
+                <input type="password" name="password" id="pass" autocomplete="new-password" required>
                 <span class="spin"></span>
             </div>
 
@@ -53,25 +53,25 @@ Session::remove('alertemail')
     </div>
 
     <div class="overbox">
-        <form id="register">
+        <form id="register" autocomplete="off">
             <div class="material-button alt-2"><span class="shape"></span></div>
 
             <div class="title">REGISTER</div>
 
             <div class="input">
                 <label for="regname">Username</label>
-                <input type="text" class="alphanumeric" name="username" id="regname" autocomplete="off" required>
+                <input type="text" class="alphanumeric" name="username" id="regname" autocomplete="false" required>
                 <span class="spin"></span>
             </div>
             <div class="input">
                 <label for="regemail">Email</label>
-                <input type="email" name="email" id="regemail" autocomplete="off" required>
+                <input type="email" name="email" id="regemail" autocomplete="false" required>
                 <span class="spin"></span>
             </div>
 
             <div class="input">
                 <label for="regpass">Password <span style="float:right"><span class="fa fa-fw fa-eye toggle-icon toggle-input--text" toggle="#password-field2"></span></span></label>
-                <input type="password" name="password" id="regpass" autocomplete="off" required>
+                <input type="password" name="password" id="regpass" autocomplete="new-password" required>
                 <span class="spin"></span>
             </div>
 

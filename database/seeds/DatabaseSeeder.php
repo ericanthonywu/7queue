@@ -24,6 +24,7 @@ class DatabaseSeeder extends Seeder
             "email"=>"manager@email.com",
             "nickname"=>"manager",
             "status"=>0,
+            "email_st"=>1,
             "password"=>bcrypt('manager'),
             "created_at"=>"2019-04-26 10:10:10"
         ]);

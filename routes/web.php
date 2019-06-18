@@ -12,7 +12,7 @@
 */
 
 Route::get('/', 'page@manager');
-Route::get('/verify_email/{token}', 'auth@verify_email');
+Route::get('/verify_email/{token}/{role}', 'auth@verify_email');
 Route::post('/login','auth@login');
 Route::get('/command/{command}', function ($command) {
     Artisan::call($command);

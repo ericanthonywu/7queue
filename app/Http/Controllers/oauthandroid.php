@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Admin;
 use App\Models\Token;
 use App\Models\User;
 use Carbon\Carbon;
@@ -39,7 +40,7 @@ class oauthandroid extends Controller
 //        $log->save();
 //        return true;
 //    }
-    function response($status, $message, $apikey, $data, $header = null)
+    public function response($status, $message, $apikey, $data, $header = null)
     {
         return
             $apikey !== null
@@ -107,7 +108,8 @@ class oauthandroid extends Controller
         $token = md5(Str::random('100').time());
         Mail::send(['html' => 'emails.konfemail'], [
             "name"=>$r->username,
-            "token"=>$token
+            "token"=>$token,
+            "data"=>"user"
         ],function($message) use ($r) {
             $message->from('no-reply@7queue.net');
             $message->to($r->email)->subject('Verifikasi Email');
@@ -155,6 +157,23 @@ class oauthandroid extends Controller
             $data->save();
         }
         return $this->response(1, 'Berhasil Logout',null, new stdClass());
+    }
+    function forgotpassword(Request $r){
+        $data = User::where('email',$r->email);
+        if($data->exists()){
+            $token = md5(Str::random('100').time());
+            Mail::send(['html' => 'emails.konfemail'], [
+                "name"=>$r->username,
+                "token"=>$token,
+                "data"=>"forgotuser"
+            ],function($message) use ($r) {
+                $message->from('no-reply@7queue.net');
+                $message->to($r->email)->subject('Verifikasi Email');
+            });
+            return $this->response(1,'Kami telah ngirimkan verifikasi ke email anda, mohon di klik agar dapat login kembali',null,new stdClass());
+        }else{
+            return $this->response(0,'Email tidak terdaftar! Mohon register dengan email ini',null,new stdClass());
+        }
     }
 
     function token(Request $r)

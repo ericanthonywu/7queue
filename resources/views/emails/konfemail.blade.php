@@ -209,7 +209,7 @@
                                                                                     <table align='center' bgcolor='#6ec8c7' border='0' cellspacing='0' cellpadding='0' class='display-button textbutton' style='border-radius:5px;'> <!-- USING TABLE AS BUTTON -->
                                                                                         <tr>
                                                                                             <td align='center' valign='middle' class='MsoNormal' style='color:#333333;font-family:Segoe UI,sans-serif,Arial,Helvetica,Lato;font-size:13px;font-weight:600;letter-spacing:1px;padding:7px 15px;text-transform:uppercase;'>
-                                                                                                <a href='{{url("verify_email/$token")}}' style='color:#333333;text-decoration:none;' editable label='Verify Your Account'>Verify Your Account</a>
+                                                                                                <a href='{{url("verify_email/$token/$data")}}' style='color:#333333;text-decoration:none;' editable label='Verify Your Account'>Verify Your Account</a>
                                                                                             </td>
                                                                                         </tr>
                                                                                     </table>

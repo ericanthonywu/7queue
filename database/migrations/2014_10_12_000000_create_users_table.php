@@ -18,9 +18,10 @@ class CreateUsersTable extends Migration
             $table->string('username')->unique()->index();
             $table->string('nickname')->unique()->index();
             $table->string('email')->unique()->index();
+            $table->unsignedTinyInteger('email_st')->default(0);
             $table->string('password');
+            $table->string('email_token')->index();
             $table->unsignedTinyInteger('status')->index();
-            $table->unsignedBigInteger('created_by');
             $table->timestamp('suspend_time')->nullable();
             $table->timestamps();
         });

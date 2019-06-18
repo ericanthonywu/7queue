@@ -7,7 +7,6 @@ use App\Models\Manager;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Str;
-use Prophecy\Promise\PromiseInterface;
 
 class auth extends Controller
 {

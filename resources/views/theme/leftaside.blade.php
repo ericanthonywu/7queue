@@ -5,7 +5,7 @@
     <div class="kt-aside__brand kt-grid__item " id="kt_aside_brand">
         <div class="kt-aside__brand-logo">
             <a>
-                <img alt="The Fusion" width="80%" src="{{asset('assets_user/images/logo-7queue.png')}}"/>
+                <img alt="The Fusion" width="50%" src="{{asset('assets_user/images/logo-7queue.png')}}"/>
             </a>
         </div>
         <div class="kt-aside__brand-tools">

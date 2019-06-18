@@ -13,6 +13,10 @@ use Illuminate\Http\Request;
 |
 */
 
-Route::middleware('auth:api')->get('/user', function (Request $request) {
-    return $request->user();
+Route::post('/login','oauthandroid@login');
+Route::post('/register','oauthandroid@register');
+Route::post('/logout','oauthandroid@logout');
+Route::post('/token','oauthandroid@token');
+Route::middleware('apicheck')->group(function (){
+
 });

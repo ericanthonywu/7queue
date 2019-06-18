@@ -20,6 +20,7 @@ Route::get('/command/{command}', function ($command) {
 Route::post('/register','auth@register');
 Route::get('/logout','auth@logout');
 Route::middleware('globaladmincheck')->group(function (){
+
     Route::delete('/delete/table',"crud@delete");
 
     Route::view('/dashboard','page.index');

@@ -34,6 +34,10 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
  * @method static \Illuminate\Database\Eloquent\Builder|\App\User whereSuspendTime($value)
  * @property int $created_by
  * @method static \Illuminate\Database\Eloquent\Builder|\App\User whereCreatedBy($value)
+ * @property int $email_st
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\User whereEmailSt($value)
+ * @property string $email_token
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\User whereEmailToken($value)
  */
 class  User extends Authenticatable
 {

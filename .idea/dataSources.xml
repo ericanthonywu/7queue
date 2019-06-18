@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="DataSourceManagerImpl" format="xml" multifile-model="true">
-    <data-source source="LOCAL" name="7queue@localhost" uuid="167abffd-8d4b-4c62-985a-59e0240dad37">
+    <data-source source="LOCAL" name="localhost 7queue" uuid="9efe532c-2ff3-4669-bc0f-68cfbf5d9f15">
       <driver-ref>mysql.8</driver-ref>
       <synchronize>true</synchronize>
       <jdbc-driver>com.mysql.cj.jdbc.Driver</jdbc-driver>
@@ -15,7 +15,7 @@
         <property name="yearIsDateType" value="false" />
       </driver-properties>
     </data-source>
-    <data-source source="LOCAL" name="7queue deployment" uuid="5fc882f4-b67a-4fc0-bf0d-dc063279f237">
+    <data-source source="LOCAL" name="7queue deployment" uuid="f5a9fc0c-ef11-45b3-8489-f1b8ea8c71c8">
       <driver-ref>mysql.8</driver-ref>
       <synchronize>true</synchronize>
       <jdbc-driver>com.mysql.cj.jdbc.Driver</jdbc-driver>

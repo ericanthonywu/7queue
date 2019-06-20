@@ -2,7 +2,7 @@
 
 /**
  * Created by Reliese Model.
- * Date: Tue, 18 Jun 2019 11:43:06 +0000.
+ * Date: Thu, 20 Jun 2019 09:19:06 +0000.
  */
 
 namespace App\Models;
@@ -19,6 +19,7 @@ use Reliese\Database\Eloquent\Model as Eloquent;
  * @property int $email_st
  * @property string $emailtoken
  * @property string $password
+ * @property \Carbon\Carbon $email_expired
  * @property int $status
  * @property \Carbon\Carbon $suspend_time
  * @property \Carbon\Carbon $created_at
@@ -29,6 +30,7 @@ use Reliese\Database\Eloquent\Model as Eloquent;
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Manager query()
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Manager whereCreatedAt($value)
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Manager whereEmail($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Manager whereEmailExpired($value)
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Manager whereEmailSt($value)
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Manager whereEmailtoken($value)
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Manager whereId($value)
@@ -50,6 +52,7 @@ class Manager extends Eloquent
 	];
 
 	protected $dates = [
+		'email_expired',
 		'suspend_time'
 	];
 
@@ -65,6 +68,7 @@ class Manager extends Eloquent
 		'email_st',
 		'emailtoken',
 		'password',
+		'email_expired',
 		'status',
 		'suspend_time'
 	];

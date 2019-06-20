@@ -20,7 +20,10 @@ class CreateUsersTable extends Migration
             $table->string('email')->unique()->index();
             $table->unsignedTinyInteger('email_st')->default(0);
             $table->string('password');
-            $table->string('email_token')->index();
+            $table->string('gender')->nullable();
+            $table->string('foto_profil')->nullable();
+            $table->string('email_token')->index()->nullable();
+            $table->timestamp('email_expired')->nullable();
             $table->unsignedTinyInteger('status')->index();
             $table->timestamp('suspend_time')->nullable();
             $table->timestamps();

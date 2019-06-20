@@ -47,6 +47,10 @@ return [
             'driver' => 'local',
             'root' => public_path('uploads/products/'),
         ],
+        'user' => [
+            'driver' => 'local',
+            'root' => public_path('uploads/user/'),
+        ],
 
         'public' => [
             'driver' => 'local',

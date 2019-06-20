@@ -37,6 +37,15 @@ class DatabaseSeeder extends Seeder
         DB::table('kategori_produk')->insert([
             "kategori"=>"Sampah",
         ]);
+        DB::table('users')->insert([
+            "username"=>"tes",
+            "nickname"=>"tes",
+            "email"=>"tes@gmail.com",
+            "email_st"=>1,
+            "password"=>bcrypt('tes'),
+            "gender"=>"male",
+            'foto_profil'=>'WKNyqCrzoARf1k3KKsokIP66pzzqBFRVA3TZfDqzCigcSrUh4ly21S5dHcFIhbrd55sTvF38VBfrYQBlBw7eVn61IVxWVNrNgPRI1561022685.jpg'
+        ]);
         // $this->call(UsersTableSeeder::class);
     }
 }

@@ -17,6 +17,7 @@ Route::post('/login','oauthandroid@login');
 Route::post('/register','oauthandroid@register');
 Route::post('/logout','oauthandroid@logout');
 Route::post('/token','oauthandroid@token');
+Route::post('/forgotpassword','oauthandroid@forgotpassword');
 Route::middleware('apicheck')->group(function (){
 
 });

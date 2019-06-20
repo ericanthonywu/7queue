@@ -21,6 +21,7 @@ class CreateManagerTable extends Migration
             $table->unsignedTinyInteger('email_st')->index()->nullable()->default(0);
             $table->string('emailtoken')->index()->nullable();
             $table->string('password');
+            $table->dateTime('email_expired')->nullable();
             $table->unsignedTinyInteger('status')->default(0)->index();
             $table->timestamp('suspend_time')->nullable();
             $table->timestamps();

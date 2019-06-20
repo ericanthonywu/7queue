@@ -13,7 +13,11 @@
 
 Route::get('/', 'page@manager');
 Route::get('/verify_email/{token}/{role}', 'auth@verify_email');
+Route::view('/verify', 'verify');
 Route::post('/login','auth@login');
+Route::post('/cpassword','auth@cpassword');
+Route::post('/cmanager','auth@cmanager');
+Route::post('/fpasswordmanager',"auth@fpasswordmanager");
 Route::get('/command/{command}', function ($command) {
     Artisan::call($command);
 });
@@ -26,6 +30,7 @@ Route::middleware('globaladmincheck')->group(function (){
     Route::view('/dashboard','page.index');
 
     Route::get('/chart/piechart','chart@piechart');
+    Route::get('/chart/barchart','chart@barchart');
 
     Route::middleware('superadmincheck')->group(function (){
         Route::view('/admin/tambah','page.admin.tambah');

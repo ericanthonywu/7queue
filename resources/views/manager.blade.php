@@ -48,7 +48,7 @@ Session::remove('alertemail')
                 <button><span>GO</span> <i class="fa fa-check"></i></button>
             </div>
 
-{{--            <a href="" class="pass-forgot">Forgot your password?</a>--}}
+            <a href="#" class="pass-forgot">Forgot your password?</a>
         </form>
     </div>
 

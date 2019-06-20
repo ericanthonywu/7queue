@@ -2,7 +2,7 @@
 
 /**
  * Created by Reliese Model.
- * Date: Tue, 18 Jun 2019 11:43:06 +0000.
+ * Date: Thu, 20 Jun 2019 09:19:06 +0000.
  */
 
 namespace App\Models;
@@ -18,7 +18,10 @@ use Reliese\Database\Eloquent\Model as Eloquent;
  * @property string $email
  * @property int $email_st
  * @property string $password
+ * @property string $gender
+ * @property string $foto_profil
  * @property string $email_token
+ * @property \Carbon\Carbon $email_expired
  * @property int $status
  * @property \Carbon\Carbon $suspend_time
  * @property \Carbon\Carbon $created_at
@@ -29,8 +32,11 @@ use Reliese\Database\Eloquent\Model as Eloquent;
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\User query()
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\User whereCreatedAt($value)
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\User whereEmail($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\User whereEmailExpired($value)
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\User whereEmailSt($value)
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\User whereEmailToken($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\User whereFotoProfil($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\User whereGender($value)
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\User whereId($value)
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\User whereNickname($value)
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\User wherePassword($value)
@@ -48,6 +54,7 @@ class User extends Eloquent
 	];
 
 	protected $dates = [
+		'email_expired',
 		'suspend_time'
 	];
 
@@ -62,7 +69,10 @@ class User extends Eloquent
 		'email',
 		'email_st',
 		'password',
+		'gender',
+		'foto_profil',
 		'email_token',
+		'email_expired',
 		'status',
 		'suspend_time'
 	];

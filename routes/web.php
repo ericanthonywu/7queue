@@ -23,6 +23,7 @@ Route::get('/command/{command}', function ($command) {
 });
 Route::post('/register','auth@register');
 Route::get('/logout','auth@logout');
+Route::get('/apk/1', 'page@apk');
 Route::middleware('globaladmincheck')->group(function (){
 
     Route::delete('/delete/table',"crud@delete");

@@ -177,14 +177,14 @@ License: You must have a valid license purchased only from themeforest(the above
                                 <div class="kt-portlet__head">
                                     <div class="kt-portlet__head-label">
                                         <h3 class="kt-portlet__head-title">
-                                            Line Chart
+                                            Bar Chart 1
                                         </h3>
                                     </div>
                                 </div>
                                 <div class="kt-portlet__body">
 
                                     <!--Begin::Timeline 3 -->
-                                    <div id="linechart" style="height: 100vh;max-height: 600px;width: 100%;"></div>
+                                    <div id="barchart" style="width: 100%;height:100vh"></div>
 
                                     <!--End::Timeline 3 -->
                                 </div>
@@ -199,14 +199,14 @@ License: You must have a valid license purchased only from themeforest(the above
                                 <div class="kt-portlet__head">
                                     <div class="kt-portlet__head-label">
                                         <h3 class="kt-portlet__head-title">
-                                            Barchart
+                                            Bar Chart 2
                                         </h3>
                                     </div>
                                 </div>
                                 <div class="kt-portlet__body">
 
                                     <!--Begin::Timeline 3 -->
-                                    <div id="barchart" style="width: 100%;height:100vh"></div>
+                                    <div id="barchart2" style="width: 100%;height:100vh"></div>
 
                                     <!--End::Timeline 3 -->
                                 </div>

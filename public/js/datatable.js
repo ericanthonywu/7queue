@@ -15,8 +15,8 @@ $(document).ready(function () {
                 html += `<option value="${o.id}">${o.kategori}</option>`
             });
 
-            $('.kt-selectpicker').html(html);
-            $('.kt-selectpicker').selectpicker('refresh');
+            $('.kt-selectpicker').html(html)
+                .selectpicker('refresh');
         });
         $('.kt-selectpicker').selectpicker('refresh');
     }

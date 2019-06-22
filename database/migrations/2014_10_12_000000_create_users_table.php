@@ -24,7 +24,7 @@ class CreateUsersTable extends Migration
             $table->string('foto_profil')->nullable();
             $table->string('email_token')->index()->nullable();
             $table->timestamp('email_expired')->nullable();
-            $table->unsignedTinyInteger('status')->index();
+            $table->unsignedTinyInteger('status')->index()->default(0);
             $table->timestamp('suspend_time')->nullable();
             $table->timestamps();
         });

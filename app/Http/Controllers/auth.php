@@ -112,14 +112,20 @@ class auth extends Controller
                 $check = User::where('email_token',$token);
                 if($check->exists()){
                     if($check->first()['email_st'] == 1){
-                       return $this->response(1,'Your email already verified! You can login now',null,new \stdClass());
+                        return response()->view('notify.notify',[
+                            "message"=>"Your email already verified! You can login now",
+                            "status"=>1
+                        ]);
                     }
-                    $data = Manager::where('emailtoken',$token);
+                    $data = User::whereEmailToken($token);
                     $data->update([
                         "email_st"=>1,
-                        "emailtoken"=>null
+                        "email_token"=>null
                     ]);
-                    return $this->response(1,'Your email has been verified! You can login now',null,new \stdClass());;
+                    return response()->view('notify.notify',[
+                        "message"=>"Your email has been verified! You can login now",
+                        "status"=>1
+                    ]);
                 }else{
                     return response()->view('error.404',[],404);
                 }

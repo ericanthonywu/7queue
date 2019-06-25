@@ -15,7 +15,6 @@ class CreateUsersTable extends Migration
     {
         Schema::create('users', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('username')->unique()->index();
             $table->string('nickname')->unique()->index();
             $table->string('email')->unique()->index();
             $table->unsignedTinyInteger('email_st')->default(0);
@@ -24,7 +23,7 @@ class CreateUsersTable extends Migration
             $table->string('foto_profil')->nullable();
             $table->string('email_token')->index()->nullable();
             $table->timestamp('email_expired')->nullable();
-            $table->unsignedTinyInteger('status')->index();
+            $table->unsignedTinyInteger('status')->index()->default(0);
             $table->timestamp('suspend_time')->nullable();
             $table->timestamps();
         });

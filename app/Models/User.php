@@ -2,7 +2,7 @@
 
 /**
  * Created by Reliese Model.
- * Date: Thu, 20 Jun 2019 09:19:06 +0000.
+ * Date: Tue, 25 Jun 2019 11:32:57 +0000.
  */
 
 namespace App\Models;
@@ -13,7 +13,6 @@ use Reliese\Database\Eloquent\Model as Eloquent;
  * Class User
  *
  * @property int $id
- * @property string $username
  * @property string $nickname
  * @property string $email
  * @property int $email_st
@@ -43,7 +42,6 @@ use Reliese\Database\Eloquent\Model as Eloquent;
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\User whereStatus($value)
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\User whereSuspendTime($value)
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\User whereUpdatedAt($value)
- * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\User whereUsername($value)
  * @mixin \Eloquent
  */
 class User extends Eloquent
@@ -64,7 +62,6 @@ class User extends Eloquent
 	];
 
 	protected $fillable = [
-		'username',
 		'nickname',
 		'email',
 		'email_st',

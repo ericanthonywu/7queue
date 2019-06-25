@@ -38,7 +38,6 @@ class DatabaseSeeder extends Seeder
             "kategori"=>"Sampah",
         ]);
         DB::table('users')->insert([
-            "username"=>"tes",
             "nickname"=>"tes",
             "email"=>"tes@gmail.com",
             "email_st"=>1,

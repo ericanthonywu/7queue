@@ -2,21 +2,24 @@
 
 /**
  * Created by Reliese Model.
- * Date: Tue, 25 Jun 2019 11:32:56 +0000.
+ * Date: Thu, 27 Jun 2019 09:00:46 +0000.
  */
 
 namespace App\Models;
 
+use Carbon\Carbon;
 use Reliese\Database\Eloquent\Model as Eloquent;
 
 /**
  * Class Merchant
  *
  * @property int $id
- * @property string $username
  * @property string $nickname
  * @property string $email
  * @property string $password
+ * @property string $lat
+ * @property string $long
+ * @property string $foto
  * @property int $status
  * @property int $created_by
  * @property \Carbon\Carbon $created_at
@@ -28,12 +31,14 @@ use Reliese\Database\Eloquent\Model as Eloquent;
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Merchant whereCreatedAt($value)
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Merchant whereCreatedBy($value)
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Merchant whereEmail($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Merchant whereFoto($value)
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Merchant whereId($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Merchant whereLat($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Merchant whereLong($value)
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Merchant whereNickname($value)
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Merchant wherePassword($value)
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Merchant whereStatus($value)
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Merchant whereUpdatedAt($value)
- * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Merchant whereUsername($value)
  * @mixin \Eloquent
  */
 class Merchant extends Eloquent
@@ -42,16 +47,22 @@ class Merchant extends Eloquent
 		'status' => 'int',
 		'created_by' => 'int'
 	];
+    public function getCreatedAtAttribute($date)
+    {
+        return Carbon::createFromFormat('Y-m-d H:i:s', $date)->format('D, d M Y H:i');
+    }
 
 	protected $hidden = [
 		'password'
 	];
 
 	protected $fillable = [
-		'username',
 		'nickname',
 		'email',
 		'password',
+		'lat',
+		'long',
+		'foto',
 		'status',
 		'created_by'
 	];

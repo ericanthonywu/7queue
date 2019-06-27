@@ -15,6 +15,6 @@ class admincheck
      */
     public function handle($request, Closure $next)
     {
-        return \Session::get('level') == 2 ? $next($request) : response()->view('error.404', [], 404);;
+        return \Session::get('level') >= 2  ? $next($request) : response()->view('error.404', [], 404);
     }
 }

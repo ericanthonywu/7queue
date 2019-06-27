@@ -31,7 +31,9 @@ class auth extends Controller
                 ], $header ? (int)$header : 200);
     }
     function login(Request $r){
-        $data = $r->status == "admin" ? Admin::where('username',$r->username) : Manager::where('username',$r->username)->orWhere('email',$r->username);
+        $data = $r->status == "admin"
+            ? Admin::whereEmail($r->email) :
+            Manager::whereEmail($r->email);
         if($data->exists() && $r->status == "manager" && $data->first()['email_st'] == 0){
             return "Your email hasn't verified yet";
         }
@@ -52,7 +54,7 @@ class auth extends Controller
             }
             \Session::put('initial',strtoupper($acronym));
         }else{
-            return "Username / Password anda tidak tersedia";
+            return "Email / Password anda salah";
         }
     }
     function register(Request $r){
@@ -61,21 +63,13 @@ class auth extends Controller
             return "Email Invalid";
         }
         $emailcheck = Manager::whereEmail($r->email)->exists();
-        $usernamecheck = Manager::whereUsername($r->username)->exists();
-        if($usernamecheck && $emailcheck){
-            return "Username dan Email sudah tersedia. <br> Mungkin anda sudah mendaftarkannya";
-        }
-        if($usernamecheck){
-            return "Username sudah tersedia";
-        }
         if($emailcheck){
-            return "Email Sudah tersedia mohon gunakan email lain";
+            return "Email sudah tersedia. <br> Mungkin anda sudah mendaftarkannya";
         }
-        $req['nickname'] = $r->username;
         $req['password'] = bcrypt($r->password);
         $token = Str::random(16).time();
         Mail::send(['html' => 'emails.konfemail'], [
-            "name"=>$r->username,
+            "name"=>ucwords($r->nickname),
             "token"=>$token,
             "data"=>"manager"
         ],function($message) use ($r) {
@@ -161,7 +155,7 @@ class auth extends Controller
                     if($check->first()['email_expired'] > Carbon::now()->format('Y-m-d H:i:s')){
                         $token = Str::random(16).time();
                         Mail::send(['html' => 'emails.konfemail'], [
-                            "name"=>$check->first()['username'],
+                            "name"=>$check->first()['email'],
                             "token"=>$token,
                         ],function($message) use ($check) {
                             $message->from('no-reply@7queue.net');
@@ -205,7 +199,7 @@ class auth extends Controller
             $data = $check->first();
             $token = Str::random(16).time();
             Mail::send(['html' => 'emails.konfemail'], [
-                "name"=>$data['username'],
+                "name"=>$data['email'],
                 "token"=>$token,
                 "data"=>"fmanager"
             ],function($message) use ($r) {
@@ -232,14 +226,14 @@ class auth extends Controller
     function cmanager(Request $r){
         Manager::find($r->user)->update([
             "password"=>bcrypt($r->password),
-            "email_token"=>null
+            "emailtoken"=>null
         ]);
         if(\Session::get('device') === "android"){
             return "android";
         }
         \Session::remove('device');
     }
-    function logout(Request $r){
+    function logout(){
         $lvl = \Session::get('level');
         \Session::flush();
         return $lvl == 1 ? redirect('/'): redirect('/admin');

@@ -35,6 +35,7 @@
 
     <!--begin::Global Theme Styles(used by all pages) -->
     <link href="{{asset('assets/vendors/global/vendors.bundle.css')}}" rel="stylesheet" type="text/css" />
+    <link href="{{asset('assets/vendors/custom/datatables/datatables.bundle.css')}}" rel="stylesheet" type="text/css" />
     <link href="{{asset('assets/css/demo1/style.bundle.css')}}" rel="stylesheet" type="text/css" />
 
     <!--end::Global Theme Styles -->

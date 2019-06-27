@@ -15,7 +15,6 @@ class CreateAdminTable extends Migration
     {
         Schema::create('admin', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('username')->unique()->index();
             $table->string('nickname')->unique()->index();
             $table->string('email')->unique()->nullable()->index();
             $table->unsignedTinyInteger('level')->index();

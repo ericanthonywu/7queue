@@ -67,11 +67,11 @@ jQuery(document).ready(function () {
                     user: $('#userID').val()
                 },
                 success: res => {
-                    // if(res === "android"){
-                    //     location.href=""
-                    // }else{
-                    toastr.success("Password anda sudah di ganti. Silahkan login di aplikasi");
-                    // }
+                    if(res === "android"){
+                        toastr.success("Password anda sudah di ganti. Silahkan login di aplikasi");
+                    }else{
+                        location.href = window.location.origin
+                    }
                 },
                 error: xhr => {
                     console.log(xhr.responseJSON.message);
@@ -660,7 +660,7 @@ jQuery(document).ready(function () {
             verdictText = verdictText[0];
 
             if (options.common.debug) {
-                console.log(score + ' - ' + verdictText);
+                // console.log(score + ' - ' + verdictText);
             }
 
             if ($.isFunction(options.common.onKeyUp)) {

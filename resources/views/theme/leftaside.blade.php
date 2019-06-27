@@ -122,6 +122,21 @@
                             </g>
                         </svg></span>
                         <span class="kt-menu__link-text"> Banner</span></a></li>
+                @if(Session::get('level') == 3)
+                    <li class="kt-menu__item {{Request::url() == url("/trending") ? "kt-menu__item--active" : ""}}"
+                        aria-haspopup="true"><a href="{{url('/trending')}}" class="kt-menu__link "><span
+                                    class="kt-menu__link-icon"><svg xmlns="http://www.w3.org/2000/svg"
+                                                                    xmlns:xlink="http://www.w3.org/1999/xlink" width="24px"
+                                                                    height="24px" viewBox="0 0 24 24" version="1.1"
+                                                                    class="kt-svg-icon">
+                            <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                                <rect id="bound" x="0" y="0" width="24" height="24"/>
+                                <path d="M3.5,21 L20.5,21 C21.3284271,21 22,20.3284271 22,19.5 L22,8.5 C22,7.67157288 21.3284271,7 20.5,7 L10,7 L7.43933983,4.43933983 C7.15803526,4.15803526 6.77650439,4 6.37867966,4 L3.5,4 C2.67157288,4 2,4.67157288 2,5.5 L2,19.5 C2,20.3284271 2.67157288,21 3.5,21 Z"
+                                      id="Combined-Shape" fill="#000000"/>
+                            </g>
+                        </svg></span>
+                            <span class="kt-menu__link-text"> Trending</span></a></li>
+                @endif
                 <li class="kt-menu__item {{Request::url() == url("/products") ? "kt-menu__item--active" : ""}}"
                     aria-haspopup="true"><a href="{{url('/products')}}" class="kt-menu__link "><span
                                 class="kt-menu__link-icon"><svg xmlns="http://www.w3.org/2000/svg"

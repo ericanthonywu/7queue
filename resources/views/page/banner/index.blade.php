@@ -1,17 +1,5 @@
 <!DOCTYPE html>
 
-<!--
-Template Name: Metronic - Responsive Admin Dashboard Template build with Twitter Bootstrap 4 & Angular 7
-Author: KeenThemes
-Website: http://www.keenthemes.com/
-Contact: support@keenthemes.com
-Follow: www.twitter.com/keenthemes
-Dribbble: www.dribbble.com/keenthemes
-Like: www.facebook.com/keenthemes
-Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-template/4021469?ref=keenthemes
-Renew Support: http://themeforest.net/item/metronic-responsive-admin-dashboard-template/4021469?ref=keenthemes
-License: You must have a valid license purchased only from themeforest(the above link) in order to legally use the theme for your project.
--->
 <html lang="en">
 
 <!-- begin::Head -->
@@ -83,10 +71,12 @@ License: You must have a valid license purchased only from themeforest(the above
                             <div class="kt-portlet__head-toolbar">
                                 <div class="kt-portlet__head-wrapper">
                                     <div class="kt-portlet__head-actions">
-                                        <a href="{{url('/banner/tambah')}}" class="btn btn-brand btn-elevate btn-icon-sm">
-                                            <i class="la la-plus"></i>
-                                            Tambah Banner
-                                        </a>
+                                        @if(Session::get('level') == 1)
+                                            <a href="{{url('/banner/tambah')}}" class="btn btn-brand btn-elevate btn-icon-sm">
+                                                <i class="la la-plus"></i>
+                                                Tambah Banner
+                                            </a>
+                                        @endif
                                     </div>
                                 </div>
                             </div>

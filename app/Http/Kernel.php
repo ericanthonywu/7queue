@@ -2,6 +2,7 @@
 
 namespace App\Http;
 
+use App\Http\Middleware\apicheck;
 use Illuminate\Foundation\Http\Kernel as HttpKernel;
 
 class Kernel extends HttpKernel
@@ -57,6 +58,7 @@ class Kernel extends HttpKernel
         'globaladmincheck' => \App\Http\Middleware\globaladmincheck::class,
         'managercheck' => \App\Http\Middleware\managercheck::class,
         'oauthcheck' => \App\Http\Middleware\oauthcheck::class,
+        'apicheck' => \App\Http\Middleware\apicheck::class,
         'auth.basic' => \Illuminate\Auth\Middleware\AuthenticateWithBasicAuth::class,
         'bindings' => \Illuminate\Routing\Middleware\SubstituteBindings::class,
         'cache.headers' => \Illuminate\Http\Middleware\SetCacheHeaders::class,

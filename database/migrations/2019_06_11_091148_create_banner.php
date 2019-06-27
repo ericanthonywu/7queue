@@ -17,11 +17,11 @@ class CreateBanner extends Migration
             $table->bigIncrements('id');
             $table->string('nama')->index();
             $table->string('file');
-            $table->string('phone');
-            $table->string('url');
-            $table->string('lat', 50);
-            $table->string('long', 50);
-            $table->string('confirmation');
+            $table->string('phone')->nullable();
+            $table->string('url')->nullable();
+            $table->string('lat', 50)->nullable();
+            $table->string('long', 50)->nullable();
+            $table->string('confirmation')->nullable();
             $table->unsignedInteger('order');
             $table->timestamps();
         });

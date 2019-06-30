@@ -11,12 +11,16 @@ use Illuminate\Http\Request;
 
 class page extends Controller
 {
-    function apk(){
-        return "apk error sedang di fix";
-        return response()->file(storage_path('app/7queue.apk'),[
-            'Content-Type'=>'application/vnd.android.package-archive',
-            'Content-Disposition'=> 'attachment; filename="7queue.apk"',
-        ]);
+    function apk($ver) {
+        $path = "app/7queue$ver.apk";
+        if(file_exists(storage_path($path))) {
+            return response()->file(storage_path($path), [
+                'Content-Type' => 'application/vnd.android.package-archive',
+                'Content-Disposition' => 'attachment; filename="7queue.apk"',
+            ]);
+        }else{
+            return response()->view('error.404',[],404);
+        }
     }
     function manager(){
         return \Session::get('name') && \Session::get('level') ? redirect('/dashboard') : view('manager');

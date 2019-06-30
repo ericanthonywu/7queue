@@ -1,17 +1,6 @@
 <!DOCTYPE html>
 
-<!--
-Template Name: Metronic - Responsive Produk Dashboard Template build with Twitter Bootstrap 4 & Angular 7
-Author: KeenThemes
-Website: http://www.keenthemes.com/
-Contact: support@keenthemes.com
-Follow: www.twitter.com/keenthemes
-Dribbble: www.dribbble.com/keenthemes
-Like: www.facebook.com/keenthemes
-Purchase: http://themeforest.net/item/metronic-responsive-produk-dashboard-template/4021469?ref=keenthemes
-Renew Support: http://themeforest.net/item/metronic-responsive-produk-dashboard-template/4021469?ref=keenthemes
-License: You must have a valid license purchased only from themeforest(the above link) in order to legally use the theme for your project.
--->
+
 <html lang="en">
 
 <!-- begin::Head -->
@@ -138,7 +127,7 @@ License: You must have a valid license purchased only from themeforest(the above
                                     <div class="form-group row">
                                         <label class="col-lg-3 col-form-label">&nbsp;</label>
                                         <div class="col-lg-6">
-                                            <button data-toggle="modal" data-target="#fkategori"
+                                            <button type="button" data-toggle="modal" data-target="#fkategori"
                                                     class="btn btn-brand btn-elevate btn-icon-sm">
                                                 <i class="la la-plus"></i>
                                                 Tambah Kategori Products

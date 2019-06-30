@@ -1,17 +1,5 @@
 <!DOCTYPE html>
 
-<!--
-Template Name: Metronic - Responsive Merchants Dashboard Template build with Twitter Bootstrap 4 & Angular 7
-Author: KeenThemes
-Website: http://www.keenthemes.com/
-Contact: support@keenthemes.com
-Follow: www.twitter.com/keenthemes
-Dribbble: www.dribbble.com/keenthemes
-Like: www.facebook.com/keenthemes
-Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-template/4021469?ref=keenthemes
-Renew Support: http://themeforest.net/item/metronic-responsive-admin-dashboard-template/4021469?ref=keenthemes
-License: You must have a valid license purchased only from themeforest(the above link) in order to legally use the theme for your project.
--->
 <html lang="en">
 
 <!-- begin::Head -->
@@ -88,13 +76,6 @@ License: You must have a valid license purchased only from themeforest(the above
                             <div class="kt-portlet__body">
                                 <div class="kt-section kt-section--first">
                                     <div class="form-group row">
-                                        <label class="col-lg-3 col-form-label">Username:</label>
-                                        <div class="col-lg-6">
-                                            <input type="text" class="form-control" name="username" placeholder="Masukkan Username Merchants" required>
-                                            <span class="form-text text-muted">Masukkan Username</span>
-                                        </div>
-                                    </div>
-                                    <div class="form-group row">
                                         <label class="col-lg-3 col-form-label">Nickname:</label>
                                         <div class="col-lg-6">
                                             <input type="text" class="form-control" name="nickname" placeholder="Masukkan Nickname Merchants" required>
@@ -106,6 +87,31 @@ License: You must have a valid license purchased only from themeforest(the above
                                         <div class="col-lg-6">
                                             <input type="email" aria-describedby="emailHelp" class="form-control" name="email" placeholder="Masukkan Email Merchants" required>
                                             <span class="form-text text-muted">Masukkan Email</span>
+                                        </div>
+                                    </div>
+                                    <div class="form-group row">
+                                        <label class="col-lg-3 col-form-label">Foto:</label>
+                                        <div class="col-lg-6">
+                                            <div class="custom-file">
+                                                <input type="file" name="foto" class="custom-file-input" id="customFile" required>
+                                                <label class="custom-file-label" for="customFile">Pilih Foto Merchant</label>
+                                            </div>
+                                            <span class="form-text text-muted">Masukkan Foto Merchant</span>
+                                        </div>
+                                    </div>
+                                    <div class="form-group row">
+                                        <label class="col-lg-3 col-form-label">Lokasi Merchants:</label>
+                                        <div class="col-lg-6">
+                                            <input type="hidden" name="lat" id="lat">
+                                            <input type="hidden" name="long" id="long">
+                                            <div class="input-group-append">
+                                                <input type="text" class="form-control" id="search_map"
+                                                       placeholder="address...">
+                                                <button type="button" class="btn btn-primary" id="btn_search_map"><i
+                                                            class="fa fa-search"></i></button>
+                                            </div>
+                                            <div id="gmaps" style="height: 500px;width: 500px"></div>
+                                            <span class="form-text text-muted">Pilih Lokasi Merchants</span>
                                         </div>
                                     </div>
                                     <div class="form-group row">
@@ -165,6 +171,87 @@ License: You must have a valid license purchased only from themeforest(the above
 <!--ENd:: Chat-->
 
 @include("theme.script")
+
+<script src="//maps.google.com/maps/api/js?key=AIzaSyAA4hPyKk1JroIrhLwPiFyz0kX-w7ll8pU" type="text/javascript"></script>
+<script src="{{asset('assets/vendors/custom/gmaps/gmaps.js')}}"></script>
+<script>
+    const maps = new GMaps({
+        div: '#gmaps',
+        lat: -6.1826977,
+        lng: 106.7883846,
+    });
+    const handleAction = () => {
+        const text = $.trim($('#search_map').val());
+        GMaps.geocode({
+            address: text,
+            callback: (results, status) => {
+                if (status == 'OK') {
+                    const latlng = results[0].geometry.location;
+                    $('#lat').val(latlng.lat())
+                    $('#long').val(latlng.lng())
+                    maps.setCenter(latlng.lat(), latlng.lng());
+                    maps.removeMarkers();
+                    maps.addMarker({
+                        lat: latlng.lat(),
+                        lng: latlng.lng(),
+                        title: 'Tempat Merchant',
+
+                        draggable: true,
+
+                        dragend: e => {
+                            $('#lat').val(e.latLng.lat())
+                            $('#long').val(e.latLng.lng())
+                        },
+
+                        infoWindow: {
+                            content: '<span style="color:#000">Tempat Merchants</span>'
+                        }
+                    });
+                    mUtil.scrollTo('gmaps');
+                }else{
+                    toastr.options = {
+                        "closeButton": false,
+                        "debug": false,
+                        "newestOnTop": false,
+                        "progressBar": false,
+                        "positionClass": "toast-top-right",
+                        "preventDuplicates": false,
+                        "onclick": null,
+                        "showDuration": "300",
+                        "hideDuration": "1000",
+                        "timeOut": "5000",
+                        "extendedTimeOut": "1000",
+                        "showEasing": "swing",
+                        "hideEasing": "linear",
+                        "showMethod": "fadeIn",
+                        "hideMethod": "fadeOut"
+                    };
+                    toastr.error('alamat tidak ditemukan','Error')
+                }
+            }
+        });
+    }
+
+    $('#btn_search_map').click(function (e) {
+        e.preventDefault();
+        handleAction();
+    });
+
+    $("#search_map").keypress(function (e) {
+        const keycode = (e.keyCode || e.which);
+        if (keycode == '13') {
+            e.preventDefault();
+            handleAction();
+        }
+    });
+
+    // maps.addMarker({
+    //     lat: -6.1826977,
+    //     lng: 106.7883846,
+
+    // });
+    // maps.setZoom(15);
+</script>
 </body>
 
 <!-- end::Body -->

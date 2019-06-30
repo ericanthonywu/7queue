@@ -33,8 +33,8 @@ Session::remove('alertemail')
             <div class="title">LOGIN</div>
 
             <div class="input">
-                <label for="name">Username / Email</label>
-                <input type="text" name="username" id="name" autocomplete="false" required>
+                <label for="name">Email</label>
+                <input type="email" name="email" id="name" autocomplete="false" required>
                 <span class="spin"></span>
             </div>
 
@@ -59,8 +59,8 @@ Session::remove('alertemail')
             <div class="title">REGISTER</div>
 
             <div class="input">
-                <label for="regname">Username</label>
-                <input type="text" class="alphanumeric" name="username" id="regname" autocomplete="false" required>
+                <label for="regname">Nama Lengkap</label>
+                <input type="text" name="nickname" id="regname" autocomplete="false" required>
                 <span class="spin"></span>
             </div>
             <div class="input">

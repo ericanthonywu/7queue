@@ -1,17 +1,6 @@
 <!DOCTYPE html>
 
-<!--
-Template Name: Metronic - Responsive Admin Dashboard Template build with Twitter Bootstrap 4 & Angular 7
-Author: KeenThemes
-Website: http://www.keenthemes.com/
-Contact: support@keenthemes.com
-Follow: www.twitter.com/keenthemes
-Dribbble: www.dribbble.com/keenthemes
-Like: www.facebook.com/keenthemes
-Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-template/4021469?ref=keenthemes
-Renew Support: http://themeforest.net/item/metronic-responsive-admin-dashboard-template/4021469?ref=keenthemes
-License: You must have a valid license purchased only from themeforest(the above link) in order to legally use the theme for your project.
--->
+
 <html lang="en">
 
 <!-- begin::Head -->
@@ -88,6 +77,10 @@ License: You must have a valid license purchased only from themeforest(the above
                                             <i class="la la-plus"></i>
                                             Tambah Merchants
                                         </a>
+                                            <a href="{{url('/merchants/track_location')}}" class="btn btn-brand btn-elevate btn-icon-sm">
+                                                <i class="la la-map-marker"></i>
+                                                 Merchants' Location
+                                            </a>
                                             @endif
                                     </div>
                                 </div>

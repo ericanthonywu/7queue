@@ -51,6 +51,14 @@ return [
             'driver' => 'local',
             'root' => public_path('uploads/user/'),
         ],
+        'merchant' => [
+            'driver' => 'local',
+            'root' => public_path('uploads/merchant/'),
+        ],
+        'banner' => [
+            'driver' => 'local',
+            'root' => public_path('uploads/banner/'),
+        ],
 
         'public' => [
             'driver' => 'local',

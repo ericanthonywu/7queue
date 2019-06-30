@@ -19,5 +19,7 @@ Route::post('/logout','oauthandroid@logout');
 Route::post('/token','oauthandroid@token');
 Route::post('/forgotpassword','oauthandroid@forgotpassword');
 Route::middleware('apicheck')->group(function (){
-
+    Route::post('/home','apiandroid@home');
+    Route::post('/nearmerchant','apiandroid@nearestmerchant');
 });
+

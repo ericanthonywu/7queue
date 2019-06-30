@@ -2,7 +2,7 @@
 
 /**
  * Created by Reliese Model.
- * Date: Thu, 20 Jun 2019 09:19:06 +0000.
+ * Date: Thu, 27 Jun 2019 09:00:46 +0000.
  */
 
 namespace App\Models;
@@ -13,7 +13,6 @@ use Reliese\Database\Eloquent\Model as Eloquent;
  * Class Manager
  *
  * @property int $id
- * @property string $username
  * @property string $nickname
  * @property string $email
  * @property int $email_st
@@ -39,7 +38,6 @@ use Reliese\Database\Eloquent\Model as Eloquent;
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Manager whereStatus($value)
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Manager whereSuspendTime($value)
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Manager whereUpdatedAt($value)
- * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Manager whereUsername($value)
  * @mixin \Eloquent
  */
 class Manager extends Eloquent
@@ -62,7 +60,6 @@ class Manager extends Eloquent
 	];
 
 	protected $fillable = [
-		'username',
 		'nickname',
 		'email',
 		'email_st',

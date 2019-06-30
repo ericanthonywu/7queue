@@ -3,14 +3,16 @@
 namespace App\Http\Controllers;
 
 use App\Models\Admin;
+use App\Models\Banner;
 use App\Models\KategoriProduk;
 use App\Models\Merchant;
 use App\Models\Product;
+use App\Models\Trending;
+use App\Models\TrendingCategory;
 use File;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Str;
-use MongoDB\Driver\Manager;
 use Carbon\Carbon;
 
 class crud extends Controller
@@ -91,8 +93,14 @@ class crud extends Controller
         $req = $r->all();
         if(Merchant::where('email',$r->email)->exists()){
             return "Email sudah tersedia";
-        }else if(Merchant::where('username',$r->username)->exists()){
-            return "Username Sudah Tersedia";
+        }
+        if($r->hasFile('foto')){
+            $filename = $this->insertimage('merchant',$r->foto);
+            if($filename){
+                $req['foto'] = $filename;
+            }else{
+                return "Hanya Menerima ekstensi ".implode($this->ext,',')." extensi anda ".$r->file('foto')->getClientOriginalExtension();
+            }
         }
         $req['password'] = bcrypt($r->password);
         $req['created_by'] = \Session::get('id');
@@ -104,12 +112,7 @@ class crud extends Controller
         }
         $data = Merchant::find($r->id);
         $checkemail = Merchant::where('email', $r->email);
-        $checkname = Merchant::where('username', $r->username);
-        if ($checkname->exists() && $r->name !== $data->name && $checkemail->exists() && $r->email !== $data->email) {
-            return "Username dan Email sudah tersedia";
-        } else if ($checkname->exists() && $r->name !== $data->name) {
-            return "Username Sudah Tersedia";
-        } else if ($checkemail->exists() && $r->email !== $data->email) {
+        if ($checkemail->exists() && $r->email !== $data->email) {
             return "Email Sudah Tersedia";
         }
         $req = $r->all();
@@ -117,6 +120,14 @@ class crud extends Controller
             unset($req['password']);
         }else{
             $req['password'] = bcrypt($r->password);
+        }
+        if($r->hasFile('foto')){
+            $filename = $this->insertimage('merchant',$r->foto);
+            if($filename){
+                $req['foto'] = $filename;
+            }else{
+                return "Hanya Menerima ekstensi ".implode($this->ext,',')." extensi anda ".$r->file('foto')->getClientOriginalExtension();
+            }
         }
         Merchant::find($r->id)->update($req);
     }
@@ -138,17 +149,52 @@ class crud extends Controller
                 \Storage::disk('products')->delete(Product::find($r->id)['foto']);
                 $req['foto'] = $filename;
             } else {
-                return "Hanya menerima ekstensi " . implode($this->ext, ',') . " extensi anda " . $r->file('foto')->getClientOriginalExtension();
+                return "Hanya menerima ekstensi <strong><b>" . implode($this->ext, ',') . "</b></strong> extensi anda <strong><b>" . $r->file('foto')->getClientOriginalExtension()."</b></strong>";
             }
         }
         Product::find($r->id)->update($req);
     }
     function tambahkategoriproduk(Request $r){
-        KategoriProduk::create($r->all());
+        if(empty($r->kategori)) {
+            return "Kategori Kosong";
+        }else{
+            KategoriProduk::create($r->all());
+        }
     }
     function editkategoriproduk(Request $r){
         KategoriProduk::find($r->id)->update([
             "kategori"=>$r->kategori
         ]);
+    }
+    function tambahbanner(Request $r){
+        $req = $r->all();
+        if($r->hasFile('file')) {
+            $order = Banner::orderByDesc('order')->limit(1)->first()['order'];
+            $req['order'] = $order || 1;
+            $filename = $this->insertimage('banner',$r->file('file'));
+            if($filename){
+                $req['file'] = $filename;
+                Banner::create($req);
+            }else{
+                return "Hanya menerima ektensi gambar ".implode($this->ext,",")." extensi anda ".$r->file('file')->getClientOriginalExtension();
+            }
+        }else {
+            return "Harap upload gambar banner";
+        }
+    }
+    function editbanner(Request $r){
+        $req = $r->all();
+        if($r->hasFile('file')) {
+            $filename = $this->insertimage('banner',$r->file('file'));
+            if($filename){
+                $req['file'] = $filename;
+            }else{
+                return "Hanya menerima ektensi gambar ".implode($this->ext,",")." extensi anda ".$r->file('file')->getClientOriginalExtension();
+            }
+        }
+        Banner::create($req);
+    }
+    function tambahtrending(Request $r){
+        TrendingCategory::create($r->all());
     }
 }

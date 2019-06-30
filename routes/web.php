@@ -23,7 +23,7 @@ Route::get('/command/{command}', function ($command) {
 });
 Route::post('/register','auth@register');
 Route::get('/logout','auth@logout');
-Route::get('/apk/1', 'page@apk');
+Route::get('/apk/{ver}', 'page@apk');
 Route::middleware('globaladmincheck')->group(function (){
 
     Route::delete('/delete/table',"crud@delete");
@@ -43,9 +43,19 @@ Route::middleware('globaladmincheck')->group(function (){
         Route::post('/action/chgstadmin','crud@chgstadmin');
     });
 
+    Route::middleware('admincheck')->group(function(){
+        Route::view('/trending/tambah','page.trending.tambah');
+        Route::post('/action/trending','crud@tambahtrending');
+        Route::post('/action/update/trending','crud@edittrending');
+        Route::get('/trending/edit/{id}','page@edittrending');
+        Route::view('/trending','page.trending.index');
+        Route::post('/table/trending','table@trending');
+        Route::post('/get_merchant_list','table@get_merchant_list');
+    });
+
     Route::view('/merchants','page.merchants.index');
     Route::post('/table/merchants','table@merchants');
-
+    Route::get('/merchants/track_location','page@trackmerchants');
     Route::middleware('managercheck')->group(function (){
         Route::view('/merchants/tambah','page.merchants.tambah');
         Route::get('/merchants/edit/{id}','page@editmerchants');

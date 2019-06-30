@@ -13,7 +13,9 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Str;
 use mysql_xdevapi\Exception;
+use Session;
 use stdClass;
+use Storage;
 use Validator;
 
 class oauthandroid extends Controller
@@ -43,35 +45,28 @@ class oauthandroid extends Controller
 //        $log->save();
 //        return true;
 //    }
-    public $ext = ['jpg','jpeg','png','pneg'];
+    public $ext = ['jpg', 'jpeg', 'png', 'pneg'];
 
     public function insertimage($disk, $file)
     {
-        if(in_array(strtolower($file->getClientOriginalExtension()),$this->ext)) {
-            $filename = str_replace(' ', '_', \Session::get('name')) . Str::random(100) . time() . "." . $file->getClientOriginalExtension();
-            \Storage::disk($disk)->put($filename, File::get($file));
+        if (in_array(strtolower($file->getClientOriginalExtension()), $this->ext)) {
+            $filename = str_replace(' ', '_', Session::get('name')) . Str::random(100) . time() . "." . $file->getClientOriginalExtension();
+            Storage::disk($disk)->put($filename, File::get($file));
             return $filename;
-        }else{
+        } else {
             return false;
         }
     }
-    public function response($status, $message, $apikey, $data, $header = null)
+
+    public function response($r, $status, $message, $apikey, $data, $header = null)
     {
-        return
-            $apikey !== null
-                ?
-                response()->json([
-                    "status" => $status,
-                    "message" => $message,
-                    "apiKey" => $apikey,
-                    "data" => $data
-                ], $header ? (int)$header : 200)
-                :
-                response()->json([
-                    "status" => $status,
-                    "message" => $message,
-                    "data" => $data
-                ], $header ? (int)$header : 200);
+        return response()->json([
+            "status" => $status,
+            "message" => $message,
+            "apiKey" => $apikey,
+            "debug" => $r->all(),
+            "data" => $data
+        ], $header ? (int)$header : 200);
     }
 
     function generatetoken($user)
@@ -108,66 +103,62 @@ class oauthandroid extends Controller
             'username' => 'required',
             'email' => 'required|email',
             'password' => 'required',
-            'gender'=> 'required',
+            'gender' => 'required',
         ]);
         if ($validator->fails()) {
-            $this->response(0, $validator->fails(), null, new stdClass());
+            $this->response($r, 0, $validator->fails(), null, new stdClass());
         }
-        $cekusername = User::where('username', $r->username)->exists();
-        $cekemail = User::whereEmail($r->email)->exists();
-        if($cekemail){
-            return $this->response(0, "Email $r->email sudah tersedia", null, new stdClass());
-        }
-        if ($cekusername) {
-            return $this->response(0, "Username $r->username sudah tersedia", null, new stdClass());
+        if (User::whereEmail($r->email)->exists()) {
+            return $this->response($r, 0, "Email $r->email sudah tersedia", null, new stdClass());
         }
         $input = $r->all();
-        $filename = $this->insertimage('user',$r->file('foto'));
-        if($filename){
-            $input['foto_profil'] = $filename;
-        }else{
-            return "Hanya menerima ekstensi ".implode($this->ext,',')." extensi anda ".$r->file('foto')->getClientOriginalExtension();
+        if ($r->hasFile('foto')) {
+            $filename = $this->insertimage('user', $r->file('foto'));
+            if ($filename) {
+                $input['foto_profil'] = $filename;
+            } else {
+                return "Hanya menerima ekstensi " . implode($this->ext, ',') . " extensi anda " . $r->file('foto')->getClientOriginalExtension();
+            }
         }
         $input['password'] = bcrypt($input['password']);
-        $input['nickname'] = $r->username;
         $input['status'] = 0;
-        $token = md5(Str::random('100').time());
+        $token = md5(Str::random('100') . time());
         Mail::send(['html' => 'emails.konfemail'], [
-            "name"=>$r->username,
-            "token"=>$token,
-            "data"=>"user"
-        ],function($message) use ($r) {
+            "name" => $r->username,
+            "token" => $token,
+            "data" => "user"
+        ], function ($message) use ($r) {
             $message->from('no-reply@7queue.net');
             $message->to($r->email)->subject('Verifikasi Email');
         });
         $input['email_token'] = $token;
         User::create($input);
-        return $this->response(1, "User $r->username berhasil register ",null, new stdClass());
+        return $this->response($r, 1, "User $r->nickname berhasil register \n cek email anda untuk konfirmasi ", null, new stdClass());
     }
 
     function login(Request $r)
     {
         $validator = Validator::make($r->all(), [
-            'username' => 'required',
+            'email' => 'email | required',
             'password' => 'required',
         ]);
         if ($validator->fails()) {
-            $this->response(0, $validator->errors(),null, new stdClass());
+            $this->response($r, 0, $validator->errors(), null, new stdClass());
         }
-        $data = User::where('username', $r->username)->first();
+        $data = User::whereEmail($r->email)->first();
         if ($data && Hash::check($r->password, $data['password'])) {
-            if($data['email_st'] == 0){
-                return $this->response(0,'Email belum di verifikasi!',null,new stdClass());
+            if ($data['email_st'] == 0) {
+                return $this->response($r, 0, 'Email belum di verifikasi!', null, new stdClass());
             }
             $token = $this->generatetoken($data['id']);
             if ($token) {
 //                $this->log("<b>$r->name</b> (marketing) logged in",null);
-                return $this->response(1, 'Berhasil Login',$token,new stdClass());
+                return $this->response($r, 1, 'Berhasil Login', $token, new stdClass());
             } else {
-                return $this->response(0, 'User tidak ditemukan',null, new stdClass());
+                return $this->response($r, 0, 'User tidak ditemukan', null, new stdClass());
             }
         } else {
-            return $this->response(0, 'Unauthorized',null, new stdClass());
+            return $this->response($r, 0, 'Unauthorized', null, new stdClass());
         }
     }
 
@@ -182,31 +173,33 @@ class oauthandroid extends Controller
             $data->expire = Carbon::now()->toDateTimeString();
             $data->save();
         }
-        return $this->response(1, 'Berhasil Logout',null, new stdClass());
+        return $this->response($r, 1, 'Berhasil Logout', null, new stdClass());
     }
-    function forgotpassword(Request $r){
-        $data = User::where('email',$r->email);
-        if($data->exists()){
-            $token = Str::random(16).time();
-            try{
+
+    function forgotpassword(Request $r)
+    {
+        $data = User::where('email', $r->email);
+        if ($data->exists()) {
+            $token = Str::random(16) . time();
+            try {
                 Mail::send(['html' => 'emails.konfemail'], [
-                    "name"=>$data->first()['nickname'],
-                    "token"=>$token,
-                    "data"=>"forgotuser"
-                ],function($message) use ($r) {
+                    "name" => $data->first()['nickname'],
+                    "token" => $token,
+                    "data" => "forgotuser"
+                ], function ($message) use ($r) {
                     $message->from('no-reply@7queue.net');
                     $message->to($r->email)->subject('Verifikasi Email');
                 });
                 User::whereEmail($r->email)->update([
-                    "email_token"=>$token,
-                    "email_expired"=>Carbon::now()->addMinutes(10)
+                    "email_token" => $token,
+                    "email_expired" => Carbon::now()->addMinutes(10)
                 ]);
-                return $this->response(1,'Kami telah ngirimkan verifikasi ke email anda, mohon di klik agar dapat login kembali',null,new stdClass());
-            }catch (Exception $e){
-                return $this->response(0,$e->getMessage(),null,new stdClass());
+                return $this->response($r, 1, 'Kami telah ngirimkan verifikasi ke email anda, mohon di klik agar dapat login kembali', null, new stdClass());
+            } catch (Exception $e) {
+                return $this->response($r, 0, $e->getMessage(), null, new stdClass());
             }
-        }else{
-            return $this->response(0,'Email tidak terdaftar! Mohon register dengan email ini',null,new stdClass());
+        } else {
+            return $this->response($r, 0, 'Email tidak terdaftar! Mohon register dengan email ini', null, new stdClass());
         }
     }
 
@@ -225,9 +218,9 @@ class oauthandroid extends Controller
             }
             $data->devicetoken = $r->deviceToken;
             $data->save();
-            return $this->response(1, '', $apiKey,new stdClass());
+            return $this->response($r, 1, '', $apiKey, new stdClass());
         } else {
-            return $this->response(-1, 'Token Expire',null, new stdClass());
+            return $this->response($r, -1, 'Token Expire', null, new stdClass());
         }
     }
 }

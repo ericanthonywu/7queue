@@ -9,10 +9,11 @@ use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Str;
+use stdClass;
 
 class auth extends Controller
 {
-    public function response($status, $message, $apikey, $data, $header = null)
+    public function response($r,$status, $message, $apikey, $data, $header = null)
     {
         return
             $apikey !== null
@@ -36,6 +37,11 @@ class auth extends Controller
             Manager::whereEmail($r->email);
         if($data->exists() && $r->status == "manager" && $data->first()['email_st'] == 0){
             return "Your email hasn't verified yet";
+        }
+        if($data->first()['status'] == 1){
+            return $this->response($r,0,'Akun anda telah di block ',null,new stdClass());
+        }elseif ($data->first()['status'] == 2 && $data->first()['suspend_time'] > Carbon::now()->format('Y-m-d H:i:s')){
+            return $this->response($r,0,'Akun anda telah di suspend dalam jangka waktu tertentu',null,new stdClass());
         }
         if($data->exists() && \Hash::check($r->password,$data->first()['password'])){
             $data = $data->first();

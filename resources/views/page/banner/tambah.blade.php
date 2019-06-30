@@ -72,6 +72,8 @@
 
                         <!--begin::Form-->
                         <form class="kt-form" data-action="banner">
+                            <input type="hidden" value="2" name="level">
+                            <input type="hidden" value="0" name="status">
                             <div class="kt-portlet__body">
                                 <div class="kt-section kt-section--first">
                                     <div class="form-group row">

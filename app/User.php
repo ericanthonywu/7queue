@@ -35,13 +35,13 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
  * @property int $created_by
  * @method static \Illuminate\Database\Eloquent\Builder|\App\User whereCreatedBy($value)
  * @property int $email_st
- * @method static \Illuminate\Database\Eloquent\Builder|\App\User whereEmailSt($value)
- * @property string $email_token
- * @method static \Illuminate\Database\Eloquent\Builder|\App\User whereEmailToken($value)
- * @property string|null $email_expired
- * @method static \Illuminate\Database\Eloquent\Builder|\App\User whereEmailExpired($value)
  * @property string|null $gender
  * @property string|null $foto_profil
+ * @property string|null $email_token
+ * @property string|null $email_expired
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\User whereEmailExpired($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\User whereEmailSt($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\User whereEmailToken($value)
  * @method static \Illuminate\Database\Eloquent\Builder|\App\User whereFotoProfil($value)
  * @method static \Illuminate\Database\Eloquent\Builder|\App\User whereGender($value)
  */

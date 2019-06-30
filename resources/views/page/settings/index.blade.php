@@ -63,43 +63,41 @@
                         <div class="kt-portlet__head">
                             <div class="kt-portlet__head-label">
                                 <h3 class="kt-portlet__head-title">
-                                    Form Setting
+                                    Form Settings
                                 </h3>
                             </div>
                         </div>
 
                         <!--begin::Form-->
-                        <form class="kt-form" data-action="setting">
-                            <input type="hidden" value="2" name="level">
-                            <input type="hidden" value="0" name="status">
+                        <form class="kt-form" data-action="settings">
                             <div class="kt-portlet__body">
                                 <div class="kt-section kt-section--first">
                                     <div class="form-group row">
-                                        <label class="col-lg-3 col-form-label">Username:</label>
+                                        <label class="col-lg-3 col-form-label">No Telp :</label>
                                         <div class="col-lg-6">
-                                            <input type="text" class="form-control" name="username" placeholder="Masukkan Username Admin" required>
-                                            <span class="form-text text-muted">Masukkan Username</span>
+                                            <input type="text" class="form-control number" value="{{$data['notelp']}}" name="notelp" placeholder="Masukkan No Telp Perusahaan">
+                                            <span class="form-text text-muted">Masukkan No Telp</span>
                                         </div>
                                     </div>
                                     <div class="form-group row">
-                                        <label class="col-lg-3 col-form-label">Nickname:</label>
+                                        <label class="col-lg-3 col-form-label">Email :</label>
                                         <div class="col-lg-6">
-                                            <input type="text" class="form-control" name="name" placeholder="Masukkan Nickname Admin" required>
-                                            <span class="form-text text-muted">Masukkan Nickname</span>
-                                        </div>
-                                    </div>
-                                    <div class="form-group row">
-                                        <label class="col-lg-3 col-form-label">Email:</label>
-                                        <div class="col-lg-6">
-                                            <input type="email" aria-describedby="emailHelp" class="form-control" name="email" placeholder="Masukkan Email Admin" required>
+                                            <input type="email" aria-describedby="emailHelp" value="{{$data['email']}}" class="form-control" name="email" placeholder="Masukkan Email Perusahaan">
                                             <span class="form-text text-muted">Masukkan Email</span>
                                         </div>
                                     </div>
                                     <div class="form-group row">
-                                        <label class="col-lg-3 col-form-label">Password:</label>
+                                        <label class="col-lg-3 col-form-label">Privacy & Policy :</label>
                                         <div class="col-lg-6">
-                                            <input type="password" class="form-control" name="password" placeholder="Masukkan Password Admin" required>
-                                            <span class="form-text text-muted">Masukkan Password</span>
+                                            <textarea class="form-control summernote" name="privacy_policy" placeholder="Masukkan Privacy & Policy Perusahaan">{{$data['privacy_policy']}}</textarea>
+                                            <span class="form-text text-muted">Masukkan Privacy & Policy</span>
+                                        </div>
+                                    </div>
+                                    <div class="form-group row">
+                                        <label class="col-lg-3 col-form-label">FAQ :</label>
+                                        <div class="col-lg-6">
+                                            <input type="text" class="form-control" name="faq" value="{{$data['faq']}}" placeholder="Masukkan FAQ Perusahaan">
+                                            <span class="form-text text-muted">Masukkan FAQ</span>
                                         </div>
                                     </div>
                                 </div>

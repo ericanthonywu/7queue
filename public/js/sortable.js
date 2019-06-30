@@ -73,7 +73,39 @@ $("#tblbanner").sortable({
         })
     },
 });
-let oldList,newList,item;
+let oldList, newList, item;
+let idglobal = '';
+$(document).on('click', '.merchant_list', function () {
+    const id = $(this).data('id');
+    idglobal = id;
+    $.ajax({
+        url: `${base_url}get_merchant_list`,
+        data: {
+            id: id
+        },
+        success: res => {
+            $('span#nama_trending').text(res[0].kategori);
+            const listmerchant = res[1];
+            let html_list_merchant = '';
+            listmerchant.forEach(data => {
+                html_list_merchant += `<div class="kt-widget6__item" style="cursor: pointer;" data-trending="${id}" data-merchant="${data.merchant}">
+                                                <span>${data.merchant_name}</span>
+                                                <span>${data.date_added}</span>
+                                            </div>`
+            });
+            $('#list_merchant').html(html_list_merchant);
+            let html_list_notmerchant = '';
+            const listnotmerchant = res[2];
+            listnotmerchant.forEach(datas => {
+                html_list_notmerchant += `<div class="kt-widget6__item" style="cursor: pointer;" data-trending="${id}" data-merchant="${datas.id}">
+                                                <span>${datas.nickname}</span>
+                                                <span>${datas.jumlah_trending}</span>
+                                            </div>`
+            });
+            $('#list_notmerchant').html(html_list_notmerchant)
+        }
+    })
+})
 $('.dragdropmerchant').sortable({
     items: '.kt-widget6__item',
     // handle: '.kt-widget6__item',
@@ -83,22 +115,67 @@ $('.dragdropmerchant').sortable({
     tolerance: "pointer",
     helper: "clone",
     revert: 250,
-    connectWith:'.dragdropmerchant',
-    start: (e,ui) => {
-        item = ui.item[0];
+    connectWith: '.dragdropmerchant',
+    start: (e, ui) => {
+        item = ui.item;
         newList = oldList = ui.item.parent();
     },
     stop: e => {
-        $.ajax({
-            url:`${base_url}merchant/${newList.attr('id') === ""}`,
-            data:{
-                id:item.dataset.id,
-            }
-        })
-        console.log(item.dataset.id);
+        let progress_table = 0;
+        if(oldList.attr('id') !== newList.attr('id')) {
+            $.ajax({
+                url: `${base_url}trending/${newList.attr('id')}`,
+                data: {
+                    merchant: item[0].dataset.merchant,
+                    trending: item[0].dataset.trending,
+                },
+                xhr: () => {
+                    var xhr = $.ajaxSettings.xhr();
+                    xhr.upload.onprogress = e => {
+                        progress_table = e.loaded / e.total * 100;
+                        $('#modalprogress').css('width', e.loaded / e.total * 100 + '%').text(e.loaded / e.total * 100 + '%');
+                    };
+                    return xhr;
+                },
+                success: res => {
+                    if(res){
+                        toastr.error(res,"Error");
+                    }else{
+                        const id = idglobal;
+                        let progress = 0;
+                        $.ajax({
+                            url: `${base_url}get_merchant_list`,
+                            data: {
+                                id: id
+                            },
+                            success: res => {
+                                const listmerchant = res[1];
+                                let html_list_merchant = '';
+                                listmerchant.forEach(data => {
+                                    html_list_merchant += `<div class="kt-widget6__item" style="cursor: pointer;" data-trending="${id}" data-merchant="${data.merchant}">
+                                                <span>${data.merchant_name}</span>
+                                                <span>${data.date_added}</span>
+                                            </div>`
+                                });
+                                $('#list_merchant').html(html_list_merchant);
+                                let html_list_notmerchant = '';
+                                const listnotmerchant = res[2];
+                                listnotmerchant.forEach(datas => {
+                                    html_list_notmerchant += `<div class="kt-widget6__item" style="cursor: pointer;" data-trending="${id}" data-merchant="${datas.id}">
+                                                <span>${datas.nickname}</span>
+                                                <span>${datas.jumlah_trending}</span>
+                                            </div>`
+                                });
+                                $('#list_notmerchant').html(html_list_notmerchant)
+                            }
+                        })
+                    }
+                }
+            });
+        }
         // alert("Moved " + item.children('span:first-child').text() + " from " + oldList.attr('id') + " to " + newList.attr('id'))
     },
     change: (e, ui) => {
-        if(ui.sender) newList = ui.placeholder.parent();
+        if (ui.sender) newList = ui.placeholder.parent();
     },
 }).disableSelection();

@@ -62,22 +62,12 @@
                     <div class="kt-portlet kt-portlet--mobile">
                         <div class="kt-portlet__head kt-portlet__head--lg">
                             <div class="kt-portlet__head-label">
-			<span class="kt-portlet__head-icon">
-				<i class="kt-font-brand flaticon2-line-chart"></i>
-			</span>
+                                <span class="kt-portlet__head-icon">
+                                    <i class="kt-font-brand flaticon2-line-chart"></i>
+                                </span>
                                 <h3 class="kt-portlet__head-title">
                                     List Customer
                                 </h3>
-                            </div>
-                            <div class="kt-portlet__head-toolbar">
-                                <div class="kt-portlet__head-wrapper">
-                                    <div class="kt-portlet__head-actions">
-                                        <a href="{{url('/customer/tambah')}}" class="btn btn-brand btn-elevate btn-icon-sm">
-                                            <i class="la la-plus"></i>
-                                            Tambah Customer
-                                        </a>
-                                    </div>
-                                </div>
                             </div>
                         </div>
 
@@ -103,7 +93,7 @@
                         </div>
                         <div class="kt-portlet__body kt-portlet__body--fit">
                             <!--begin: Datatable -->
-                            <div class="kt-datatable" id="tblcustomer"></div>
+                            <div class="kt-datatable" id="tblusers"></div>
                             <!--end: Datatable -->
                         </div>
                     </div>

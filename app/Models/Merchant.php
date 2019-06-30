@@ -2,12 +2,11 @@
 
 /**
  * Created by Reliese Model.
- * Date: Thu, 27 Jun 2019 09:00:46 +0000.
+ * Date: Sun, 30 Jun 2019 19:56:56 +0700.
  */
 
 namespace App\Models;
 
-use Carbon\Carbon;
 use Reliese\Database\Eloquent\Model as Eloquent;
 
 /**
@@ -47,10 +46,6 @@ class Merchant extends Eloquent
 		'status' => 'int',
 		'created_by' => 'int'
 	];
-    public function getCreatedAtAttribute($date)
-    {
-        return Carbon::createFromFormat('Y-m-d H:i:s', $date)->format('D, d M Y H:i');
-    }
 
 	protected $hidden = [
 		'password'

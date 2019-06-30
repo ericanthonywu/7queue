@@ -49,6 +49,7 @@ Route::middleware('globaladmincheck')->group(function (){
         Route::post('/action/update/trending','crud@edittrending');
         Route::get('/trending/edit/{id}','page@edittrending');
         Route::view('/trending','page.trending.index');
+        Route::post('/trending/{action}','crud@addmerchantrending');
         Route::post('/table/trending','table@trending');
         Route::post('/get_merchant_list','table@get_merchant_list');
     });
@@ -98,7 +99,8 @@ Route::middleware('globaladmincheck')->group(function (){
         Route::post('/action/products','crud@tambahproducts');
         Route::post('/action/update/products','crud@editproducts');
     });
-    Route::view('/settings','page.settings.index');
+    Route::get('/settings','page@settings');
+    Route::post('/action/settings','crud@settings');
 
     Route::post('/toggleuser','crud@toggleuser');
     Route::get('/getkategori','page@kategori');

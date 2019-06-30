@@ -30,16 +30,16 @@ $(document).ready(function () {
                     url: `${base_table}manager`,
                     // sample custom headers
                     headers: {'x-my-custokt-header': 'some value', 'x-test-header': 'the value'},
-                    // map: function (raw) {
-                    //     // sample data mapping
-                    //     return typeof raw.data !== 'undefined' ? raw.data : raw;
-                    // },
+                    map: raw => {
+                        // sample data mapping
+                        return typeof raw.data !== 'undefined' ? raw.data : raw;
+                    },
                 },
             },
             pageSize: 10,
-            // serverPaging: true,
-            // serverFiltering: true,
-            // serverSorting: true,
+            serverPaging: true,
+            serverFiltering: true,
+            serverSorting: true,
         },
 
         // layout definition
@@ -69,8 +69,8 @@ $(document).ready(function () {
                 textAlign: 'center',
             },
             {
-                field: 'name',
-                title: 'Name',
+                field: 'nickname',
+                title: 'Nickname',
             },
             {
                 field: 'email',
@@ -98,18 +98,18 @@ $(document).ready(function () {
                             </a>
 						  	<div class="dropdown-menu dropdown-menu-right">
 						    	${t.status === 1 ?
-                        `<button class="dropdown-item toggleuser" data-status="0" data-nama="${t.username}" data-action="block" data-id="${t.id}" data-table="admin"><i class="fa fa-user-slash"></i> unBlock </button>`
-                        : `<button class="dropdown-item toggleuser" data-status="1" data-nama="${t.username}" data-action="block" data-id="${t.id}" data-table="admin"><i class="fa fa-user-slash"></i> Block </button>`}
+                        `<button class="dropdown-item toggleuser" data-status="0" data-nama="${t.nickname}" data-action="block" data-id="${t.id}" data-table="manager"><i class="fa fa-user-slash"></i> unBlock </button>`
+                        : `<button class="dropdown-item toggleuser" data-status="1" data-nama="${t.nickname}" data-action="block" data-id="${t.id}" data-table="manager"><i class="fa fa-user-slash"></i> Block </button>`}
 						    	${t.status === 2 ?
                         ` 
                                         <button class="dropdown-item toggleuser" 
-                                                    data-status="0" data-nama="${t.username}" data-action="suspend" data-table="admin" 
+                                                    data-status="0" data-nama="${t.nickname}" data-action="suspend" data-table="manager" 
                                                     data-id="${t.id}" ><i class="fa fa-user-check"></i> Unsuspend </button>
                                     `
                         :
                         `
                                         <button class="dropdown-item toggleuser" 
-                                                    data-status="2" data-nama="${t.username}" data-action="suspend" data-table="admin" 
+                                                    data-status="2" data-nama="${t.nickname}" data-action="suspend" data-table="manager" 
                                                     data-id="${t.id}" ><i class="fa fa-user-times"></i> Suspend </button>`
                         }
 						  	</div>
@@ -233,7 +233,7 @@ $(document).ready(function () {
             }],
 
     });
-    let customers = $('#tblcustomers').KTDatatable({
+    let users = $('#tblusers').KTDatatable({
         // datasource definition
         data: {
             type: 'remote',
@@ -303,32 +303,29 @@ $(document).ready(function () {
                 template: (t, e, a) => {
                     return `
                     ${
-                        t.status === 1 ? `
-						<div class="dropdown">
+                        `
+                        <div class="dropdown">
 							<a href="javascript:;" class="btn btn-sm btn-clean btn-icon btn-icon-sm" data-toggle="dropdown">
                                 <i class="flaticon2-gear"></i>
                             </a>
 						  	<div class="dropdown-menu dropdown-menu-right">
-                             <a class="dropdown-item" href="${base_url}merchants/edit/${t.id}">
-                                        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1" class="kt-svg-icon">
-                                            <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-                                                <rect id="bound" x="0" y="0" width="24" height="24"/>
-                                                <path d="M8,17.9148182 L8,5.96685884 C8,5.56391781 8.16211443,5.17792052 8.44982609,4.89581508 L10.965708,2.42895648 C11.5426798,1.86322723 12.4640974,1.85620921 13.0496196,2.41308426 L15.5337377,4.77566479 C15.8314604,5.0588212 16,5.45170806 16,5.86258077 L16,17.9148182 C16,18.7432453 15.3284271,19.4148182 14.5,19.4148182 L9.5,19.4148182 C8.67157288,19.4148182 8,18.7432453 8,17.9148182 Z" id="Path-11" fill="#000000" fill-rule="nonzero" transform="translate(12.000000, 10.707409) rotate(-135.000000) translate(-12.000000, -10.707409) "/>
-                                                <rect id="Rectangle" fill="#000000" opacity="0.3" x="5" y="20" width="15" height="2" rx="1"/>
-                                            </g>
-                                        </svg> Edit </a>
-                               <a class="dropdown-item btn-del" data-table="merchants" data-id="${t.id}" href="#">
-                                        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1" class="kt-svg-icon">
-                                            <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-                                                <rect id="bound" x="0" y="0" width="24" height="24"/>
-                                                <path d="M6,8 L6,20.5 C6,21.3284271 6.67157288,22 7.5,22 L16.5,22 C17.3284271,22 18,21.3284271 18,20.5 L18,8 L6,8 Z" id="round" fill="#000000" fill-rule="nonzero"/>
-                                                <path d="M14,4.5 L14,4 C14,3.44771525 13.5522847,3 13,3 L11,3 C10.4477153,3 10,3.44771525 10,4 L10,4.5 L5.5,4.5 C5.22385763,4.5 5,4.72385763 5,5 L5,5.5 C5,5.77614237 5.22385763,6 5.5,6 L18.5,6 C18.7761424,6 19,5.77614237 19,5.5 L19,5 C19,4.72385763 18.7761424,4.5 18.5,4.5 L14,4.5 Z" id="Shape" fill="#000000" opacity="0.3"/>
-                                            </g>
-                                        </svg> Delete </a>          
-                                </div>
-                            </div>
-                                ` :
-                            ""
+						    	${
+                            t.status === 1 ?
+                                `<button class="dropdown-item toggleuser" data-status="0" data-nama="${t.nickname}" data-action="block" data-id="${t.id}" data-table="users"><i class="fa fa-user-slash"></i> unBlock </button>`
+                                : `<button class = "dropdown-item toggleuser" data-status="1" data-nama="${t.nickname}" data-action="block" data-id="${t.id}" data-table="users"><i class="fa fa-user-slash"></i> Block </button>`}
+						    	${t.status === 2 ?
+                            `
+                        <button class="dropdown-item toggleuser" data-status="0" data-nama="${t.nickname}" data-action="suspend" data-table="users" 
+                        data-id="${t.id}" ><i class="fa fa-user-check"></i> Unsuspend </button>
+                        `
+                            :
+                            `
+                            <button class="dropdown-item toggleuser" 
+                                        data-status="2" data-nama="${t.nickname}" data-action="suspend" data-table="users" 
+                                        data-id="${t.id}" ><i class="fa fa-user-times"></i> Suspend </button>`
+                            }
+                                              </div>
+                                        </div>`
                         }
 					`
                 },
@@ -1348,17 +1345,18 @@ $(document).ready(function () {
         $('#idkategori').val(id);
         $('.btn_kategori').val('Edit Kategori')
     });
-    $(document).on('click', '.toggleuser', function () {
+    $(document).on('click', '.toggleuser', function (e) {
         const id = $(this).data('id');
         const status = $(this).data('status');
         const action = $(this).data('action');
         const nama = $(this).data('nama');
+        const table = $(this).data('table');
 
         switch (status) {
             case 1:
                 swal.fire({
-                    title: `Apakah anda yakin akan meng${!status ? "un" : ""}${action} manager ${nama}?`,
-                    text: `Anda bisa meng${status ? "un" : ""}${action} manager ${nama} kembali`,
+                    title: `Apakah anda yakin akan meng${!status ? "un" : ""}${action} ${table.charAt(0).toUpperCase() + table.slice(1)} ${nama}?`,
+                    text: `Anda bisa meng${status ? "un" : ""}${action} ${table.charAt(0).toUpperCase() + table.slice(1)} ${nama} kembali`,
                     type: 'warning',
                     showCancelButton: true,
                     confirmButtonText: `Ya, ${!status ? "un" : ""}${action} saja!`,
@@ -1370,15 +1368,17 @@ $(document).ready(function () {
                             url: `${base_url}toggleuser`,
                             data: {
                                 id: id,
-                                status: status
+                                status: status,
+                                suspend_time: null,
+                                table: table
                             },
                             success: res => {
                                 swal.fire(
-                                    `Sukses! Manager ${nama} telah di ${!status ? "un" : ""}${action}`,
+                                    `Sukses! ${table.charAt(0).toUpperCase() + table.slice(1)} ${nama} telah di ${!status ? "un" : ""}${action}`,
                                     '',
                                     'success'
                                 );
-                                manager.reload()
+                                $(`#tbl${table}`).KTDatatable().reload()
                             }
                         })
                     }
@@ -1386,8 +1386,8 @@ $(document).ready(function () {
                 break;
             case 2:
                 swal.fire({
-                    title: `Apakah anda yakin akan meng${!status ? "un" : ""}${action} manager ${nama}?`,
-                    text: `Anda bisa meng${status ? "un" : ""}${action} manager ${nama} kembali`,
+                    title: `Apakah anda yakin akan meng${!status ? "un" : ""}${action} ${table.charAt(0).toUpperCase() + table.slice(1)} ${nama}?`,
+                    text: `Anda bisa meng${status ? "un" : ""}${action} ${table.charAt(0).toUpperCase() + table.slice(1)} ${nama} kembali`,
                     type: 'warning',
                     // html: '<input id="datepicker" class="form-control" readonly>',
                     input: 'text',
@@ -1427,15 +1427,16 @@ $(document).ready(function () {
                             data: {
                                 id: id,
                                 status: status,
-                                suspend_time: $('#datepicker').val()
+                                suspend_time: $('#datepicker').val(),
+                                table: table
                             },
                             success: res => {
                                 swal.fire(
-                                    `Sukses! Manager ${nama} telah di ${!status ? "un" : ""}${action}`,
+                                    `Sukses! ${table.charAt(0).toUpperCase() + table.slice(1)} ${nama} telah di ${!status ? "un" : ""}${action}`,
                                     '',
                                     'success'
                                 );
-                                manager.reload()
+                                $(`#tbl${table}`).KTDatatable().reload()
                             }
                         })
                     }
@@ -1447,14 +1448,16 @@ $(document).ready(function () {
                     data: {
                         id: id,
                         status: status,
+                        suspend_time: null,
+                        table: table
                     },
                     success: res => {
                         swal.fire(
-                            `Sukses! Manager ${nama} telah di ${!status ? "un" : ""}${action}`,
+                            `Sukses! ${table.charAt(0).toUpperCase() + table.slice(1)} ${nama} telah di ${!status ? "un" : ""}${action}`,
                             '',
                             'success'
                         );
-                        manager.reload()
+                        $(`#tbl${table}`).KTDatatable().reload()
                     }
                 })
 
@@ -1462,34 +1465,4 @@ $(document).ready(function () {
 
 
     });
-    $(document).on('click', '.merchant_list', function () {
-        const id = $(this).data('id');
-        $.ajax({
-            url: `${base_url}get_merchant_list`,
-            data: {
-                id: id
-            },
-            success: res => {
-                $('#nama_trending').text(res[0].kategori);
-                const listmerchant = res[1];
-                let html_list_merchant = '';
-                listmerchant.forEach(data => {
-                    html_list_merchant += `<div class="kt-widget6__item" style="cursor: pointer;" data-id="${data.id}">
-                                                <span>${data.merchant_name}</span>
-                                                <span>${data.date_added}</span>
-                                            </div>`
-                });
-                $('#list_merchant').html(html_list_merchant);
-                let html_list_notmerchant = '';
-                const listnotmerchant = res[2];
-                listnotmerchant.forEach(datas => {
-                    html_list_notmerchant += `<div class="kt-widget6__item" style="cursor: pointer;" data-id="${datas.id}">
-                                                <span>${datas.nickname}</span>
-                                                <span>${datas.jumlah_trending}</span>
-                                            </div>`
-                })
-                $('#list_notmerchants').html(html_list_notmerchant)
-            }
-        })
-    })
 });

@@ -145,6 +145,11 @@
                             </div>
                             <div class="modal-body">
                                 <div class="row">
+                                    <div class="col-lg-12">
+                                        <div class="progress">
+                                            <div class="progress-bar" id="modalprogress" role="progressbar" style="width: 0%;" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100">0%</div>
+                                        </div>
+                                    </div>
                                     <div class="col-lg-6">
                                         <div class="kt-portlet kt-portlet--height-fluid">
                                             <div class="kt-portlet__head">
@@ -155,6 +160,7 @@
                                                 </div>
                                             </div>
                                             <input type="search" class="form-control" placeholder="Search Merchants...">
+
                                             <div class="kt-portlet__body">
                                                 <div class="kt-widget6">
                                                     <div class="kt-widget6__head">
@@ -163,10 +169,11 @@
                                                             <span>Tanggal Di Tambahkan </span>
                                                         </div>
                                                     </div>
-                                                    <div class="">
-                                                        <div class="kt-widget6__body dragdropmerchant" style="min-height: 200px;" id="list_merchant">
+                                                    <div class="kt-widget6__body dragdropmerchant" style="min-height: 200px;" id="list_merchant">
 
-                                                        </div>
+                                                    </div>
+                                                    <div class="kt-widget6__foot">
+
                                                     </div>
                                                 </div>
                                             </div>
@@ -190,14 +197,12 @@
                                                             <span>Jumlah Trending</span>
                                                         </div>
                                                     </div>
-                                                    <div class="">
-                                                        <div class="kt-widget6__body dragdropmerchant" style="min-height: 200px;" id="list_notmerchants">
+                                                    <div class="kt-widget6__body dragdropmerchant" style="min-height: 200px;" id="list_notmerchant">
 
-                                                        </div>
                                                     </div>
 {{--                                                    <div class="kt-widget6__foot">--}}
-{{--                                                        <div class="kt-widget6__action kt-align-right">--}}
-{{--                                                            <a href="#" class="btn btn-label-brand btn-sm btn-bold">Save</a>--}}
+{{--                                                        <div class="progress">--}}
+{{--                                                            <div class="progress-bar" role="progressbar" style="width: 25%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">25%</div>--}}
 {{--                                                        </div>--}}
 {{--                                                    </div>--}}
                                                 </div>

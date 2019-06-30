@@ -7,6 +7,7 @@ use App\Models\Banner;
 use App\Models\KategoriProduk;
 use App\Models\Merchant;
 use App\Models\Product;
+use App\Models\Setting;
 use Illuminate\Http\Request;
 
 class page extends Controller
@@ -29,13 +30,13 @@ class page extends Controller
         $data = Admin::find($id);
         return $data ? view('page.admin.edit',[
             "admin"=>$data
-        ]) : redirect()->back();
+        ]) : response()->view('error.404',[],404);
     }
     function editmerchants($id){
         $data = Merchant::find($id);
         return $data ? view('page.merchants.edit',[
             "merchants"=>$data
-        ]) : redirect()->back();
+        ]) : response()->view('error.404',[],404);
     }
     function kategori(){
         return response()->json(KategoriProduk::all());
@@ -44,7 +45,7 @@ class page extends Controller
         $data = Banner::find($id);
         return $data ? view('page.banner.edit',[
             "data"=>$data
-        ]) : redirect()->back();
+        ]) : response()->view('error.404',[],404);
     }
     function tambahproducts(){
         return view('page.products.tambah',[
@@ -56,6 +57,12 @@ class page extends Controller
         return $data ? view('page.products.edit',[
             "kategori"=>KategoriProduk::all(),
             "data"=>$data
-        ]) : redirect()->back();
+        ]) : response()->view('error.404',[],404);
+    }
+    function settings(){
+        $data = Setting::first();
+        return view('page.settings.index',[
+            "data"=> $data ? $data : []
+        ]);
     }
 }

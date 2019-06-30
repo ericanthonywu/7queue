@@ -7,8 +7,10 @@ use App\Models\Banner;
 use App\Models\KategoriProduk;
 use App\Models\Merchant;
 use App\Models\Product;
+use App\Models\Setting;
 use App\Models\Trending;
 use App\Models\TrendingCategory;
+use App\Models\TrendingMerchant;
 use File;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
@@ -81,7 +83,7 @@ class crud extends Controller
         ]);
     }
     function toggleuser(Request $r){
-        Admin::find($r->id)->update([
+        DB::table($r->table)->where('id',$r->id)->update([
             "status"=>$r->status,
             "suspend_time"=>Carbon::parse($r->suspend_time)->format('Y-m-d h:i:s')
         ]);
@@ -196,5 +198,39 @@ class crud extends Controller
     }
     function tambahtrending(Request $r){
         TrendingCategory::create($r->all());
+    }
+    function addmerchantrending(Request $r,$action){
+        switch ($action){
+            case "list_merchant":
+                $cek = TrendingMerchant::where([
+                    "merchant"=>$r->merchant,
+                    "trending"=>$r->trending
+                ])->exists();
+                if(!$cek) {
+                    TrendingMerchant::create([
+                        "merchant" => $r->merchant,
+                        "trending" => $r->trending
+                    ]);
+                }else{
+                    return "merchant $r->merchant sudah ada di trending $r->trending";
+                }
+                break;
+            case "list_notmerchant":
+                TrendingMerchant::where([
+                    "merchant"=>$r->merchant,
+                    "trending"=>$r->trending
+                ])->delete();
+                break;
+            default:
+                return response()->view('error.404',[],404);
+        }
+    }
+    function settings(Request $r){
+        $check = Setting::find(1);
+        if($check){
+            $check->update($r->all());
+        }else{
+            Setting::create($r->all());
+        }
     }
 }

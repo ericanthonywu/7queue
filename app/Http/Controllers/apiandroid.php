@@ -2,34 +2,61 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Banner;
 use App\Models\Merchant;
+use App\Models\Setting;
 use App\Models\Token;
+use App\Models\Trending;
+use App\Models\TrendingCategory;
+use App\Models\TrendingMerchant;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
+use stdClass;
 
 class apiandroid extends Controller
 {
+    function home(Request $r)
+    {
+        $trending = TrendingCategory::all();
+        foreach ($trending as $k => $v) {
+            $data = TrendingMerchant::whereTrending($v['id'])->select('merchant')->distinct()->inRandomOrder()->limit(10)->get();
+            $arr = [];
+            foreach ($data as $key => $val) {
+                array_push($arr, Merchant::find($val['merchant']));
+            }
+            $trending[$k]['merchant_name'] = $arr;
+        }
+        $banner = Banner::orderBy('order')->get();
+        foreach ($banner as $k => $v) {
+            $banner[$k]['gambar'] = url("uploads/banner/$v[file]");
+            unset($banner[$k]['file']);
+        }
+        return $this->response($r, 1, 'Data Home', [
+            "banner" => $banner,
+            "trending" => $trending
+        ]);
+    }
+
     function response($r, $status, $message, $data, $header = null)
     {
-        $newtoken = bcrypt(Str::random(100).time());
-            $token = Token::whereTokenNew($r->apiKey)->orWhere('token_old',$r->apiKey)->first();
-            $token->token_new = $newtoken;
-            $token->save();
-            return response()->json([
-                "status" => $status,
-                "message" => $message,
-                "apiKey" => $newtoken,
-                "debug" => $r->all(),
-                "data" => $data
-            ], $header ? (int)$header : 200);
+        $newtoken = bcrypt(Str::random(100) . time());
+        $token = Token::whereTokenNew($r->apiKey)->orWhere('token_old', $r->apiKey)->first();
+        $token->token_new = $newtoken;
+        $token->save();
+        return response()->json([
+            "status" => $status,
+            "message" => $message,
+            "apiKey" => $newtoken,
+            "debug" => $r->all(),
+            "data" => $data
+        ], !empty($header) ? (int)$header : 200);
     }
-    function home(Request $r){
 
-    }
-    function nearestmerchant(Request $r){
-        if(empty($r->lat) || empty($r->long)){
-            return $this->response($r,0,"GPS belum di nyalakan",new \stdClass());
+    function nearestmerchant(Request $r)
+    {
+        if (empty($r->lat) || empty($r->long)) {
+            return $this->response($r, 0, "GPS belum di nyalakan", new stdClass());
         }
         $data = Merchant::selectRaw("(
                 6371 * acos (
@@ -40,10 +67,15 @@ class apiandroid extends Controller
                                 * sin( radians( lat ) )
                 )
             ) AS distance,nickname")->orderBy('distance')->limit(10)->get();
-        foreach ($data as $k=>$v){
+        foreach ($data as $k => $v) {
             $data[$k]['jarak'] = round($v['distance']);
             unset($data[$k]['distance']);
         }
-        return $this->response($r,1,"List Merchant Terdekat",$data);
+        return $this->response($r, 1, "List Merchant Terdekat", $data);
+    }
+
+    function settings(Request $r)
+    {
+        return $this->response($r, 1, "Data Settings 7Queue", Setting::first());
     }
 }

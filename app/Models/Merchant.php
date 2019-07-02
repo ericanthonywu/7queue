@@ -2,7 +2,7 @@
 
 /**
  * Created by Reliese Model.
- * Date: Sun, 30 Jun 2019 19:56:56 +0700.
+ * Date: Tue, 02 Jul 2019 16:47:06 +0700.
  */
 
 namespace App\Models;
@@ -19,6 +19,7 @@ use Reliese\Database\Eloquent\Model as Eloquent;
  * @property string $lat
  * @property string $long
  * @property string $foto
+ * @property string $lokasi
  * @property int $status
  * @property int $created_by
  * @property \Carbon\Carbon $created_at
@@ -33,6 +34,7 @@ use Reliese\Database\Eloquent\Model as Eloquent;
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Merchant whereFoto($value)
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Merchant whereId($value)
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Merchant whereLat($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Merchant whereLokasi($value)
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Merchant whereLong($value)
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Merchant whereNickname($value)
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Merchant wherePassword($value)
@@ -58,6 +60,7 @@ class Merchant extends Eloquent
 		'lat',
 		'long',
 		'foto',
+		'lokasi',
 		'status',
 		'created_by'
 	];

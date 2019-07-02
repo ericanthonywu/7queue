@@ -118,6 +118,7 @@ $(document).ready(function () {
                 },
             }],
 
+
     });
     let merchants = $('#tblmerchants').KTDatatable({
         // datasource definition
@@ -128,16 +129,16 @@ $(document).ready(function () {
                     url: `${base_table}merchants`,
                     // sample custom headers
                     // headers: {'x-my-custokt-header': 'some value', 'x-test-header': 'the value'},
-                    // map: function (raw) {
-                    //     // sample data mapping
-                    //     return typeof raw.data !== 'undefined' ? raw.data : raw;
-                    // },
+                    map: raw => {
+                        // sample data mapping
+                        return typeof raw.data !== 'undefined' ? raw.data : raw;
+                    },
                 },
             },
             pageSize: 10,
-            // serverPaging: true,
-            // serverFiltering: true,
-            // serverSorting: true,
+            serverPaging: true,
+            serverFiltering: true,
+            serverSorting: true,
         },
 
         // layout definition

@@ -21,7 +21,7 @@ class oauthandroid extends Controller
 //    public function log($desc,$apikey)
 //    {
 //        $user = '';
-//        if($apikey !== null) {
+//        if($apikey !== [,null) {
 //            $datatoken = Token::where("token_old", $apikey)->orWhere('token_new', $apikey)->first();
 //            $marketing = User::find($datatoken['user'])['name'];
 //
@@ -55,16 +55,16 @@ class oauthandroid extends Controller
             return false;
         }
     }
-    public function response($r,$status, $message, $data, $header = null)
+    public function response($r,$status, $message, $data,$apikey, $header = null)
     {
         return
             response()->json([
                 "status" => $status,
                 "message" => $message,
-                "apiKey" => "",
+                "apiKey" => $apikey,
                 "debug"=>$r->all(),
-                "data" => $data
-            ], $header ? (int)$header : 200);
+                "data" => $data == [] ? new stdClass() : $data
+            ], $header !== null ? $header : 200);
     }
 
     function generatetoken($user)
@@ -104,10 +104,10 @@ class oauthandroid extends Controller
             'gender'=> 'required',
         ]);
         if ($validator->fails()) {
-            $this->response($r,0, $validator->fails(), null, new stdClass());
+            $this->response($r,0, $validator->fails(), [],null);
         }
         if(User::whereEmail($r->email)->exists()){
-            return $this->response($r,0, "Email $r->email sudah tersedia", null, new stdClass());
+            return $this->response($r,0, "Email $r->email sudah tersedia", [],null, [],null);
         }
         $input = $r->all();
         if($r->hasFile('foto')) {
@@ -131,7 +131,7 @@ class oauthandroid extends Controller
         });
         $input['email_token'] = $token;
         User::create($input);
-        return $this->response($r,1, "User $r->nickname berhasil register \n cek email anda untuk konfirmasi ", new stdClass());
+        return $this->response($r,1, "User $r->nickname berhasil register \n cek email anda untuk konfirmasi ", [],null);
     }
 
     function login(Request $r)
@@ -141,27 +141,27 @@ class oauthandroid extends Controller
             'password' => 'required',
         ]);
         if ($validator->fails()) {
-            $this->response($r,0, $validator->errors(), new stdClass());
+            $this->response($r,0, $validator->errors(), [],null);
         }
         $data = User::whereEmail($r->email)->first();
         if ($data && Hash::check($r->password, $data['password'])) {
             if($data['email_st'] == 0){
-                return $this->response($r,0,'Email belum di verifikasi!',new stdClass());
+                return $this->response($r,0,'Email belum di verifikasi!',[],null);
             }
             if($data['status'] == 1){
-                return $this->response($r,0,'Akun anda telah di block ',new stdClass());
+                return $this->response($r,0,'Akun anda telah di block ',[],null);
             }elseif ($data['status'] == 2 && $data['suspend_time'] > Carbon::now()->format('Y-m-d H:i:s')){
-                return $this->response($r,0,'Akun anda telah di suspend dalam jangka waktu tertentu',new stdClass());
+                return $this->response($r,0,'Akun anda telah di suspend dalam jangka waktu tertentu',[],null);
             }
             $token = $this->generatetoken($data['id']);
             if ($token) {
-//                $this->log("<b>$r->name</b> (marketing) logged in",null);
-                return $this->response($r,1, 'Berhasil Login',$token,new stdClass());
+//                $this->log("<b>$r->name</b> (marketing) logged in",[,null);
+                return $this->response($r,1, 'Berhasil Login',[],$token);
             } else {
-                return $this->response($r,0, 'User tidak ditemukan', new stdClass());
+                return $this->response($r,0, 'User tidak ditemukan', [],null);
             }
         } else {
-            return $this->response($r,0, 'Unauthorized', new stdClass());
+            return $this->response($r,0, 'Unauthorized', [],null);
         }
     }
 
@@ -169,14 +169,14 @@ class oauthandroid extends Controller
     {
         $datany = Token::where('token_old', $r->apiKey)->orWhere('token_new', $r->apiKey);
 //        $marketing = User::find($datany->first()['user'])['name'];
-//        $this->log("<b>$marketing</b> (marketing) has logged out",null);
+//        $this->log("<b>$marketing</b> (marketing) has logged out",[,null);
         if ($datany->exists()) {
             $data = $datany->first();
             $data->first();
             $data->expire = Carbon::now()->toDateTimeString();
             $data->save();
         }
-        return $this->response($r,1, 'Berhasil Logout', new stdClass());
+        return $this->response($r,1, 'Berhasil Logout', [],null);
     }
     function forgotpassword(Request $r){
         $data = User::where('email',$r->email);
@@ -195,12 +195,12 @@ class oauthandroid extends Controller
                     "email_token"=>$token,
                     "email_expired"=>Carbon::now()->addMinutes(10)
                 ]);
-                return $this->response($r,1,'Kami telah ngirimkan verifikasi ke email anda, mohon di klik agar dapat login kembali',new stdClass());
+                return $this->response($r,1,'Kami telah ngirimkan verifikasi ke email anda, mohon di klik agar dapat login kembali',[],null);
             }catch (Exception $e){
-                return $this->response($r,0,$e->getMessage(),new stdClass());
+                return $this->response($r,0,$e->getMessage(),[],null);
             }
         }else{
-            return $this->response($r,0,'Email tidak terdaftar! Mohon register dengan email ini',new stdClass());
+            return $this->response($r,0,'Email tidak terdaftar! Mohon register dengan email ini',[],null);
         }
     }
 
@@ -219,9 +219,9 @@ class oauthandroid extends Controller
             }
             $data->devicetoken = $r->deviceToken;
             $data->save();
-            return $this->response($r,1, '', $apiKey,new stdClass());
+            return $this->response($r,1, '', $apiKey,[],null);
         } else {
-            return $this->response($r,-1, 'Token Expire', new stdClass());
+            return $this->response($r,-1, 'Token Expire', [],null);
         }
     }
 }

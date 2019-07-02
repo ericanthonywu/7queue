@@ -105,7 +105,7 @@
                                             <input type="hidden" name="lat" id="lat">
                                             <input type="hidden" name="long" id="long">
                                             <div class="input-group-append">
-                                                <input type="text" class="form-control" id="search_map"
+                                                <input type="text" name="lokasi" class="form-control" id="search_map"
                                                        placeholder="address...">
                                                 <button type="button" class="btn btn-primary" id="btn_search_map"><i
                                                             class="fa fa-search"></i></button>

@@ -53,11 +53,18 @@ class table extends Controller
         ]);
     }
 
-    function merchants()
+    function merchants(Request $r)
     {
-        $data = Session::get('level') == 1
-            ? Merchant::whereCreatedBy(Session::get('id'))->get()
-            : Merchant::all();
+        $limit = empty($r->pagination['perpage']) ? 10 : (int)$r->pagination['perpage'];
+//        $limit = (int) $r->pagination['perpage'];
+        $current_paginate = (int)$r->pagination['page'] == 1 ? 0 : (int)$r->pagination['page'];
+        $offset = $limit * $current_paginate;
+        $total = Merchant::all()->count();
+        $totalpage = ceil($total / $limit);
+
+        $data = Merchant::limit($limit)->offset($offset)
+           ->orderBy($r->sort['field'] == "no" ? "id" : $r->sort['field'],$r->sort['sort'])
+            ->get();
         $no = 1;
         foreach ($data as $k => $val) {
             $data[$k]['no'] = $no;
@@ -65,7 +72,20 @@ class table extends Controller
             $no++;
         }
         return response()->json([
-            "data" => $data
+            "meta"=>[
+                "page"=>$current_paginate,
+                "pages"=>$totalpage,
+                "perpages"=>10,
+                "total"=>$total,
+                "sort"=>$r->sort['sort'],
+                "field"=>$r->sort['field'] == "no" ? "id" : $r->sort['field']
+            ],
+            "data" => $data,
+            "debug" => [
+                "offset"=>$offset,
+                "limit"=>$limit,
+                "current_paginate"=>$current_paginate,
+            ]
         ]);
     }
 

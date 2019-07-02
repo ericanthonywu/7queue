@@ -23,14 +23,25 @@ class apiandroid extends Controller
             $data = TrendingMerchant::whereTrending($v['id'])->select('merchant')->distinct()->inRandomOrder()->limit(10)->get();
             $arr = [];
             foreach ($data as $key => $val) {
-                array_push($arr, Merchant::find($val['merchant']));
+                $merchant = Merchant::find($val['merchant']);
+                if($merchant) {
+                    foreach ($merchant as $asdsadsda) {
+                        $merchant['urlfoto'] = url("uploads/merchant/$merchant[foto]");
+                    }
+                }
+                array_push($arr, $merchant);
+
             }
             $trending[$k]['merchant_name'] = $arr;
         }
         $banner = Banner::orderBy('order')->get();
-        foreach ($banner as $k => $v) {
-            $banner[$k]['gambar'] = url("uploads/banner/$v[file]");
-            unset($banner[$k]['file']);
+        foreach ($banner as $kb => $vb) {
+            $arr = ['phone','url','lat','long','confirmation'];
+            foreach ($arr as $item){
+                $banner[$kb][$item] = is_null($banner[$kb][$item]) ? "" : $vb[$item];
+            }
+            $banner[$kb]['gambar'] = url("uploads/banner/$vb[file]");
+            unset($banner[$kb]['file']);
         }
         return $this->response($r, 1, 'Data Home', [
             "banner" => $banner,

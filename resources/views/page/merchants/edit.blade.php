@@ -93,14 +93,14 @@
                                         <label class="col-lg-3 col-form-label">Preview Foto:</label>
                                         <div class="col-lg-6">
                                             <a href="{{!empty($merchants["foto"]) ? asset("uploads/merchant/$merchants[foto]") : "#"}}" target="_blank"><img src="{{!empty($merchants["foto"])? asset("uploads/merchant/$merchants[foto]") : asset('assets_user/images/logo-7queue.png')}}" width="100%" alt=""></a>
-                                            <span class="form-text text-muted">Masukkan Foto Merchant</span>
+                                            <span class="form-text text-muted">Preview Foto Merchant</span>
                                         </div>
                                     </div>
                                     <div class="form-group row">
-                                        <label class="col-lg-3 col-form-label">Priview Foto:</label>
+                                        <label class="col-lg-3 col-form-label">Foto:</label>
                                         <div class="col-lg-6">
                                             <div class="custom-file">
-                                                <input type="file" name="foto" class="custom-file-input" id="customFile" required>
+                                                <input type="file" name="foto" class="custom-file-input" id="customFile">
                                                 <label class="custom-file-label" for="customFile">Pilih Foto Merchant</label>
                                             </div>
                                             <span class="form-text text-muted">Masukkan Foto Merchant</span>
@@ -112,7 +112,7 @@
                                             <input type="hidden" name="lat" id="lat" value="{{$merchants['lat']}}">
                                             <input type="hidden" name="long" id="long" value="{{$merchants['long']}}">
                                             <div class="input-group-append">
-                                                <input type="text" class="form-control" id="search_map"
+                                                <input type="text" name="lokasi" value="{{$merchants['lokasi']}}" class="form-control" id="search_map"
                                                        placeholder="address...">
                                                 <button type="button" class="btn btn-primary" id="btn_search_map"><i
                                                             class="fa fa-search"></i></button>

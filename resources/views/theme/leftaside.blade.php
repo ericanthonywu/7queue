@@ -94,10 +94,12 @@
                                                 class="kt-menu__link-bullet kt-menu__link-bullet--dot"><span></span></i><span
                                                 class="kt-menu__link-text">Admin</span></a></li>
                             @endif
+                            @if(Session::get('level') >= 2)
                             <li class="kt-menu__item {{Request::url() == url('/manager') ? "kt-menu__item--active" : ""}}"
                                 aria-haspopup="true"><a href="{{url('/manager')}}" class="kt-menu__link "><i
                                             class="kt-menu__link-bullet kt-menu__link-bullet--dot"><span></span></i><span
                                             class="kt-menu__link-text">Manager</span></a></li>
+                            @endif
                             <li class="kt-menu__item {{Request::url() == url('/merchants') ? "kt-menu__item--active" : ""}}"
                                 aria-haspopup="true"><a href="{{url('/merchants')}}" class="kt-menu__link "><i
                                             class="kt-menu__link-bullet kt-menu__link-bullet--dot"><span></span></i><span

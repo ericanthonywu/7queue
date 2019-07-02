@@ -105,7 +105,7 @@ $(document).on('click', '.merchant_list', function () {
             $('#list_notmerchant').html(html_list_notmerchant)
         }
     })
-})
+});
 $('.dragdropmerchant').sortable({
     items: '.kt-widget6__item',
     // handle: '.kt-widget6__item',
@@ -122,7 +122,7 @@ $('.dragdropmerchant').sortable({
     },
     stop: e => {
         let progress_table = 0;
-        if(oldList.attr('id') !== newList.attr('id')) {
+        if (oldList.attr('id') !== newList.attr('id')) {
             $.ajax({
                 url: `${base_url}trending/${newList.attr('id')}`,
                 data: {
@@ -138,35 +138,37 @@ $('.dragdropmerchant').sortable({
                     return xhr;
                 },
                 success: res => {
-                    if(res){
-                        toastr.error(res,"Error");
-                    }else{
+                    if (res) {
+                        toastr.error(res, "Error");
+                    } else {
                         const id = idglobal;
-                        let progress = 0;
                         $.ajax({
                             url: `${base_url}get_merchant_list`,
                             data: {
                                 id: id
                             },
                             success: res => {
-                                const listmerchant = res[1];
-                                let html_list_merchant = '';
-                                listmerchant.forEach(data => {
-                                    html_list_merchant += `<div class="kt-widget6__item" style="cursor: pointer;" data-trending="${id}" data-merchant="${data.merchant}">
+                                if (newList.attr('id') === "list_merchant") {
+                                    const listmerchant = res[1];
+                                    let html_list_merchant = '';
+                                    listmerchant.forEach(data => {
+                                        html_list_merchant += `<div class="kt-widget6__item" style="cursor: pointer;" data-trending="${id}" data-merchant="${data.merchant}">
                                                 <span>${data.merchant_name}</span>
                                                 <span>${data.date_added}</span>
                                             </div>`
-                                });
-                                $('#list_merchant').html(html_list_merchant);
-                                let html_list_notmerchant = '';
-                                const listnotmerchant = res[2];
-                                listnotmerchant.forEach(datas => {
-                                    html_list_notmerchant += `<div class="kt-widget6__item" style="cursor: pointer;" data-trending="${id}" data-merchant="${datas.id}">
+                                    });
+                                    $('#list_merchant').html(html_list_merchant);
+                                } else if (newList.attr('id') === "list_notmerchant") {
+                                    let html_list_notmerchant = '';
+                                    const listnotmerchant =  res[2];
+                                    listnotmerchant.forEach(datas => {
+                                        html_list_notmerchant += `<div class="kt-widget6__item" style="cursor: pointer;" data-trending="${id}" data-merchant="${datas.id}">
                                                 <span>${datas.nickname}</span>
                                                 <span>${datas.jumlah_trending}</span>
                                             </div>`
-                                });
-                                $('#list_notmerchant').html(html_list_notmerchant)
+                                    });
+                                    $('#list_notmerchant').html(html_list_notmerchant)
+                                }
                             }
                         })
                     }

@@ -150,7 +150,7 @@ class oauthandroid extends Controller
             }
             if($data['status'] == 1){
                 return $this->response($r,0,'Akun anda telah di block ',[],null);
-            }elseif ($data['status'] == 2 && $data['suspend_time'] > Carbon::now()->format('Y-m-d H:i:s')){
+            }elseif ($data['status'] == 2 && $data['suspend_time'] < Carbon::now()->format('Y-m-d H:i:s')){
                 return $this->response($r,0,'Akun anda telah di suspend dalam jangka waktu tertentu',[],null);
             }
             $token = $this->generatetoken($data['id']);

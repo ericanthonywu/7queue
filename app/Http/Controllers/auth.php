@@ -40,7 +40,7 @@ class auth extends Controller
         }
         if($data->first()['status'] == 1){
             return $this->response($r,0,'Akun anda telah di block ',null,new stdClass());
-        }elseif ($data->first()['status'] == 2 && $data->first()['suspend_time'] > Carbon::now()->format('Y-m-d H:i:s')){
+        }elseif ($data->first()['status'] == 2 && $data->first()['suspend_time'] < Carbon::now()->format('Y-m-d H:i:s')){
             return $this->response($r,0,'Akun anda telah di suspend dalam jangka waktu tertentu',null,new stdClass());
         }
         if($data->exists() && \Hash::check($r->password,$data->first()['password'])){

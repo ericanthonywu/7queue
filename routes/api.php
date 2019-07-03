@@ -22,5 +22,6 @@ Route::middleware('apicheck')->group(function (){
     Route::post('/home','apiandroid@home');
     Route::post('/nearmerchant','apiandroid@nearestmerchant');
     Route::post('/settings','apiandroid@settings');
+    Route::post('/profile','apiandroid@profile');
 });
 

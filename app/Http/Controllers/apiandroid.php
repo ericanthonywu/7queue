@@ -11,6 +11,7 @@ use App\Models\TrendingCategory;
 use App\Models\TrendingMerchant;
 use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Str;
 use stdClass;
 
@@ -28,9 +29,9 @@ class apiandroid extends Controller
                     foreach ($merchant as $asdsadsda) {
                         $merchant['urlfoto'] = url("uploads/merchant/$merchant[foto]");
                     }
+                    unset($merchant['foto']);
                 }
                 array_push($arr, $merchant);
-
             }
             $trending[$k]['merchant_name'] = $arr;
         }
@@ -77,10 +78,28 @@ class apiandroid extends Controller
                         + sin ( radians($r->lat) )
                                 * sin( radians( lat ) )
                 )
-            ) AS distance,nickname")->orderBy('distance')->limit(10)->get();
+            ) AS distance,nickname,id")->orderBy('distance')->limit(10)->get();
         foreach ($data as $k => $v) {
             $data[$k]['jarak'] = round($v['distance']);
+            $trending = DB::table('trending_merchant')->select(
+                'trending_merchant.id as id',
+                'trending_merchant.trending as trending',
+                'trending_merchant.merchant as merchant',
+                'trending_category.kategori as kategori'
+            )->where('merchant','=',$v['id'])
+                ->join('trending_category',
+                    'trending_merchant.trending',
+                    '=',
+                    'trending_category.id'
+                )
+                ->get();
+            $kategori = '';
+            foreach ($trending as $a => $b){
+                $kategori .= $b->kategori.", ";
+            }
+            $data[$k]['kategori'] = rtrim($kategori,', ');;
             unset($data[$k]['distance']);
+            unset($data[$k]['id']);
         }
         return $this->response($r, 1, "List Merchant Terdekat", $data);
     }
@@ -88,5 +107,20 @@ class apiandroid extends Controller
     function settings(Request $r)
     {
         return $this->response($r, 1, "Data Settings 7Queue", Setting::first());
+    }
+    function profile(Request $r){
+        $userID = Token::whereTokenNew($r->apiKey)->orWhere('token_old',$r->apiKey)->first()['user'];
+        $user = User::find($userID);
+        if(count(array_filter($r->all())) > 1){
+            $req = array_filter($r->all());
+            unset($r->id);
+            $user->update($req);
+            $data = User::find($userID);
+            $data['urlfoto_profil'] = empty($user['foto_profil']) ? asset('assets_user/images/logo-7queue.png') : url("uploads/user/$user[foto_profil]");
+            return $this->response($r,1,"Data User $user[nickname]",$data);
+        }else {
+            $user['urlfoto_profil'] = url("uploads/user/$user[foto_profil]");
+            return $this->response($r, 1, "Data User $user[nickname]", $user);
+        }
     }
 }

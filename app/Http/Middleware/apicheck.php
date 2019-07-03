@@ -3,44 +3,72 @@
 namespace App\Http\Middleware;
 
 use App\Models\Token;
+use App\Models\User;
 use Closure;
+use Illuminate\Http\Request;
+use stdClass;
 
 class apicheck
 {
     /**
      * Handle an incoming request.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \Closure  $next
+     * @param Request $request
+     * @param Closure $next
      * @return mixed
      */
     public function handle($r, Closure $next)
     {
-        $data_old = Token::where('token_old',$r->apiKey);
-        $data_new = Token::where('token_new',$r->apiKey);
+        $data_old = Token::where('token_old', $r->apiKey);
+        $data_new = Token::where('token_new', $r->apiKey);
 
         if ($data_old->exists()) {
-            return $next($r);
-        } else if($data_new->exists()) {
-            $token = $data_new->first();
-            $token->token_old = $r->apiKey;
-            $token->save();
-//            if (Carbon::now()->toDateTimeString() > $token['expire']) {
-//                return response()->json([
-//                    "status"=>0,
-//                    "data"=>[
-//                        "message"=>"Token expire"
-//                    ]
-//                ],200);
-//            }else{
-            return $next($r);
-//            }
-        }else{
+            $user = $data_old->first()['user'];
+            $data = User::find($user);
+            switch ($data['status']){
+                case 1:
+                    return response()->json([
+                        "status"=>-1,
+                        "message"=>"Akun anda telah di Block",
+                        "data"=> new stdClass()
+                    ]);
+                case 2:
+                    return response()->json([
+                        "status"=>-1,
+                        "message"=>"Akun anda telah di Suspend",
+                        "data"=> new stdClass()
+                    ]);
+                default:
+                    return $next($r);
+            }
+        } else if ($data_new->exists()) {
+            $user = $data_new->first()['user'];
+            $data = User::find($user);
+            switch ($data['status']){
+                case 1:
+                    return response()->json([
+                        "status"=>-1,
+                        "message"=>"Akun anda telah di Block",
+                        "data"=> new stdClass()
+                    ]);
+                case 2:
+                    return response()->json([
+                        "status"=>-1,
+                        "message"=>"Akun anda telah di Suspend",
+                        "data"=> new stdClass()
+                    ]);
+                default:
+                    $token = $data_new->first();
+                    $token->token_old = $r->apiKey;
+                    $token->save();
+                    return $next($r);
+            }
+        } else {
             return response()->json([
-                "status"=>-1,
-                "message"=>"Token expire",
-                "data"=>new \stdClass()
-            ],200);
+                "status" => -1,
+                "message" => "Token expire",
+                "data" => new stdClass()
+            ], 200);
         }
     }
 }

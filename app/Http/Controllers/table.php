@@ -57,15 +57,15 @@ class table extends Controller
     {
         $limit = empty($r->pagination['perpage']) ? 10 : (int)$r->pagination['perpage'];
 //        $limit = (int) $r->pagination['perpage'];
-        $current_paginate = (int)$r->pagination['page'] == 1 ? 0 : (int)$r->pagination['page'];
-        $offset = $limit * $current_paginate;
+        $current_paginate = $r->pagination['page'] == null ? 1 : $r->pagination['page'];
+        $offset = $limit * ($current_paginate-1);
         $total = Merchant::all()->count();
         $totalpage = ceil($total / $limit);
 
         $data = Merchant::limit($limit)->offset($offset)
            ->orderBy($r->sort['field'] == "no" ? "id" : $r->sort['field'],$r->sort['sort'])
             ->get();
-        $no = 1;
+        $no = $offset + 1;
         foreach ($data as $k => $val) {
             $data[$k]['no'] = $no;
             $data[$k]['readedit'] = Session::get('level') == 1;
@@ -75,7 +75,7 @@ class table extends Controller
             "meta"=>[
                 "page"=>$current_paginate,
                 "pages"=>$totalpage,
-                "perpages"=>10,
+                "perpage"=>$limit,
                 "total"=>$total,
                 "sort"=>$r->sort['sort'],
                 "field"=>$r->sort['field'] == "no" ? "id" : $r->sort['field']

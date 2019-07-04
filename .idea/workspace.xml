@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="f91e0e37-603b-40fe-b975-6df174a888fb" name="Default Changelist" comment="">
+    <list default="true" id="f91e0e37-603b-40fe-b975-6df174a888fb" name="Default Changelist" comment="asd">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/auth.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/auth.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/oauthandroid.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/oauthandroid.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/table.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Middleware/apicheck.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Middleware/apicheck.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/datatable.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/datatable.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -45,52 +46,25 @@
         <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
         <item name="7queue: schema" type="76f4a085:MysqlImplModel$Schema" />
       </path>
-      <path>
-        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
-        <item name="7queue deployment" type="feb32156:DbDataSourceImpl" />
-        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
-        <item name="7queue: schema" type="76f4a085:MysqlImplModel$Schema" />
-        <item name="trending_category: table" type="285a2a93:MysqlImplModel$Table" />
-      </path>
-      <path>
-        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
-        <item name="7queue deployment" type="feb32156:DbDataSourceImpl" />
-        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
-        <item name="7queue: schema" type="76f4a085:MysqlImplModel$Schema" />
-        <item name="trending_merchant: table" type="285a2a93:MysqlImplModel$Table" />
-      </path>
     </expand>
     <select />
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/public/js/sortable.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="190">
-              <caret line="130" column="18" selection-start-line="130" selection-start-column="18" selection-end-line="130" selection-end-column="18" />
-              <folding>
-                <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/public/js/datatable.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2057">
-              <caret line="121" column="7" selection-start-line="121" selection-start-column="7" selection-end-line="121" selection-end-column="7" />
+            <state relative-caret-position="2584">
+              <caret line="152" column="25" selection-start-line="152" selection-start-column="25" selection-end-line="152" selection-end-column="25" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/Http/Controllers/table.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="986">
-              <caret line="58" column="7" selection-start-line="58" selection-start-column="7" selection-end-line="58" selection-end-column="51" />
+            <state relative-caret-position="259">
+              <caret line="70" column="37" selection-start-line="70" selection-start-column="37" selection-end-line="70" selection-end-column="37" />
               <folding>
                 <element signature="e#40#61#0#PHP" expanded="true" />
               </folding>
@@ -101,8 +75,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/Http/Controllers/apiandroid.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="241">
-              <caret line="82" column="28" selection-start-line="82" selection-start-column="28" selection-end-line="82" selection-end-column="28" />
+            <state relative-caret-position="1224">
+              <caret line="83" column="47" selection-start-line="83" selection-start-column="47" selection-end-line="83" selection-end-column="47" />
               <folding>
                 <element signature="e#40#62#0#PHP" expanded="true" />
               </folding>
@@ -131,7 +105,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="das://2d4d1fb0-a901-4513-adde-978defab7a64/schema/7queue/table/merchants">
           <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-            <state projectRestartId="24299612-719e-43fc-9ec1-859b8b17a6f5">
+            <state projectRestartId="09ab3103-e469-4a72-b151-f51490ea8f11">
               <filtering />
             </state>
           </provider>
@@ -140,7 +114,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/Http/Controllers/oauthandroid.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-29">
+            <state relative-caret-position="2380">
               <caret line="152" column="68" selection-start-line="152" selection-start-column="67" selection-end-line="152" selection-end-column="68" />
               <folding>
                 <element signature="e#40#61#0#PHP" expanded="true" />
@@ -149,13 +123,13 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app/Http/Controllers/auth.php">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/Http/Middleware/apicheck.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="271">
-              <caret line="39" column="9" lean-forward="true" selection-start-line="39" selection-start-column="9" selection-end-line="39" selection-end-column="9" />
+            <state relative-caret-position="544">
+              <caret line="36" column="1" selection-start-line="36" selection-start-column="1" selection-end-line="36" selection-end-column="1" />
               <folding>
-                <element signature="e#40#61#0#PHP" expanded="true" />
+                <element signature="e#39#60#0#PHP" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -173,8 +147,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>form</find>
-      <find>kategoripro</find>
       <find>views</find>
       <find>Tambah Kategori Pro</find>
       <find>kategori</find>
@@ -192,7 +164,6 @@
       <find>var</find>
       <find>xhr.open</find>
       <find>progress</find>
-      <find>merchants</find>
       <find>manager</find>
       <find>jspon</find>
       <find>$token</find>
@@ -203,6 +174,9 @@
       <find>required</find>
       <find>tren</find>
       <find>login</find>
+      <find>merchants</find>
+      <find>merchanbt</find>
+      <find>table/merchant</find>
     </findStrings>
     <replaceStrings>
       <replace />
@@ -223,7 +197,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/database/migrations/2014_10_12_000000_create_users_table.php" />
         <option value="$PROJECT_DIR$/resources/views/notify/notify.blade.php" />
         <option value="$PROJECT_DIR$/database/migrations/2019_06_14_095958_create_manager_table.php" />
         <option value="$PROJECT_DIR$/database/migrations/2019_06_02_111109_create_admin_table.php" />
@@ -242,7 +215,6 @@
         <option value="$PROJECT_DIR$/resources/views/page/merchants/track.blade.php" />
         <option value="$APPLICATION_CONFIG_DIR$/consoles/db/9efe532c-2ff3-4669-bc0f-68cfbf5d9f15/console.sql" />
         <option value="$PROJECT_DIR$/app/Http/Kernel.php" />
-        <option value="$PROJECT_DIR$/app/Http/Middleware/apicheck.php" />
         <option value="$PROJECT_DIR$/database/migrations/2019_06_11_091148_create_banner.php" />
         <option value="$PROJECT_DIR$/resources/views/page/products/tambah.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/page/banner/tambah.blade.php" />
@@ -263,9 +235,6 @@
         <option value="$PROJECT_DIR$/public/js/sortable.js" />
         <option value="$PROJECT_DIR$/resources/views/theme/leftaside.blade.php" />
         <option value="$APPLICATION_CONFIG_DIR$/consoles/db/f5a9fc0c-ef11-45b3-8489-f1b8ea8c71c8/console.sql" />
-        <option value="$PROJECT_DIR$/public/js/datatable.js" />
-        <option value="$PROJECT_DIR$/app/Http/Controllers/table.php" />
-        <option value="$APPLICATION_CONFIG_DIR$/consoles/.datagrid/cell" />
         <option value="$PROJECT_DIR$/database/migrations/2019_06_02_111612_create_merchants_table.php" />
         <option value="$PROJECT_DIR$/resources/views/page/merchants/tambah.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/page/merchants/edit.blade.php" />
@@ -274,6 +243,11 @@
         <option value="$PROJECT_DIR$/app/Http/Controllers/apiandroid.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/oauthandroid.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/auth.php" />
+        <option value="$PROJECT_DIR$/app/Http/Middleware/apicheck.php" />
+        <option value="$PROJECT_DIR$/public/js/datatable.js" />
+        <option value="$APPLICATION_CONFIG_DIR$/consoles/.datagrid/cell" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/table.php" />
+        <option value="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Support/Facades/Facade.php" />
       </list>
     </option>
   </component>
@@ -392,6 +366,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -416,6 +391,13 @@
               <item name="app" type="462c0819:PsiDirectoryNode" />
               <item name="Http" type="462c0819:PsiDirectoryNode" />
               <item name="Controllers" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="7queuee" type="b2602c69:ProjectViewProjectNode" />
+              <item name="7queuee" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="Http" type="462c0819:PsiDirectoryNode" />
+              <item name="Middleware" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="7queuee" type="b2602c69:ProjectViewProjectNode" />
@@ -492,7 +474,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -515,17 +496,17 @@
     <property name="nodejs_package_manager_path" value="npm" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="D:\web\7queuee\app\Http\Controllers" />
-      <recent name="D:\web\7queuee\resources\views\theme" />
-      <recent name="D:\web\7queue\public\js" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\web\7queuee\resources\views\page\merchants" />
       <recent name="D:\web\7queuee\resources\views\page" />
       <recent name="D:\web\7queuee\public\assets_user\images" />
       <recent name="D:\web\7queuee\app\Http\Controllers\Auth" />
       <recent name="D:\web\7queuee" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\web\7queuee\app\Http\Controllers" />
+      <recent name="D:\web\7queuee\resources\views\theme" />
+      <recent name="D:\web\7queue\public\js" />
     </key>
   </component>
   <component name="RunAnythingCache">
@@ -624,6 +605,10 @@
       <workItem from="1562144679832" duration="698000" />
       <workItem from="1562154938766" duration="3729000" />
       <workItem from="1562159433613" duration="176000" />
+      <workItem from="1562159618219" duration="4778000" />
+      <workItem from="1562216527189" duration="1473000" />
+      <workItem from="1562221004969" duration="733000" />
+      <workItem from="1562224826226" duration="1026000" />
     </task>
     <task id="LOCAL-00001" summary="asd">
       <created>1560232580760</created>
@@ -636,14 +621,14 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="248158000" />
+    <option name="totallyTimeSpent" value="256168000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="npm" order="0" side_tool="true" />
-      <window_info content_ui="combo" id="Project" order="1" visible="true" weight="0.28517398" />
+      <window_info content_ui="combo" id="Project" order="1" visible="true" weight="0.29500756" />
       <window_info id="Structure" order="2" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="3" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -712,40 +697,6 @@
     <option name="LAST_COMMIT_MESSAGE" value="asd" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/Http/Middleware/apicheck.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="16" column="45" selection-start-line="16" selection-start-column="45" selection-end-line="16" selection-end-column="45" />
-          <folding>
-            <element signature="e#39#60#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Kernel.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="935">
-          <caret line="56" column="39" selection-start-line="56" selection-start-column="39" selection-end-line="56" selection-end-column="39" />
-          <folding>
-            <element signature="e#28#61#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/database/migrations/2019_06_11_091148_create_banner.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="17" column="44" lean-forward="true" selection-start-line="17" selection-start-column="44" selection-end-line="17" selection-end-column="44" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/page/products/tambah.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="129" column="64" selection-start-line="129" selection-start-column="64" selection-end-line="129" selection-end-column="64" />
-        </state>
-      </provider>
-    </entry>
     <entry file="das://f5a9fc0c-ef11-45b3-8489-f1b8ea8c71c8/schema/7queue/table/banner" />
     <entry file="file://$PROJECT_DIR$/resources/views/page/merchants/index.blade.php">
       <provider selected="true" editor-type-id="text-editor">
@@ -895,13 +846,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/routes/web.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="731">
-          <caret line="52" column="56" selection-start-line="52" selection-start-column="56" selection-end-line="52" selection-end-column="56" />
-        </state>
-      </provider>
-    </entry>
     <entry file="das://f5a9fc0c-ef11-45b3-8489-f1b8ea8c71c8/schema/7queue/table/trending_merchant" />
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/crud.php">
       <provider selected="true" editor-type-id="text-editor">
@@ -1002,30 +946,57 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/auth.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="271">
+          <caret line="39" column="9" selection-start-line="39" selection-start-column="9" selection-end-line="39" selection-end-column="9" />
+          <folding>
+            <element signature="e#40#61#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/routes/web.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="177">
+          <caret line="57" column="46" lean-forward="true" selection-start-line="57" selection-end-line="58" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/public/js/sortable.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="190">
+        <state relative-caret-position="2210">
           <caret line="130" column="18" selection-start-line="130" selection-start-column="18" selection-end-line="130" selection-end-column="18" />
-          <folding>
-            <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
-          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Support/Facades/Facade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="374">
+          <caret line="33" column="101" selection-start-line="33" selection-start-column="101" selection-end-line="33" selection-end-column="101" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Support/Facades/Session.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="139">
+          <caret line="31" column="26" selection-start-line="31" selection-start-column="26" selection-end-line="31" selection-end-column="26" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/public/js/datatable.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2057">
-          <caret line="121" column="7" selection-start-line="121" selection-start-column="7" selection-end-line="121" selection-end-column="7" />
+        <state relative-caret-position="2584">
+          <caret line="152" column="25" selection-start-line="152" selection-start-column="25" selection-end-line="152" selection-end-column="25" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/table.php">
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/apiandroid.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="986">
-          <caret line="58" column="7" selection-start-line="58" selection-start-column="7" selection-end-line="58" selection-end-column="51" />
+        <state relative-caret-position="1224">
+          <caret line="83" column="47" selection-start-line="83" selection-start-column="47" selection-end-line="83" selection-end-column="47" />
           <folding>
-            <element signature="e#40#61#0#PHP" expanded="true" />
+            <element signature="e#40#62#0#PHP" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1046,24 +1017,14 @@
     </entry>
     <entry file="das://2d4d1fb0-a901-4513-adde-978defab7a64/schema/7queue/table/merchants">
       <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state projectRestartId="24299612-719e-43fc-9ec1-859b8b17a6f5">
+        <state projectRestartId="09ab3103-e469-4a72-b151-f51490ea8f11">
           <filtering />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/apiandroid.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="241">
-          <caret line="82" column="28" selection-start-line="82" selection-start-column="28" selection-end-line="82" selection-end-column="28" />
-          <folding>
-            <element signature="e#40#62#0#PHP" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/oauthandroid.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-29">
+        <state relative-caret-position="2380">
           <caret line="152" column="68" selection-start-line="152" selection-start-column="67" selection-end-line="152" selection-end-column="68" />
           <folding>
             <element signature="e#40#61#0#PHP" expanded="true" />
@@ -1071,10 +1032,27 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/auth.php">
+    <entry file="file://$PROJECT_DIR$/app/Http/Middleware/apicheck.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="271">
-          <caret line="39" column="9" lean-forward="true" selection-start-line="39" selection-start-column="9" selection-end-line="39" selection-end-column="9" />
+        <state relative-caret-position="544">
+          <caret line="36" column="1" selection-start-line="36" selection-start-column="1" selection-end-line="36" selection-end-column="1" />
+          <folding>
+            <element signature="e#39#60#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/_ide_helper.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="11775" column="10" selection-start-line="11775" selection-start-column="10" selection-end-line="11775" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/table.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="259">
+          <caret line="70" column="37" selection-start-line="70" selection-start-column="37" selection-end-line="70" selection-end-column="37" />
           <folding>
             <element signature="e#40#61#0#PHP" expanded="true" />
           </folding>

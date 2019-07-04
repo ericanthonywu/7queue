@@ -135,7 +135,7 @@ $(document).ready(function () {
                     },
                 },
             },
-            pageSize: 10,
+
             serverPaging: true,
             serverFiltering: true,
             serverSorting: true,
@@ -151,6 +151,22 @@ $(document).ready(function () {
         sortable: true,
 
         pagination: true,
+
+        toolbars: {
+            items: {
+                info: true
+            }
+        },
+
+        translate:{
+            toolbar:{
+                pagination:{
+                    items:{
+                        info: 'Displaying {{start}} - {{end}} of {{total}} records'
+                    }
+                }
+            }
+        },
 
         search: {
             input: $('#generalSearch'),
@@ -234,6 +250,7 @@ $(document).ready(function () {
             }],
 
     });
+    console.log(merchants.getPageSize());
     let users = $('#tblusers').KTDatatable({
         // datasource definition
         data: {

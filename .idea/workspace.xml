@@ -1,12 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="f91e0e37-603b-40fe-b975-6df174a888fb" name="Default Changelist" comment="asd">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/table.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Middleware/apicheck.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Middleware/apicheck.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/datatable.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/datatable.js" afterDir="false" />
-    </list>
+    <list default="true" id="f91e0e37-603b-40fe-b975-6df174a888fb" name="Default Changelist" comment="asd" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -608,7 +603,7 @@
       <workItem from="1562159618219" duration="4778000" />
       <workItem from="1562216527189" duration="1473000" />
       <workItem from="1562221004969" duration="733000" />
-      <workItem from="1562224826226" duration="1026000" />
+      <workItem from="1562224826226" duration="1081000" />
     </task>
     <task id="LOCAL-00001" summary="asd">
       <created>1560232580760</created>
@@ -621,11 +616,10 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="256168000" />
+    <option name="totallyTimeSpent" value="256223000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info id="npm" order="0" side_tool="true" />
       <window_info content_ui="combo" id="Project" order="1" visible="true" weight="0.29500756" />
@@ -641,7 +635,7 @@
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Database Changes" order="8" />
       <window_info anchor="bottom" id="Version Control" order="9" weight="0.3289689" />
-      <window_info anchor="bottom" id="Terminal" order="10" weight="0.3289689" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="10" visible="true" weight="0.3289689" />
       <window_info anchor="bottom" id="Event Log" order="11" sideWeight="0.50226927" side_tool="true" weight="0.19312602" />
       <window_info anchor="bottom" id="Database Console" order="12" weight="0.40589198" />
       <window_info anchor="bottom" id="Messages" order="13" weight="0.3289689" />

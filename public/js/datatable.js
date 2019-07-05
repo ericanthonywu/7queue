@@ -250,7 +250,6 @@ $(document).ready(function () {
             }],
 
     });
-    console.log(merchants.getPageSize());
     let users = $('#tblusers').KTDatatable({
         // datasource definition
         data: {

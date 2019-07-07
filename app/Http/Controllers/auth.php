@@ -16,20 +16,20 @@ class auth extends Controller
     public function response($r,$status, $message, $apikey, $data, $header = null)
     {
         return
-            $apikey !== null
+            !is_null($apikey)
                 ?
                 response()->json([
                     "status" => $status,
                     "message" => $message,
                     "apiKey" => $apikey,
                     "data" => $data
-                ], $header ? (int)$header : 200)
+                ], !is_null($header) ? (int)$header : 200)
                 :
                 response()->json([
                     "status" => $status,
                     "message" => $message,
                     "data" => $data
-                ], $header ? (int)$header : 200);
+                ], !is_null($header) ? (int)$header : 200);
     }
     function login(Request $r){
         $data = $r->status == "admin"

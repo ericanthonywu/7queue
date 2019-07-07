@@ -62,7 +62,7 @@ class apiandroid extends Controller
             "apiKey" => $newtoken,
             "debug" => $r->all(),
             "data" => $data
-        ], !empty($header) ? (int)$header : 200);
+        ], !is_null($header) ? (int)$header : 200);
     }
 
     function nearestmerchant(Request $r)

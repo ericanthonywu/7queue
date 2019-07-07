@@ -17,7 +17,6 @@ $("#tblclient").sortable({
             // console.log(`${x+1} - ${data[x]}`)
             data_order += `${x + 1}-${data[x].replace('row-', '')}${x == length - 1 ? "" : ","}`;
         }
-        console.log(data_order);
         $.ajax({
             headers: {
                 'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
@@ -97,14 +96,62 @@ $(document).on('click', '.merchant_list', function () {
             let html_list_notmerchant = '';
             const listnotmerchant = res[2];
             listnotmerchant.forEach(datas => {
-                html_list_notmerchant += `<div class="kt-widget6__item" style="cursor: pointer;" data-trending="${id}" data-merchant="${datas.id}">
-                                                <span>${datas.nickname}</span>
-                                                <span>${datas.jumlah_trending}</span>
-                                            </div>`
+                html_list_notmerchant += `
+                    <div class="kt-widget6__item" style="cursor: pointer;" data-trending="${id}" data-merchant="${datas.id}">
+                        <span>${datas.nickname}</span>
+                        <span>${datas.jumlah_trending}</span>
+                    </div>`
             });
             $('#list_notmerchant').html(html_list_notmerchant)
         }
     })
+});
+$('#find_merchant').keyup(function (e) {
+    if (e.keyCode == 13) {
+        const val = $(this).val();
+        $.ajax({
+            url: `${base_url}get_filtered_merchant_list`,
+            data: {
+                id: idglobal,
+                val: val,
+                status: "list_merchant"
+            },
+            success: res => {
+                let html_list_merchant = '';
+                res.forEach(data => {
+                    html_list_merchant += `<div class="kt-widget6__item" style="cursor: pointer;" data-trending="${idglobal}" data-merchant="${data.merchant}">
+                                                <span>${data.merchant_name}</span>
+                                                <span>${data.date_added}</span>
+                                            </div>`;
+                })
+                $('#list_merchant').html(html_list_merchant);
+            }
+        })
+    }
+});
+$('#find_notmerchant').keyup(function (e) {
+    if (e.keyCode == 13) {
+        const val = $(this).val();
+        $.ajax({
+            url: `${base_url}get_filtered_merchant_list`,
+            data: {
+                id: idglobal,
+                val: val,
+                status: "list_notmerchant"
+            },
+            success: res => {
+                let html_list_notmerchant = '';
+                res.forEach(datas => {
+                    html_list_notmerchant += `
+                    <div class="kt-widget6__item" style="cursor: pointer;" data-trending="${idglobal}" data-merchant="${datas.id}">
+                        <span>${datas.nickname}</span>
+                        <span>${datas.jumlah_trending}</span>
+                    </div>`
+                });
+                $('#list_notmerchant').html(html_list_notmerchant)
+            }
+        })
+    }
 });
 $('.dragdropmerchant').sortable({
     items: '.kt-widget6__item',
@@ -160,7 +207,7 @@ $('.dragdropmerchant').sortable({
                                     $('#list_merchant').html(html_list_merchant);
                                 } else if (newList.attr('id') === "list_notmerchant") {
                                     let html_list_notmerchant = '';
-                                    const listnotmerchant =  res[2];
+                                    const listnotmerchant = res[2];
                                     listnotmerchant.forEach(datas => {
                                         html_list_notmerchant += `<div class="kt-widget6__item" style="cursor: pointer;" data-trending="${id}" data-merchant="${datas.id}">
                                                 <span>${datas.nickname}</span>

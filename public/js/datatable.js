@@ -29,14 +29,14 @@ $(document).ready(function () {
                 read: {
                     url: `${base_table}manager`,
                     // sample custom headers
-                    headers: {'x-my-custokt-header': 'some value', 'x-test-header': 'the value'},
+                    // headers: {'x-my-custokt-header': 'some value', 'x-test-header': 'the value'},
                     map: raw => {
                         // sample data mapping
                         return typeof raw.data !== 'undefined' ? raw.data : raw;
                     },
                 },
             },
-            pageSize: 10,
+            pageSize: 20,
             serverPaging: true,
             serverFiltering: true,
             serverSorting: true,
@@ -152,22 +152,6 @@ $(document).ready(function () {
 
         pagination: true,
 
-        toolbars: {
-            items: {
-                info: true
-            }
-        },
-
-        translate:{
-            toolbar:{
-                pagination:{
-                    items:{
-                        info: 'Displaying {{start}} - {{end}} of {{total}} records'
-                    }
-                }
-            }
-        },
-
         search: {
             input: $('#generalSearch'),
         },
@@ -259,16 +243,16 @@ $(document).ready(function () {
                     url: `${base_table}customers`,
                     // sample custom headers
                     // headers: {'x-my-custokt-header': 'some value', 'x-test-header': 'the value'},
-                    // map: function (raw) {
-                    //     // sample data mapping
-                    //     return typeof raw.data !== 'undefined' ? raw.data : raw;
-                    // },
+                    map: raw => {
+                        // sample data mapping
+                        return typeof raw.data !== 'undefined' ? raw.data : raw;
+                    },
                 },
             },
-            pageSize: 10,
-            // serverPaging: true,
-            // serverFiltering: true,
-            // serverSorting: true,
+            pageSize: 20,
+            serverPaging: true,
+            serverFiltering: true,
+            serverSorting: true,
         },
 
         // layout definition
@@ -304,8 +288,8 @@ $(document).ready(function () {
             {
                 field: 'email',
                 title: 'Email',
-                template: (t, e, a) => {
-                    return `<a class="kt-link" href="mailto:${t}">
+                template: t => {
+                    return `<a class="kt-link" href="mailto:${t.email}">
                                 ${t.email}
                             </a>`
                 }
@@ -317,7 +301,7 @@ $(document).ready(function () {
                 width: 110,
                 overflow: 'visible',
                 autoHide: false,
-                template: (t, e, a) => {
+                template: t => {
                     return `
                     ${
                         `
@@ -364,7 +348,7 @@ $(document).ready(function () {
                     // },
                 },
             },
-            pageSize: 10,
+            pageSize: 20,
             // serverPaging: true,
             // serverFiltering: true,
             // serverSorting: true,
@@ -460,16 +444,16 @@ $(document).ready(function () {
                     url: `${base_table}products`,
                     // sample custom headers
                     // headers: {'x-my-custokt-header': 'some value', 'x-test-header': 'the value'},
-                    // map: function (raw) {
-                    //     // sample data mapping
-                    //     return typeof raw.data !== 'undefined' ? raw.data : raw;
-                    // },
+                    map: raw => {
+                        // sample data mapping
+                        return typeof raw.data !== 'undefined' ? raw.data : raw;
+                    },
                 },
             },
-            pageSize: 10,
-            // serverPaging: true,
-            // serverFiltering: true,
-            // serverSorting: true,
+            pageSize: 20,
+            serverPaging: true,
+            serverFiltering: true,
+            serverSorting: true,
         },
 
         // layout definition
@@ -582,7 +566,7 @@ $(document).ready(function () {
                     // },
                 },
             },
-            pageSize: 10,
+            pageSize: 20,
             // serverPaging: true,
             // serverFiltering: true,
             // serverSorting: true,
@@ -667,7 +651,7 @@ $(document).ready(function () {
                     // },
                 },
             },
-            pageSize: 10,
+            pageSize: 20,
             // serverPaging: true,
             // serverFiltering: true,
             // serverSorting: true,
@@ -767,7 +751,7 @@ $(document).ready(function () {
                     // },
                 },
             },
-            pageSize: 10,
+            pageSize: 20,
             // serverPaging: true,
             // serverFiltering: true,
             // serverSorting: true,
@@ -877,7 +861,7 @@ $(document).ready(function () {
                     // },
                 },
             },
-            pageSize: 10,
+            pageSize: 20,
             // serverPaging: true,
             // serverFiltering: true,
             // serverSorting: true,
@@ -946,257 +930,6 @@ $(document).ready(function () {
                 },
             }],
 
-    });
-    let detmerchant = $('#detmerchant_1').DataTable({
-        dom: "<'row'<'col-sm-6 text-left'f><'col-sm-6 text-right'B>>\n\t\t\t<'row'<'col-sm-12'tr>>\n\t\t\t<'row'<'col-sm-12 col-md-5'i><'col-sm-12 col-md-7 dataTables_pager'lp>>", // horizobtal scrollable datatable
-        responsive: false,
-        ajax: ` ${base_table}detmerchant/0`,
-        columns: [
-            {
-                title: "Merchants",
-                data: "nama",
-                sClass: "text-center",
-            },
-            {
-                data: "id",
-                sClass: "text-center",
-                render: (t, e, a) => {
-                    $('.btn-data').tooltip();
-                    return `
-                    <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            Action
-                    </button>
-                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                            <a href="${base_url}banner/edit/${t}" class="dropdown-item" title="Perbarui Data">
-                                <i class="flaticon-notes"></i> Edit
-                            </a>
-                            ${a.delete ? `<button class="dropdown-item btn-del" data-id="${t}" data-table="banner"><i class="flaticon-delete-1"></i> Delete </button>` : ""}
-                        </div>
-                    `;
-                }
-            },
-            {
-                data: "id",
-                sClass: "text-center",
-                width: 100,
-                render: (t, e, a) => {
-                    return `<i class="flaticon-arrows"></i>`
-                }
-            }
-        ],
-        language: {
-            aria: {
-                sortAscending: ": activate to sort column ascending",
-                sortDescending: ": activate to sort column descending"
-            },
-            loadingRecords: 'Loading ... ',
-            processing: '<div class="m-loader m-loader--brand"></div>',
-            emptyTable: "Data Banner tidak tersedia",
-            info: "Menampilkan _START_ sampai _END_ dari _TOTAL_ data",
-            infoEmpty: "Data tidak ditemukan",
-            infoFiltered: "(Terfilter _TOTAL_ data dari _MAX_ total data)",
-            lengthMenu: "_MENU_ data",
-            search: "Cari:",
-            zeroRecords: "Tidak ada data yang cocok"
-        },
-
-        buttons: [
-            {
-                extend: 'print',
-                className: 'btn m-btn--square  m-btn m-btn--gradient-from-primary m-btn--gradient-to-info btn-export',
-                attr: {
-                    "data-export": "banner"
-                }
-            },
-            {
-                extend: 'copyHtml5',
-                className: 'btn m-btn--square  m-btn m-btn--gradient-from-success m-btn--gradient-to-accent btn-export',
-                attr: {
-                    "data-export": "banner"
-                }
-            },
-            {
-                extend: 'excelHtml5',
-                className: 'btn m-btn--square  m-btn m-btn--gradient-from-danger m-btn--gradient-to-warning btn-export',
-                attr: {
-                    "data-export": "banner"
-                }
-            },
-            {
-                extend: 'csvHtml5',
-                className: 'btn m-btn--square  m-btn m-btn--gradient-from-warning m-btn--gradient-to-danger btn-export',
-                attr: {
-                    "data-export": "banner"
-                }
-            },
-            {
-                extend: 'pdfHtml5',
-                className: 'btn m-btn--square  m-btn m-btn--gradient-from-info m-btn--gradient-to-accent btn-export',
-                attr: {
-                    "data-export": "banner"
-                }
-            }
-        ],
-        order: [
-            [0, 'asc']
-        ],
-        lengthMenu: [
-            [10, 25, 50, -1],
-            [10, 25, 50, "All"] // change per page values here
-        ],
-        // set the initial value
-        pageLength: 10
-    });
-    let detnotmerchant = $('#detnotmerchant_2').DataTable({
-        dom: "<'row'<'col-sm-6 text-left'f><'col-sm-6 text-right'B>>\n\t\t\t<'row'<'col-sm-12'tr>>\n\t\t\t<'row'<'col-sm-12 col-md-5'i><'col-sm-12 col-md-7 dataTables_pager'lp>>", // horizobtal scrollable datatable
-        responsive: false,
-        ajax: ` ${base_table}detnotmerchant`,
-        columns: [
-            {
-                title: "No",
-                data: "no",
-                sClass: "text-center",
-            },
-            {
-                title: "Nama",
-                data: "nama",
-                sClass: "text-center",
-            },
-            {
-                title: "Gambar",
-                data: "file",
-                sClass: "text-center",
-                render: (t, e, a) => {
-                    return `<a class="m-link" target="_blank" href="${base_url}uploads/banner/${t}"> <img src="${base_url}uploads/banner/${t}" width="100px"></a>`
-                }
-            },
-            {
-                title: "No Telp",
-                data: "phone",
-                sClass: "text-center",
-                render: (t, e, a) => {
-                    return t ? t : "Data Kosong"
-                }
-            },
-            {
-                title: "Url",
-                data: "url",
-                sClass: "text-center",
-                render: (t, e, a) => {
-                    return t ? `<a class="m-link" target="_blank" href="${t}">${t}</a>` : "Data Kosong"
-                }
-            },
-            {
-                title: "Koordinat Map",
-                data: "lat",
-                sClass: "text-center",
-                render: (t, e, a) => {
-                    return `<a target="_blank" class="m-link" href="https://maps.google.com/maps?q=${t},${a.long}"><i class="flaticon-map-location"></i></a>`
-                }
-            },
-            {
-                title: "Konfirmasi",
-                data: "confirmation",
-                sClass: "text-center",
-                render: (t, e, a) => {
-                    return t ? `<a href="#" class="m-link btndetailuserbanner" data-id="${a.id}" data-toggle="modal" data-target="#detailuserbanner">Judul : ${t} <br> User : ${numberWithCommas(a.userkonfirmasi)}</a>` : "Tidak ada Konfirmasi"
-                }
-            },
-
-            {
-                title: "Milik",
-                data: "dibuat_oleh",
-                sClass: "text-center",
-            },
-            {
-                data: "id",
-                sClass: "text-center",
-                render: (t, e, a) => {
-                    $('.btn-data').tooltip();
-                    return `
-                    <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            Action
-                    </button>
-                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                            <a href="${base_url}banner/edit/${t}" class="dropdown-item" title="Perbarui Data">
-                                <i class="flaticon-notes"></i> Edit
-                            </a>
-                            ${a.delete ? `<button class="dropdown-item btn-del" data-id="${t}" data-table="banner"><i class="flaticon-delete-1"></i> Delete </button>` : ""}
-                        </div>
-                    `;
-                }
-            },
-            {
-                data: "id",
-                sClass: "text-center",
-                width: 100,
-                render: (t, e, a) => {
-                    return `<i class="flaticon-arrows"></i>`
-                }
-            }
-        ],
-        language: {
-            aria: {
-                sortAscending: ": activate to sort column ascending",
-                sortDescending: ": activate to sort column descending"
-            },
-            loadingRecords: 'Loading ... ',
-            processing: '<div class="m-loader m-loader--brand"></div>',
-            emptyTable: "Data Banner tidak tersedia",
-            info: "Menampilkan _START_ sampai _END_ dari _TOTAL_ data",
-            infoEmpty: "Data tidak ditemukan",
-            infoFiltered: "(Terfilter _TOTAL_ data dari _MAX_ total data)",
-            lengthMenu: "_MENU_ data",
-            search: "Cari:",
-            zeroRecords: "Tidak ada data yang cocok"
-        },
-
-        buttons: [
-            {
-                extend: 'print',
-                className: 'btn m-btn--square  m-btn m-btn--gradient-from-primary m-btn--gradient-to-info btn-export',
-                attr: {
-                    "data-export": "banner"
-                }
-            },
-            {
-                extend: 'copyHtml5',
-                className: 'btn m-btn--square  m-btn m-btn--gradient-from-success m-btn--gradient-to-accent btn-export',
-                attr: {
-                    "data-export": "banner"
-                }
-            },
-            {
-                extend: 'excelHtml5',
-                className: 'btn m-btn--square  m-btn m-btn--gradient-from-danger m-btn--gradient-to-warning btn-export',
-                attr: {
-                    "data-export": "banner"
-                }
-            },
-            {
-                extend: 'csvHtml5',
-                className: 'btn m-btn--square  m-btn m-btn--gradient-from-warning m-btn--gradient-to-danger btn-export',
-                attr: {
-                    "data-export": "banner"
-                }
-            },
-            {
-                extend: 'pdfHtml5',
-                className: 'btn m-btn--square  m-btn m-btn--gradient-from-info m-btn--gradient-to-accent btn-export',
-                attr: {
-                    "data-export": "banner"
-                }
-            }
-        ],
-        order: [
-            [0, 'asc']
-        ],
-        lengthMenu: [
-            [10, 25, 50, -1],
-            [10, 25, 50, "All"] // change per page values here
-        ],
-        // set the initial value
-        pageLength: 10
     });
 
     // $('#kt_form_status').change( function () {

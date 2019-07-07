@@ -104,13 +104,16 @@
                                 aria-haspopup="true"><a href="{{url('/merchants')}}" class="kt-menu__link "><i
                                             class="kt-menu__link-bullet kt-menu__link-bullet--dot"><span></span></i><span
                                             class="kt-menu__link-text">Merchants</span></a></li>
+                            @if(Session::get('level') >= 2)
                             <li class="kt-menu__item {{Request::url() == url('/customers') ? "kt-menu__item--active" : ""}}"
                                 aria-haspopup="true"><a href="{{url('/customers')}}" class="kt-menu__link "><i
                                             class="kt-menu__link-bullet kt-menu__link-bullet--dot"><span></span></i><span
                                             class="kt-menu__link-text">Customers</span></a></li>
+                            @endif
                         </ul>
                     </div>
                 </li>
+                @if(Session::get('level') >= 2)
                 <li class="kt-menu__item {{Request::url() == url("/banner") ? "kt-menu__item--active" : ""}}"
                     aria-haspopup="true"><a href="{{url('/banner')}}" class="kt-menu__link "><span
                                 class="kt-menu__link-icon"><svg xmlns="http://www.w3.org/2000/svg"
@@ -124,6 +127,7 @@
                             </g>
                         </svg></span>
                         <span class="kt-menu__link-text"> Banner</span></a></li>
+                @endif
                 @if(Session::get('level') == 3)
                     <li class="kt-menu__item {{Request::url() == url("/trending") ? "kt-menu__item--active" : ""}}"
                         aria-haspopup="true"><a href="{{url('/trending')}}" class="kt-menu__link "><span

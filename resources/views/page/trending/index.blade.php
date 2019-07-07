@@ -159,7 +159,8 @@
                                                     </h3>
                                                 </div>
                                             </div>
-                                            <input type="search" class="form-control" placeholder="Search Merchants...">
+                                            <input type="search" id="find_merchant" class="form-control"
+                                                   placeholder="Search Merchants...">
 
                                             <div class="kt-portlet__body">
                                                 <div class="kt-widget6">
@@ -188,7 +189,8 @@
                                                     </h3>
                                                 </div>
                                             </div>
-                                            <input type="search" class="form-control" placeholder="Search Merchants...">
+                                            <input type="search" id="find_notmerchant" class="form-control"
+                                                   placeholder="Search Merchants...">
                                             <div class="kt-portlet__body">
                                                 <div class="kt-widget6">
                                                     <div class="kt-widget6__head">

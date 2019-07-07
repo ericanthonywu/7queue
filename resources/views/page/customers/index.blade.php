@@ -82,8 +82,8 @@
                                                     <input type="text" class="form-control" placeholder="Search..."
                                                            id="generalSearch">
                                                     <span class="kt-input-icon__icon kt-input-icon__icon--left">
-							<span><i class="la la-search"></i></span>
-						</span>
+                                                        <span><i class="la la-search"></i></span>
+                                                    </span>
                                                 </div>
                                             </div>
                                         </div>

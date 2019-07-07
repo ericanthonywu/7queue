@@ -72,10 +72,7 @@
                             <div class="kt-portlet__head-toolbar">
                                 <div class="kt-portlet__head-wrapper">
                                     <div class="kt-portlet__head-actions">
-                                        <a href="{{url('/feedback/tambah')}}" class="btn btn-brand btn-elevate btn-icon-sm">
-                                            <i class="la la-plus"></i>
-                                            Tambah Feedback
-                                        </a>
+
                                     </div>
                                 </div>
                             </div>

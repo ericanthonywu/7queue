@@ -24,7 +24,7 @@ class DatabaseSeeder extends Seeder
             "status"=>0,
             "email_st"=>1,
             "password"=>bcrypt('manager'),
-            "created_at"=>"2019-04-26 10:10:10"
+            "created_at" => \Carbon\Carbon::now()->format('Y-m-d H:i:s')
         ]);
         DB::table('kategori_produk')->insert([
             "kategori"=>"Makanan",

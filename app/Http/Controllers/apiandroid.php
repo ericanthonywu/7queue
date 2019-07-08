@@ -104,7 +104,7 @@ class apiandroid extends Controller
                         + sin ( radians($r->lat) )
                                 * sin( radians( lat ) )
                 )
-            ) AS distance,nickname,id")->orderBy('distance')->limit(10)->get();
+            ) AS distance,nickname,id,foto")->orderBy('distance')->limit(10)->get();
         foreach ($data as $k => $v) {
             $data[$k]['jarak'] = round($v['distance'], 2);
             $trending = DB::table('trending_merchant')->select(
@@ -123,11 +123,13 @@ class apiandroid extends Controller
             foreach ($trending as $a => $b) {
                 $kategori .= $b->kategori . ", ";
             }
-            $data[$k]['kategori'] = rtrim($kategori, ', ');;
+            $data[$k]['kategori'] = rtrim($kategori, ', ');
+            $data[$k]['urlfoto'] = asset("uploads/merchant/$v[foto]");
+            unset($data[$k]['foto']);
             unset($data[$k]['distance']);
             unset($data[$k]['id']);
         }
-        return $this->response($r, 1, "List Merchant Terdekat", $data);
+        return $this->response($r, 1, "List Merchant Terdekat", ["merchant"=>$data]);
     }
 
     function settings(Request $r)

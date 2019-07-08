@@ -213,18 +213,20 @@ class table extends Controller
         ]);
     }
 
-    function feedback()
+    function feedback(Request $r)
     {
-        $data = Feedback::all();
-        $no = 1;
-        foreach ($data as $key => $value) {
-            $data[$key]['no'] = $no;
-            $data[$key]['tgl_dibuat'] = $value['created_at']->format('D, d M Y H:i');
-            $no++;
-        }
-        return response()->json([
-            "data" => $data
-        ]);
+        $q = Feedback::orderByDesc('id');
+        return $this->serversidetable($r,$q,["feedback","email"]);
+//        $data = Feedback::all();
+//        $no = 1;
+//        foreach ($data as $key => $value) {
+//            $data[$key]['no'] = $no;
+//            $data[$key]['tgl_dibuat'] = $value['created_at']->format('D, d M Y H:i');
+//            $no++;
+//        }
+//        return response()->json([
+//            "data" => $data
+//        ]);
     }
 
     function trending()
@@ -310,8 +312,7 @@ class table extends Controller
                 return response()->json($data_merchant);
                 break;
             default:
-                Session::flush();
-                return response('Something error, Session expiring', 419);
+                return response()->view('error.404',[],404);
         }
     }
 }

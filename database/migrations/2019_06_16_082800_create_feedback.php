@@ -15,9 +15,10 @@ class CreateFeedback extends Migration
     {
         Schema::create('feedback', function (Blueprint $table) {
             $table->bigIncrements('id');
+            $table->text('comments');
             $table->string('email');
-            $table->string('feedback',120);
             $table->unsignedTinyInteger('rating');
+            $table->unsignedBigInteger('merchant_id');
             $table->timestamps();
         });
     }

@@ -37,9 +37,18 @@ class crud extends Controller
             return "Anda tidak memiliki Hak Akses";
         }else if (($r->table == "merchants" || $r->table == "products") && \Session::get('level') !== 1){
             return "Anda tidak memiliki Hak Akses";
-        }else {
-            DB::table($r->table)->where('id',$r->id)->delete();
         }
+        switch ($r->table){
+            case "banner":
+                $file = Banner::select('file')->find($r->id)['file'];
+                \Storage::disk('banner')->delete($file);
+                break;
+            case "products":
+                $file = Product::select('foto')->find($r->id)['foto'];
+                \Storage::disk('products')->delete($file);
+                break;
+        }
+        DB::table($r->table)->where('id',$r->id)->delete();
     }
 
     function tambahadmin(Request $r){

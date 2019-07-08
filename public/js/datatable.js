@@ -90,7 +90,7 @@ $(document).ready(function () {
                 width: 110,
                 overflow: 'visible',
                 autoHide: false,
-                template: (t, e, a) => {
+                template: t => {
                     return `
 						<div class="dropdown">
 							<a href="javascript:;" class="btn btn-sm btn-clean btn-icon btn-icon-sm" data-toggle="dropdown">
@@ -286,6 +286,13 @@ $(document).ready(function () {
                 title: 'Name',
             },
             {
+                field: 'foto_profil',
+                title: 'Foto Profil',
+                template: t => {
+                    return showphoto('user',t.foto_profil)
+                }
+            },
+            {
                 field: 'email',
                 title: 'Email',
                 template: t => {
@@ -387,7 +394,7 @@ $(document).ready(function () {
             {
                 field: 'email',
                 title: 'Email',
-                template: (t, e, a) => {
+                template: t => {
                     return `<a class="kt-link" href="mailto:${t}">${t.email}</a>`
                 }
             },
@@ -398,7 +405,7 @@ $(document).ready(function () {
                 width: 110,
                 overflow: 'visible',
                 autoHide: false,
-                template: (t, e, a) => {
+                template: t => {
                     $('[data-toggle="kt-tooltip"]').tooltip();
                     return `
                     ${
@@ -515,7 +522,7 @@ $(document).ready(function () {
                 width: 110,
                 overflow: 'visible',
                 autoHide: false,
-                template: (t, e, a) => {
+                template: t => {
                     $('[data-toggle="kt-tooltip"]').tooltip();
                     return `
                     ${
@@ -609,7 +616,7 @@ $(document).ready(function () {
 
                 overflow: 'visible',
                 autoHide: false,
-                template: (t, e, a) => {
+                template: t => {
                     $('[data-toggle="kt-tooltip"]').tooltip();
                     return `
                                 <button class="btn btn-secondary btn-outline-secondary btn-editkategori" data-id="${t.id}" data-kategori="${t.kategori}">
@@ -709,7 +716,7 @@ $(document).ready(function () {
 
                 overflow: 'visible',
                 autoHide: false,
-                template: (t, e, a) => {
+                template: t => {
                     $('[data-toggle="kt-tooltip"]').tooltip();
                     return `
                                 <button class="btn btn-secondary btn-outline-secondary btn-editkategori" data-id="${t.id}" data-kategori="${t.kategori}">
@@ -819,7 +826,7 @@ $(document).ready(function () {
 
                 overflow: 'visible',
                 autoHide: false,
-                template: (t, e, a) => {
+                template: t => {
                     $('[data-toggle="kt-tooltip"]').tooltip();
                     return `
                                 <a class="btn btn-secondary btn-outline-secondary" href="${base_url}banner/edit/${t.id}">

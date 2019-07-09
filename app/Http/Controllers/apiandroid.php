@@ -39,7 +39,8 @@ class apiandroid extends Controller
     {
         $trending = TrendingCategory::all();
         foreach ($trending as $k => $v) {
-            $data = TrendingMerchant::whereTrending($v['id'])->select('merchant')->distinct()->inRandomOrder()->limit(10)->get();
+            $data = TrendingMerchant::whereTrending($v['id'])->select('merchant')
+                ->distinct()->inRandomOrder()->limit(10)->get();
             $arr = [];
             foreach ($data as $key => $val) {
                 $merchant = Merchant::find($val['merchant']);
@@ -164,9 +165,13 @@ class apiandroid extends Controller
         }
     }
     function feedback(Request $r){
-        $req = $r->all();
+        if(!$r->comments){
+            return $this->response($r,0,'ada data kosong');
+        }
+        $req = array_filter($r->all());
         $user = Token::whereTokenNew($r->apiKey)->orWhere('token_old',$r->apiKey)->first()['user'];
         $req['email'] = User::find($user)['email'];
         Feedback::create($req);
+        return $this->response($r,1,$r->lang == "en" ? "Feedback Received! Thank you" : "Feedback telah di terima");
     }
 }

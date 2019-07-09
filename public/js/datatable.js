@@ -652,16 +652,16 @@ $(document).ready(function () {
                     url: `${base_table}feedback`,
                     // sample custom headers
                     // headers: {'x-my-custokt-header': 'some value', 'x-test-header': 'the value'},
-                    // map: function (raw) {
-                    //     // sample data mapping
-                    //     return typeof raw.data !== 'undefined' ? raw.data : raw;
-                    // },
+                    map: raw => {
+                        // sample data mapping
+                        return typeof raw.data !== 'undefined' ? raw.data : raw;
+                    },
                 },
             },
             pageSize: 20,
-            // serverPaging: true,
-            // serverFiltering: true,
-            // serverSorting: true,
+            serverPaging: true,
+            serverFiltering: true,
+            serverSorting: true,
         },
 
         // layout definition
@@ -698,7 +698,7 @@ $(document).ready(function () {
                 }
             },
             {
-                field: 'feedback',
+                field: 'comments',
                 title: 'Feedback',
             },
             {

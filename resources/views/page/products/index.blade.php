@@ -98,6 +98,7 @@ License: You must have a valid license purchased only from themeforest(the above
                                 </div>
                             </div>
                         </div>
+                        @if(Session::get('level') == 1)
                         <div class="modal fade" id="fkategori" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                             <div class="modal-dialog modal-lg" role="document">
                                 <div class="modal-content">
@@ -126,6 +127,7 @@ License: You must have a valid license purchased only from themeforest(the above
                                 </div>
                             </div>
                         </div>
+                        @endif
 
 
                         <div class="kt-portlet__body">

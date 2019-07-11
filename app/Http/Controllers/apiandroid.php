@@ -172,6 +172,6 @@ class apiandroid extends Controller
         $user = Token::whereTokenNew($r->apiKey)->orWhere('token_old',$r->apiKey)->first()['user'];
         $req['email'] = User::find($user)['email'];
         Feedback::create($req);
-        return $this->response($r,1,$r->lang == "en" ? "Feedback Received! Thank you" : "Feedback telah di terima");
+        return $this->response($r, 1, $r->lang == "en" ? "Feedback Received! Thank you for your response" : "Feedback telah di terima! Terima Kasih atas responsenya");
     }
 }

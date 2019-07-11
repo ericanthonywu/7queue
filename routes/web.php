@@ -80,7 +80,7 @@ Route::middleware('globaladmincheck')->group(function (){
 
         Route::view('/banner', 'page.banner.index');
         Route::post('/table/banner', 'table@banner');
-        Route::middleware('managercheck')->group(function () {
+        Route::middleware('admincheck')->group(function () {
             Route::view('/banner/tambah', 'page.banner.tambah');
             Route::get('/banner/edit/{id}', 'page@editbanner');
             Route::post('/action/banner', 'crud@tambahbanner');

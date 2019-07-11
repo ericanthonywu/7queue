@@ -71,7 +71,7 @@
                             <div class="kt-portlet__head-toolbar">
                                 <div class="kt-portlet__head-wrapper">
                                     <div class="kt-portlet__head-actions">
-                                        @if(Session::get('level') == 1)
+                                        @if(Session::get('level') >= 2)
                                             <a href="{{url('/banner/tambah')}}" class="btn btn-brand btn-elevate btn-icon-sm">
                                                 <i class="la la-plus"></i>
                                                 Tambah Banner

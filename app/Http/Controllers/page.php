@@ -8,6 +8,7 @@ use App\Models\KategoriProduk;
 use App\Models\Merchant;
 use App\Models\Product;
 use App\Models\Setting;
+use App\Models\User;
 use Illuminate\Http\Request;
 
 class page extends Controller
@@ -63,6 +64,13 @@ class page extends Controller
         $data = Setting::first();
         return view('page.settings.index',[
             "data"=> $data ? $data : []
+        ]);
+    }
+
+    function tambahmessage()
+    {
+        return view('page.message.tambah', [
+            "user" => User::all('id', 'nickname')
         ]);
     }
 }

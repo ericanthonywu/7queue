@@ -43,8 +43,8 @@
                             <a href="{{url('/')}}" class="kt-subheader__breadcrumbs-home"><i
                                         class="flaticon2-shelter"></i></a>
                             <span class="kt-subheader__breadcrumbs-separator"></span>
-                            <a href="{{url('/banner')}}" class="kt-subheader__breadcrumbs-link">
-                                Banner </a>
+                            <a href="{{url('/message')}}" class="kt-subheader__breadcrumbs-link">
+                                Message </a>
                             <span class="kt-subheader__breadcrumbs-separator"></span>
                             <!-- <span class="kt-subheader__breadcrumbs-link kt-subheader__breadcrumbs-link--active">Active link</span> -->
                         </div>
@@ -65,16 +65,17 @@
 				<i class="kt-font-brand flaticon2-line-chart"></i>
 			</span>
                                 <h3 class="kt-portlet__head-title">
-                                    List Banner
+                                    List Message
                                 </h3>
                             </div>
                             <div class="kt-portlet__head-toolbar">
                                 <div class="kt-portlet__head-wrapper">
                                     <div class="kt-portlet__head-actions">
                                         @if(Session::get('level') >= 2)
-                                            <a href="{{url('/banner/tambah')}}" class="btn btn-brand btn-elevate btn-icon-sm">
+                                            <a href="{{url('/message/tambah')}}"
+                                               class="btn btn-brand btn-elevate btn-icon-sm">
                                                 <i class="la la-plus"></i>
-                                                Tambah Banner
+                                                Tambah Message
                                             </a>
                                         @endif
                                     </div>
@@ -104,7 +105,7 @@
                         </div>
                         <div class="kt-portlet__body kt-portlet__body--fit">
                             <!--begin: Datatable -->
-                            <div class="kt-datatable" id="tblbanner"></div>
+                            <div class="kt-datatable" id="tblmessage"></div>
                             <!--end: Datatable -->
                         </div>
 

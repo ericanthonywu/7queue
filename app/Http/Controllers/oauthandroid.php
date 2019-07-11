@@ -206,6 +206,9 @@ class oauthandroid extends Controller
 
     function token(Request $r)
     {
+        if (empty($r->apiKey)) {
+            return $this->response($r, 0, 'apiKey kosong', [], '');
+        }
         $data_old = Token::where('token_old', $r->apiKey);
         if ($data_old->exists()) {
             $data = $data_old->first();
@@ -219,7 +222,7 @@ class oauthandroid extends Controller
             }
             $data->devicetoken = $r->deviceToken;
             $data->save();
-            return $this->response($r,1, '', $apiKey,[],null);
+            return $this->response($r, 1, 'Device Token', [], $apiKey);
         } else {
             return $this->response($r,-1, 'Token Expire', [],null);
         }

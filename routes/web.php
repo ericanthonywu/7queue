@@ -41,6 +41,13 @@ Route::middleware('globaladmincheck')->group(function (){
         Route::view('/admin','page.admin.index');
         Route::post('/table/admin','table@admin');
         Route::post('/action/chgstadmin','crud@chgstadmin');
+
+        Route::get('/message/tambah', 'page@tambahmessage');
+        Route::post('/action/message', 'crud@tambahmessage');
+        Route::post('/action/update/message', 'crud@editmessage');
+        Route::get('/message/edit/{id}', 'page@editmessage');
+        Route::view('/message', 'page.message.index');
+        Route::post('/table/message', 'table@message');
     });
 
     Route::middleware('admincheck')->group(function(){
@@ -68,24 +75,22 @@ Route::middleware('globaladmincheck')->group(function (){
     Route::view('/manager','page.manager.index');
     Route::post('/table/manager','table@manager');
 
+    Route::middleware('managercheck')->group(function () {
+        Route::view('/customers/tambah', 'page.customers.tambah');
+        Route::get('/customers/edit/{id}', 'page@editcustomers');
+        Route::post('/action/customers', 'crud@tambahcustomers');
+        Route::post('/action/update/customers', 'crud@editcustomers');
+    });
     Route::middleware('admincheck')->group(function () {
         Route::view('/customers', 'page.customers.index');
         Route::post('/table/customers', 'table@customers');
-        Route::middleware('managercheck')->group(function () {
-            Route::view('/customers/tambah', 'page.customers.tambah');
-            Route::get('/customers/edit/{id}', 'page@editcustomers');
-            Route::post('/action/customers', 'crud@tambahcustomers');
-            Route::post('/action/update/customers', 'crud@editcustomers');
-        });
 
         Route::view('/banner', 'page.banner.index');
         Route::post('/table/banner', 'table@banner');
-        Route::middleware('managercheck')->group(function () {
-            Route::view('/banner/tambah', 'page.banner.tambah');
-            Route::get('/banner/edit/{id}', 'page@editbanner');
-            Route::post('/action/banner', 'crud@tambahbanner');
-            Route::post('/action/update/banner', 'crud@editbanner');
-        });
+        Route::view('/banner/tambah', 'page.banner.tambah');
+        Route::get('/banner/edit/{id}', 'page@editbanner');
+        Route::post('/action/banner', 'crud@tambahbanner');
+        Route::post('/action/update/banner', 'crud@editbanner');
     });
 
     Route::middleware('managercheck')->group(function () {

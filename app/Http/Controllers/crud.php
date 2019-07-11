@@ -6,6 +6,7 @@ use App\Models\Admin;
 use App\Models\Banner;
 use App\Models\KategoriProduk;
 use App\Models\Merchant;
+use App\Models\Message;
 use App\Models\Product;
 use App\Models\Setting;
 use App\Models\Trending;
@@ -30,6 +31,40 @@ class crud extends Controller
         }else{
             return false;
         }
+    }
+
+    public function push_notification($body, $title, $data, $token)
+    {
+        $fcmUrl = 'https://fcm.googleapis.com/fcm/send';
+
+        $notification = [
+            'title' => $title,
+            'body' => $body,
+            'sound' => true,
+        ];
+
+        $fcmNotification = [
+            //'registration_ids' => $tokenList, //multple token array
+            'to' => $token, //single token
+            'notification' => $notification,
+            'data' => $data
+        ];
+
+        $headers = [
+            'Authorization: key= AAAAdOyQ1IE:APA91bH_5FjqhP_o4m81ACIadEMKvx5ZArBcIidmHrjK3TGBk5Fa5V1QhPD7j3PcEz_ZbOmZGjkt-0b3k2MHanVBgoAXVvy1sauD4PEv8ISzHnVyJiygdC3jjkTcIL7PIlCB8UmVED0f',
+            'Content-Type: application/json'
+        ];
+
+
+        $ch = curl_init();
+        curl_setopt($ch, CURLOPT_URL, $fcmUrl);
+        curl_setopt($ch, CURLOPT_POST, true);
+        curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+        curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
+        curl_setopt($ch, CURLOPT_POSTFIELDS, json_encode($fcmNotification));
+        $result = curl_exec($ch);
+        curl_close($ch);
     }
 
     function delete(Request $r){
@@ -241,5 +276,15 @@ class crud extends Controller
         }else{
             Setting::create($r->all());
         }
+    }
+
+    function tambahmessage(Request $r)
+    {
+        if (isset($r->push_notif)) {
+            $this->push_notification($r->pesan, $r->judul, [
+                "tipe" => $r->tipe ? "promo" : "inbox",
+            ], '');
+        }
+        Message::create($r->all());
     }
 }

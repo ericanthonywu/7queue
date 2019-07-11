@@ -8,6 +8,7 @@ use App\Models\Feedback;
 use App\Models\KategoriProduk;
 use App\Models\Manager;
 use App\Models\Merchant;
+use App\Models\Message;
 use App\Models\Product;
 use App\Models\Trending;
 use App\Models\TrendingCategory;
@@ -41,6 +42,7 @@ class table extends Controller
         } else {
             $data = Manager::orderBy($r->sort['field'] !== "no" ? $r->sort['field'] : 'id', $r->sort['sort'])->limit($r->pagination['perpage']);
         }
+
 //        $data = Manager::all();
         $no = 1;
         foreach ($data as $key => $value) {
@@ -95,7 +97,7 @@ class table extends Controller
 //        ]);
     }
 
-    function serversidetable($r, $tbl, $search = [], $customdata = [])
+    function serversidetable($r, $tbl, $search, $customdata = [])
     {
         $limit = empty($r->pagination['perpage']) ? 10 : (int)$r->pagination['perpage'];
 //        $limit = (int) $r->pagination['perpage'];
@@ -104,15 +106,17 @@ class table extends Controller
         $total = is_string($tbl) ? DB::table($tbl)->get()->count() : $tbl->get()->count();
         $totalpage = ceil($total / $limit);
 
-        if (is_string($tbl)) {
-            $datas = DB::table($tbl)->limit($limit)->offset($offset)
-                ->orderBy($r->sort['field'] == "no" ? "id" : $r->sort['field'], $r->sort['sort']);
-        } else {
-            $datas = $tbl;
-        }
+        $datas = is_string($tbl) ? DB::table($tbl) : $tbl;
+
+        $datas = $datas->limit($limit)->offset($offset)
+            ->orderBy($r->sort['field'] == "no" ? "id" : $r->sort['field'], $r->sort['sort']);
         if (!is_null($r->input('query.generalSearch'))) {
-            foreach ($search as $searchnya) {
-                $datas->whereRaw("match ($searchnya) AGAINST ('" . $r->input('query.generalSearch') . "*' IN BOOLEAN MODE)");
+            if (is_string($search)) {
+                $datas->whereRaw("match ($search) AGAINST ('" . $r->input('query.generalSearch') . "*' IN BOOLEAN MODE)");
+            } else {
+                foreach ($search as $searchnya) {
+                    $datas->whereRaw("match ($searchnya) AGAINST ('" . $r->input('query.generalSearch') . "*' IN BOOLEAN MODE)");
+                }
             }
         }
         $data = $datas->get();
@@ -142,7 +146,7 @@ class table extends Controller
 
     function customers(Request $r)
     {
-        return $this->serversidetable($r, 'users', ["nickname"], [
+        return $this->serversidetable($r, 'users', "nickname", [
             "blocksuspend" => Session::get('level') == 1
         ]);
 //        $data = User::all();
@@ -184,7 +188,7 @@ class table extends Controller
             '=',
             'products.kategori'
         );
-        return $this->serversidetable($r, $query, ["nama"], [
+        return $this->serversidetable($r, $query, "nama", [
             "access" => Session::get('level') == 1,
         ]);
 //        $data = Product::all();
@@ -215,8 +219,15 @@ class table extends Controller
 
     function feedback(Request $r)
     {
-        $q = Feedback::orderByDesc('id');
-        return $this->serversidetable($r,$q,["feedback","email"]);
+        $q = Feedback::orderByDesc('id')->select(
+            'feedback.id as id',
+            'feedback.email',
+            'merchants.nickname as merchants',
+            'rating',
+            'feedback.created_at',
+            'comments'
+        )->join('merchants', 'merchants.id', '=', 'feedback.merchant_id');
+        return $this->serversidetable($r, $q, ["feedback", "email"]);
 //        $data = Feedback::all();
 //        $no = 1;
 //        foreach ($data as $key => $value) {
@@ -312,7 +323,21 @@ class table extends Controller
                 return response()->json($data_merchant);
                 break;
             default:
-                return response()->view('error.404',[],404);
+                return response()->view('error.404', [], 404);
         }
+    }
+
+    function message(Request $r)
+    {
+        $q = Message::select([
+            "message.id as id",
+            "judul",
+            "pesan",
+            "users.nickname as customer",
+            "push_notif",
+            "tipe",
+            "message.created_at"
+        ])->join('users', 'users.id', '=', 'message.customer');
+        return $this->serversidetable($r, $q, ["judul", "pesan"]);
     }
 }

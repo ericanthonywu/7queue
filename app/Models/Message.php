@@ -53,6 +53,6 @@ class Message extends Eloquent
 
     public function getCreatedAtAttribute($date)
     {
-        return Carbon::createFromFormat('Y-m-d H:i:s', $date)->format('Y-m-d');
+        return Carbon::createFromFormat('Y-m-d H:i:s', $date)->format('D, d M Y H:i');
     }
 }

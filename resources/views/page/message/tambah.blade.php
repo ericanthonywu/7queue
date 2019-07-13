@@ -77,14 +77,16 @@
                                     <div class="form-group row">
                                         <label class="col-lg-3 col-form-label">Customer :</label>
                                         <div class="col-lg-6">
-                                            <div class="kt-scroll" data-scroll="true" style="height: 200px">
-                                                @foreach($user as $datauser)
-                                                    <label class="kt-checkbox kt-checkbox--bold kt-checkbox--brand">
-                                                        <input type="checkbox" value="{{$datauser['id']}}"
-                                                               name="user[]"> {{$datauser['nickname']}}
-                                                        <span></span>
-                                                    </label>
-                                                @endforeach
+                                            <div class="kt-scroll" data-scroll="true" style="max-height: 200px">
+                                                <div class="kt-checkbox-list">
+                                                    @foreach($user as $datauser)
+                                                        <label class="kt-checkbox kt-checkbox--bold kt-checkbox--brand">
+                                                            <input type="checkbox" value="{{$datauser['id']}}"
+                                                                   name="user[]"> {{$datauser['nickname']}}
+                                                            <span></span>
+                                                        </label>
+                                                    @endforeach
+                                                </div>
                                             </div>
                                             <span class="form-text text-muted">Pilih User yang di tuju</span>
                                         </div>
@@ -94,17 +96,17 @@
                                         <div class="col-lg-6">
                                             <div class="custom-file">
                                                 <input type="text" class="form-control" name="judul"
-                                                       placeholder="Masukkan Judul">
+                                                       placeholder="Masukkan Judul" required>
                                             </div>
-                                            <span class="form-text text-muted">Masukkan Judul Message</span>
+                                            <span class="form-text text-muted">Masukkan Judul Inbox</span>
                                         </div>
                                     </div>
                                     <div class="form-group row">
                                         <label class="col-lg-3 col-form-label">Pesan :</label>
                                         <div class="col-lg-6">
                                             <input type="text" class="form-control" name="pesan"
-                                                   placeholder="Masukkan Pesan">
-                                            <span class="form-text text-muted">Masukkan Pesan Message</span>
+                                                   placeholder="Masukkan Pesan" required>
+                                            <span class="form-text text-muted">Masukkan Pesan Inbox</span>
                                         </div>
                                     </div>
                                     <div class="form-group row">
@@ -116,7 +118,7 @@
                                                     <span></span>
                                                 </label>
                                             </span>
-                                            <span class="form-text text-muted">Masukkan No Telp</span>
+                                            <span class="form-text text-muted">Pilih apakah push notifikasi apa tidak</span>
                                         </div>
                                     </div>
                                     <div class="form-group row">
@@ -124,15 +126,15 @@
                                         <div class="col-lg-6">
                                             <div class="kt-radio-inline">
                                                 <label class="kt-radio">
-                                                    <input type="radio" name="tipe" value="0"> Inbox
+                                                    <input type="radio" name="tipe" value="0" required> Inbox
                                                     <span></span>
                                                 </label>
                                                 <label class="kt-radio">
-                                                    <input type="radio" name="tipe" value="1"> Promo
+                                                    <input type="radio" name="tipe" value="1" required> Promo
                                                     <span></span>
                                                 </label>
                                             </div>
-                                            <span class="form-text text-muted">Masukkan Isi Konfirmasi Message</span>
+                                            <span class="form-text text-muted">ilih Tipe Inbox</span>
                                         </div>
                                     </div>
                                 </div>

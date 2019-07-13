@@ -990,7 +990,7 @@ $(document).ready(function () {
                 textAlign: 'center',
             },
             {
-                field: 'customer',
+                field: 'customers',
                 title: 'Customer',
             },
             {
@@ -1012,7 +1012,7 @@ $(document).ready(function () {
                 field: 'tipe',
                 title: 'Tipe',
                 template: t => {
-                    return t.tipe ? "inbox" : "promo";
+                    return t.tipe ? "promo" : "inbox";
                 }
             },
             {
@@ -1025,7 +1025,7 @@ $(document).ready(function () {
                 template: t => {
                     $('[data-toggle="kt-tooltip"]').tooltip();
                     return `
-                                <button class="btn btn-secondary btn-outline-secondary btn-editkategori" data-id="${t.id}" data-kategori="${t.kategori}">
+                                <a class="btn btn-secondary btn-outline-secondary btn-editkategori" href="${base_url}message/edit/${t.id}">
                                     <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1" class="kt-svg-icon">
                                         <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
                                             <rect id="bound" x="0" y="0" width="24" height="24"/>
@@ -1033,8 +1033,8 @@ $(document).ready(function () {
                                             <rect id="Rectangle" fill="#000000" opacity="0.3" x="5" y="20" width="15" height="2" rx="1"/>
                                         </g>
                                     </svg> Edit 
-                                </button>
-                                <button class="btn btn-secondary btn-outline-secondary btn-del" data-id="${t.id}" data-table="kategori_produk">
+                                </a>
+                                <button class="btn btn-secondary btn-outline-secondary btn-del" data-id="${t.id}" data-table="message">
                                     <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1" class="kt-svg-icon">
                                         <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
                                             <rect id="bound" x="0" y="0" width="24" height="24"/>

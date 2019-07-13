@@ -333,7 +333,7 @@ class table extends Controller
             "message.id as id",
             "judul",
             "pesan",
-            "users.nickname as customer",
+            "users.nickname as customers",
             "push_notif",
             "tipe",
             "message.created_at"

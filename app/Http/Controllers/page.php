@@ -6,6 +6,7 @@ use App\Models\Admin;
 use App\Models\Banner;
 use App\Models\KategoriProduk;
 use App\Models\Merchant;
+use App\Models\Message;
 use App\Models\Product;
 use App\Models\Setting;
 use App\Models\User;
@@ -63,7 +64,13 @@ class page extends Controller
     function settings(){
         $data = Setting::first();
         return view('page.settings.index',[
-            "data"=> $data ? $data : []
+            "data" => $data ?: [
+                "id" => "",
+                "notelp" => "",
+                "email" => "",
+                "privacy_policy" => "",
+                "faq" => "",
+            ]
         ]);
     }
 
@@ -72,5 +79,14 @@ class page extends Controller
         return view('page.message.tambah', [
             "user" => User::all('id', 'nickname')
         ]);
+    }
+
+    function editmessage($id)
+    {
+        $data = Message::find($id);
+        return $data ? view('page.message.edit', [
+            "data" => $data,
+            "user" => User::all('id', 'nickname')
+        ]) : response()->view('error.404', [], 404);
     }
 }

@@ -5,17 +5,20 @@ namespace App\Http\Controllers;
 use App\Models\Banner;
 use App\Models\Feedback;
 use App\Models\Merchant;
+use App\Models\Message;
 use App\Models\Setting;
 use App\Models\Token;
 use App\Models\Trending;
 use App\Models\TrendingCategory;
 use App\Models\TrendingMerchant;
 use App\Models\User;
+use Faker\Provider\Text;
 use File;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Str;
+use phpDocumentor\Reflection\Types\Integer;
 use Session;
 use stdClass;
 use Storage;
@@ -70,11 +73,11 @@ class apiandroid extends Controller
     }
 
     /**
-     * @param $r
-     * @param $status
+     * @param Request $r
+     * @param int $status
      * @param $message
      * @param array $data
-     * @param null $header
+     * @param int $header
      * @return JsonResponse
      */
     function response($r, $status, $message, $data = [], $header = null)
@@ -173,5 +176,17 @@ class apiandroid extends Controller
         $req['email'] = User::find($user)['email'];
         Feedback::create($req);
         return $this->response($r, 1, $r->lang == "en" ? "Feedback Received! Thank you for your response" : "Feedback telah di terima! Terima Kasih atas responsenya");
+    }
+
+    function inbox(Request $r)
+    {
+        $user = Token::whereTokenNew($r->apiKey)->orWhere('token_old', $r->apiKey)->first()['user'];
+        if ($r->tipe == 1 || $r->tipe == 0) {
+            return $this->response($r, 1, 'Data Inbox', [
+                "inbox" => Message::whereCustomer($user)->where('tipe', (int)$r->tipe)->get()
+            ]);
+        } else {
+            return $this->response($r, 0, 'Tipe tidak tersedia');
+        }
     }
 }

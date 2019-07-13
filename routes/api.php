@@ -24,5 +24,6 @@ Route::middleware('apicheck')->group(function (){
     Route::post('/settings','apiandroid@settings');
     Route::post('/profile','apiandroid@profile');
     Route::post('/feedback','apiandroid@feedback');
+    Route::post('/inbox', 'apiandroid@inbox');
 });
 

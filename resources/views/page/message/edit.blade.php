@@ -43,7 +43,7 @@
                             <a href="{{url('/')}}" class="kt-subheader__breadcrumbs-home"><i
                                         class="flaticon2-shelter"></i></a>
                             <span class="kt-subheader__breadcrumbs-separator"></span>
-                            <a href="{{url('/banner')}}" class="kt-subheader__breadcrumbs-link">
+                            <a href="{{url('/message')}}" class="kt-subheader__breadcrumbs-link">
                                 Message </a>
                             <span class="kt-subheader__breadcrumbs-separator"></span>
                             <a href="{{Request::url()}}" class="kt-subheader__breadcrumbs-link">
@@ -65,94 +65,72 @@
                         <div class="kt-portlet__head">
                             <div class="kt-portlet__head-label">
                                 <h3 class="kt-portlet__head-title">
-                                    Form Tambah Message
+                                    Form Edit Message
                                 </h3>
                             </div>
                         </div>
 
                         <!--begin::Form-->
-                        <form class="kt-form" data-action="banner">
-                            <input type="hidden" value="{{$data['id']}}" name="id">
+                        <form class="kt-form" data-action="message">
+                            <input type="hidden" name="id" value="{{$data['id']}}">
                             <div class="kt-portlet__body">
                                 <div class="kt-section kt-section--first">
                                     <div class="form-group row">
-                                        <label class="col-lg-3 col-form-label">Nama Message :</label>
+                                        <label class="col-lg-3 col-form-label">Customer :</label>
                                         <div class="col-lg-6">
-                                            <input type="text" class="form-control" value="{{$data['nama']}}"
-                                                   name="nama" placeholder="Masukkan Nama Message" required>
-                                            <span class="form-text text-muted">Masukkan Nama Message</span>
+                                            <input type="text" class="form-control"
+                                                   value="{{\App\Models\User::find($data['customer'])['nickname']}}"
+                                                   readonly>
+                                            <span class="form-text text-muted">User Inbox</span>
                                         </div>
                                     </div>
                                     <div class="form-group row">
-                                        <label class="col-lg-3 col-form-label">Preview Gambar:</label>
-                                        <div class="col-lg-6">
-                                            <a href="{{asset("uploads/banner/$data[file]")}}" target="_blank"><img
-                                                        src="{{asset("uploads/banner/$data[file]")}}" width="100%"
-                                                        alt=""></a>
-                                            <span class="form-text text-muted">Preview Gambar Message</span>
-                                        </div>
-                                    </div>
-                                    <div class="form-group row">
-                                        <label class="col-lg-3 col-form-label">Gambar:</label>
+                                        <label class="col-lg-3 col-form-label">Judul:</label>
                                         <div class="col-lg-6">
                                             <div class="custom-file">
-                                                <input type="file" name="file" class="custom-file-input" id="customFile"
-                                                       required>
-                                                <label class="custom-file-label" for="customFile">Pilih Gambar
-                                                    Message</label>
+                                                <input type="text" class="form-control" name="judul"
+                                                       placeholder="Masukkan Judul" value="{{$data['judul']}}" required>
                                             </div>
-                                            <span class="form-text text-muted">Masukkan Gambar Message</span>
+                                            <span class="form-text text-muted">Masukkan Judul Inbox</span>
                                         </div>
                                     </div>
                                     <div class="form-group row">
-                                        <label class="col-lg-3 col-form-label">Url :</label>
+                                        <label class="col-lg-3 col-form-label">Pesan :</label>
                                         <div class="col-lg-6">
-                                            <input type="url" class="form-control" value="{{$data['url']}}" name="url"
-                                                   placeholder="Masukkan Url Message">
-                                            <span class="form-text text-muted">Masukkan Url Message</span>
+                                            <input type="text" class="form-control" name="pesan"
+                                                   placeholder="Masukkan Pesan" value="{{$data['pesan']}}" required>
+                                            <span class="form-text text-muted">Masukkan Pesan Inbox</span>
                                         </div>
                                     </div>
                                     <div class="form-group row">
-                                        <label class="col-lg-3 col-form-label">No Telp :</label>
-                                        <div class="col-lg-6">
-                                            <input type="text" class="form-control" value="{{$data['phone']}}"
-                                                   name="phone" placeholder="Masukkan No Telp">
-                                            <span class="form-text text-muted">Masukkan No Telp</span>
-                                        </div>
-                                    </div>
-                                    <div class="form-group row">
-                                        <label class="col-lg-3 col-form-label">Lokasi Message:</label>
-                                        <div class="col-lg-6">
-                                            <input type="hidden" name="lat" value="{{$data['lat']}}" id="lat">
-                                            <input type="hidden" name="long" id="long" value="{{$data['long']}}">
-                                            <div class="input-group-append">
-                                                <input type="text" class="form-control" id="search_map"
-                                                       placeholder="address...">
-                                                <button type="button" class="btn btn-primary" id="btn_search_map"><i
-                                                            class="fa fa-search"></i></button>
-                                            </div>
-                                            <div id="gmaps" style="height: 500px;width: 500px"></div>
-                                            <span class="form-text text-muted">Pilih Lokasi Message</span>
-                                        </div>
-                                    </div>
-                                    <div class="form-group row">
-                                        <label class="col-lg-3 col-form-label">Show Confirmation banner : </label>
+                                        <label class="col-lg-3 col-form-label">Push Notif :</label>
                                         <div class="col-lg-6">
                                             <span class="kt-switch kt-switch--icon">
                                                 <label>
-                                                    <input type="checkbox" id="togglekonf" {{empty($data['confirmation']) ?"": "checked"}}>
+                                                    <input type="checkbox"
+                                                           {{!$data['push_notif'] ?: "checked"}} disabled>
                                                     <span></span>
                                                 </label>
                                             </span>
+                                            <span class="form-text text-muted">Pilih apakah push notifikasi apa tidak</span>
                                         </div>
                                     </div>
-                                    <div class="form-group row"
-                                         id="showconf" {{empty($data['confirmation']) ?"style=display:none": '' }}>
-                                        <label class="col-lg-3 col-form-label"> Confirmation Message :</label>
+                                    <div class="form-group row">
+                                        <label class="col-lg-3 col-form-label"> Tipe Message :</label>
                                         <div class="col-lg-6">
-                                            <textarea type="url" class="form-control" name="confirmation"
-                                                      placeholder="Masukkan Isi Konfirmasi Message">{{$data['confirmation']}}</textarea>
-                                            <span class="form-text text-muted">Masukkan Isi Konfirmasi Message</span>
+                                            <div class="kt-radio-inline">
+                                                <label class="kt-radio">
+                                                    <input type="radio" name="tipe"
+                                                           value="0" {{$data['tipe'] ?: "checked"}} required> Inbox
+                                                    <span></span>
+                                                </label>
+                                                <label class="kt-radio">
+                                                    <input type="radio" name="tipe"
+                                                           value="1" {{!$data['tipe'] ?: "checked"}} required> Promo
+                                                    <span></span>
+                                                </label>
+                                            </div>
+                                            <span class="form-text text-muted">Pilih Tipe Inbox</span>
                                         </div>
                                     </div>
                                 </div>
@@ -162,7 +140,7 @@
                                     <div class="row">
                                         <div class="col-lg-3"></div>
                                         <div class="col-lg-6">
-                                            <input type="submit" class="btn btn-success" value="Submit">
+                                            <input type="submit" class="btn btn-success" value="Edit">
                                             <button type="reset" class="btn btn-secondary">Cancel</button>
                                         </div>
                                     </div>

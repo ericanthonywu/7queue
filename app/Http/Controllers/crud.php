@@ -9,6 +9,7 @@ use App\Models\Merchant;
 use App\Models\Message;
 use App\Models\Product;
 use App\Models\Setting;
+use App\Models\Token;
 use App\Models\Trending;
 use App\Models\TrendingCategory;
 use App\Models\TrendingMerchant;
@@ -280,11 +281,27 @@ class crud extends Controller
 
     function tambahmessage(Request $r)
     {
-        if (isset($r->push_notif)) {
-            $this->push_notification($r->pesan, $r->judul, [
-                "tipe" => $r->tipe ? "promo" : "inbox",
-            ], '');
+        $req = $r->all();
+        foreach ($r->user as $datauser) {
+            if (isset($r->push_notif)) {
+                $datatoken = Token::whereUser($datauser)->first()['devicetoken'];
+                $this->push_notification($r->pesan, $r->judul, [
+                    "tipe" => $r->tipe ? "promo" : "inbox",
+                ], $datatoken);
+            }
+            $req['push_notif'] = isset($r->push_notif) ? (int)$r->push_notif : 0;
+            $req['customer'] = (int)$datauser;
+            unset($req['user']);
+            Message::create($req);
         }
-        Message::create($r->all());
+    }
+
+    function editmessage(Request $r)
+    {
+        $req = $r->all();
+        foreach ($r->user as $datauser) {
+            $req['customer'] = $datauser;
+            Message::find($r->id)->update($req);
+        }
     }
 }

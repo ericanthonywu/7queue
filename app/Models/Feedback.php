@@ -2,12 +2,11 @@
 
 /**
  * Created by Reliese Model.
- * Date: Fri, 12 Jul 2019 14:02:14 +0700.
+ * Date: Wed, 17 Jul 2019 19:20:11 +0700.
  */
 
 namespace App\Models;
 
-use Carbon\Carbon;
 use Reliese\Database\Eloquent\Model as Eloquent;
 
 /**
@@ -35,12 +34,7 @@ use Reliese\Database\Eloquent\Model as Eloquent;
  */
 class Feedback extends Eloquent
 {
-    public function getCreatedAtAttribute($date)
-    {
-        return Carbon::createFromFormat('Y-m-d H:i:s', $date)->format('Y-m-d');
-    }
-
-    protected $casts = [
+	protected $casts = [
 		'rating' => 'int',
 		'merchant_id' => 'int'
 	];

@@ -103,6 +103,23 @@
                                         </div>
                                     </div>
                                     <div class="form-group row">
+                                        <label class="col-lg-3 col-form-label">Preview Gambar :</label>
+                                        <div class="col-lg-6">
+                                            <a target="_blank" href="{{url("uploads/message/$data[gambar]")}}"><img src="{{url("uploads/message/$data[gambar]")}}" width="100%" alt=""></a>
+                                            <span class="form-text text-muted">Preview Gambar Message</span>
+                                        </div>
+                                    </div>
+                                    <div class="form-group row">
+                                        <label class="col-lg-3 col-form-label">Gambar :</label>
+                                        <div class="col-lg-6">
+                                            <div class="custom-file">
+                                                <input type="file" name="gambar" class="custom-file-input" id="customFile" >
+                                                <label class="custom-file-label" for="customFile">Pilih Gambar Message</label>
+                                            </div>
+                                            <span class="form-text text-muted">Pilih Gambar Message</span>
+                                        </div>
+                                    </div>
+                                    <div class="form-group row">
                                         <label class="col-lg-3 col-form-label">Push Notif :</label>
                                         <div class="col-lg-6">
                                             <span class="kt-switch kt-switch--icon">

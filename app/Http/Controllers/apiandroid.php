@@ -181,9 +181,14 @@ class apiandroid extends Controller
     function inbox(Request $r)
     {
         $user = Token::whereTokenNew($r->apiKey)->orWhere('token_old', $r->apiKey)->first()['user'];
+        $data = Message::whereCustomer($user)->where('tipe', (int)$r->tipe)->get();
+        foreach ($data as $k => $v){
+            $data[$k]['urlgambar'] = url("uploads/message/$v[gambar]");
+            unset($data[$k]['gambar']);
+        }
         if ($r->tipe == 1 || $r->tipe == 0) {
             return $this->response($r, 1, 'Data Inbox', [
-                "inbox" => Message::whereCustomer($user)->where('tipe', (int)$r->tipe)->get()
+                "inbox" => $data
             ]);
         } else {
             return $this->response($r, 0, 'Tipe tidak tersedia');

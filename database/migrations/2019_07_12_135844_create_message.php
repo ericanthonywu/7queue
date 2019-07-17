@@ -18,6 +18,7 @@ class CreateMessage extends Migration
             $table->unsignedBigInteger('customer');
             $table->mediumText('judul');
             $table->mediumText('pesan');
+            $table->string('gambar');
             $table->unsignedTinyInteger('push_notif');
             $table->unsignedTinyInteger('tipe');
             $table->timestamps();

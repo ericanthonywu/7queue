@@ -2,12 +2,11 @@
 
 /**
  * Created by Reliese Model.
- * Date: Fri, 12 Jul 2019 14:02:14 +0700.
+ * Date: Wed, 17 Jul 2019 19:20:11 +0700.
  */
 
 namespace App\Models;
 
-use Carbon\Carbon;
 use Reliese\Database\Eloquent\Model as Eloquent;
 
 /**
@@ -17,6 +16,7 @@ use Reliese\Database\Eloquent\Model as Eloquent;
  * @property int $customer
  * @property string $judul
  * @property string $pesan
+ * @property string $gambar
  * @property int $push_notif
  * @property int $tipe
  * @property \Carbon\Carbon $created_at
@@ -27,6 +27,7 @@ use Reliese\Database\Eloquent\Model as Eloquent;
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Message query()
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Message whereCreatedAt($value)
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Message whereCustomer($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Message whereGambar($value)
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Message whereId($value)
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Message whereJudul($value)
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Message wherePesan($value)
@@ -37,22 +38,20 @@ use Reliese\Database\Eloquent\Model as Eloquent;
  */
 class Message extends Eloquent
 {
-    protected $table = 'message';
-    protected $casts = [
-        'customer' => 'int',
-        'push_notif' => 'int',
-        'tipe' => 'int'
-    ];
-    protected $fillable = [
-        'customer',
-        'judul',
-        'pesan',
-        'push_notif',
-        'tipe'
-    ];
+	protected $table = 'message';
 
-    public function getCreatedAtAttribute($date)
-    {
-        return Carbon::createFromFormat('Y-m-d H:i:s', $date)->format('D, d M Y H:i');
-    }
+	protected $casts = [
+		'customer' => 'int',
+		'push_notif' => 'int',
+		'tipe' => 'int'
+	];
+
+	protected $fillable = [
+		'customer',
+		'judul',
+		'pesan',
+		'gambar',
+		'push_notif',
+		'tipe'
+	];
 }

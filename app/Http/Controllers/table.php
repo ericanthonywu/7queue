@@ -336,6 +336,7 @@ class table extends Controller
             "users.nickname as customers",
             "push_notif",
             "tipe",
+            "gambar",
             "message.created_at"
         ])->join('users', 'users.id', '=', 'message.customer');
         return $this->serversidetable($r, $q, ["judul", "pesan"]);

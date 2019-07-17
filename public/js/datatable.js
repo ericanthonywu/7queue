@@ -1002,6 +1002,13 @@ $(document).ready(function () {
                 title: 'Pesan',
             },
             {
+                field: 'gambar',
+                title: 'Gambar',
+                template: t => {
+                    return showphoto('message',t.gambar);
+                }
+            },
+            {
                 field: 'push_notif',
                 title: 'Push Notif',
                 template: t => {

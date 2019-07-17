@@ -59,6 +59,10 @@ return [
             'driver' => 'local',
             'root' => public_path('uploads/banner/'),
         ],
+        'message' => [
+            'driver' => 'local',
+            'root' => public_path('uploads/message/'),
+        ],
 
         'public' => [
             'driver' => 'local',

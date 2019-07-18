@@ -1005,7 +1005,7 @@ $(document).ready(function () {
                 field: 'gambar',
                 title: 'Gambar',
                 template: t => {
-                    return showphoto('message',t.gambar);
+                    return t ? showphoto('message',t.gambar) : "Tidak ada Foto";
                 }
             },
             {

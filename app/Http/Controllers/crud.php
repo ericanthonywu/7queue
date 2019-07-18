@@ -287,11 +287,13 @@ class crud extends Controller
                     "tipe" => $r->tipe ? "promo" : "inbox",
                 ], $datatoken);
             }
-            $filename = $this->insertimage('message', $r->file('gambar'));
-            if ($filename) {
-                $req['gambar'] = $filename;
-            } else {
-                return 'Hanya menerima ekstensi ' . implode($this->ext, ',');
+            if($r->hasFile('gambar')) {
+                $filename = $this->insertimage('message', $r->file('gambar'));
+                if ($filename) {
+                    $req['gambar'] = $filename;
+                } else {
+                    return 'Hanya menerima ekstensi ' . implode($this->ext, ',');
+                }
             }
             $req['push_notif'] = isset($r->push_notif) ? (int)$r->push_notif : 0;
             $req['customer'] = (int)$datauser;

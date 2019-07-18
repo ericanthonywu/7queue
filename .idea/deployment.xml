@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="PublishConfigData" serverName="7queue deployment" uploadOnCheckin="a7cc61db-c5a1-4ed9-8ff4-77a7ff9c982e">
+  <component name="PublishConfigData" serverName="7queue deployment">
     <serverData>
       <paths name="7queue deployment">
         <serverdata>
@@ -10,6 +10,5 @@
         </serverdata>
       </paths>
     </serverData>
-    <option name="myUploadOnCheckinName" value="7queue deployment" />
   </component>
 </project>

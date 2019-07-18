@@ -113,7 +113,7 @@
                                         <label class="col-lg-3 col-form-label">Gambar :</label>
                                         <div class="col-lg-6">
                                             <div class="custom-file">
-                                                <input type="file" name="gambar" class="custom-file-input" id="customFile" required="">
+                                                <input type="file" name="gambar" class="custom-file-input" id="customFile">
                                                 <label class="custom-file-label" for="customFile">Pilih Gambar Message</label>
                                             </div>
                                             <span class="form-text text-muted">Pilih Gambar Message</span>

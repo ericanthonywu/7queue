@@ -183,7 +183,7 @@ class apiandroid extends Controller
         $user = Token::whereTokenNew($r->apiKey)->orWhere('token_old', $r->apiKey)->first()['user'];
         $data = Message::whereCustomer($user)->where('tipe', (int)$r->tipe)->get();
         foreach ($data as $k => $v){
-            $data[$k]['urlgambar'] = esca(url("uploads/message/$v[gambar]"));
+            $data[$k]['urlgambar'] = url("uploads/message/$v[gambar]");
             unset($data[$k]['gambar']);
         }
         if ($r->tipe == 1 || $r->tipe == 0) {

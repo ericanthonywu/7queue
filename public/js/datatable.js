@@ -1,6 +1,6 @@
 $(document).ready(function () {
     function showphoto(dir, name) {
-        return `<a class="kt-link" href="${base_image}${dir}/${name}" target="_blank"><img src="${base_image}${dir}/${name}" alt="" width="100%"></a>`
+        return `<a href="${base_image}${dir}/${name}" target="_blank"><img src="${base_image}${dir}/${name}" alt="" width="100%"></a>`
     }
 
     function numberWithCommas(n) {
@@ -9,7 +9,7 @@ $(document).ready(function () {
     }
 
     function refreshkategori() {
-        $.get(`${base_url}getkategori`, (data, st) => {
+        $.get(`${base_url}getkategori`, data => {
             let html = '';
             data.forEach(o => {
                 html += `<option value="${o.id}">${o.kategori}</option>`

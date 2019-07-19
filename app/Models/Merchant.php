@@ -2,7 +2,7 @@
 
 /**
  * Created by Reliese Model.
- * Date: Wed, 17 Jul 2019 19:20:11 +0700.
+ * Date: Fri, 19 Jul 2019 18:04:56 +0700.
  */
 
 namespace App\Models;
@@ -15,6 +15,8 @@ use Reliese\Database\Eloquent\Model as Eloquent;
  * @property int $id
  * @property string $nickname
  * @property string $email
+ * @property string $nohp
+ * @property string $banner
  * @property string $password
  * @property string $lat
  * @property string $long
@@ -28,6 +30,7 @@ use Reliese\Database\Eloquent\Model as Eloquent;
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Merchant newModelQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Merchant newQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Merchant query()
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Merchant whereBanner($value)
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Merchant whereCreatedAt($value)
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Merchant whereCreatedBy($value)
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Merchant whereEmail($value)
@@ -37,6 +40,7 @@ use Reliese\Database\Eloquent\Model as Eloquent;
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Merchant whereLokasi($value)
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Merchant whereLong($value)
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Merchant whereNickname($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Merchant whereNohp($value)
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Merchant wherePassword($value)
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Merchant whereStatus($value)
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Merchant whereUpdatedAt($value)
@@ -56,6 +60,8 @@ class Merchant extends Eloquent
 	protected $fillable = [
 		'nickname',
 		'email',
+		'nohp',
+		'banner',
 		'password',
 		'lat',
 		'long',

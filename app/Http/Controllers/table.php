@@ -177,6 +177,7 @@ class table extends Controller
     function products(Request $r)
     {
         $query = Product::select([
+            'products.id as id',
             'kategori_produk.kategori as kategorinya',
             'nama',
             'foto',

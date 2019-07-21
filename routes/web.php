@@ -72,6 +72,7 @@ Route::middleware('globaladmincheck')->group(function (){
         Route::post('/action/update/merchants','crud@editmerchants');
     });
 
+
     Route::view('/manager','page.manager.index');
     Route::post('/table/manager','table@manager');
 
@@ -107,6 +108,10 @@ Route::middleware('globaladmincheck')->group(function (){
         Route::post('/action/products','crud@tambahproducts');
         Route::post('/action/update/products','crud@editproducts');
     });
+    Route::post('/get_products_list','table@get_products_list');
+    Route::post('/get_filtered_products_list', 'table@get_filtered_products_list');
+    Route::post('/products/{action}','crud@addmerchantproduk');
+
     Route::get('/settings','page@settings');
     Route::post('/action/settings','crud@settings');
 
@@ -115,6 +120,8 @@ Route::middleware('globaladmincheck')->group(function (){
 
     Route::view('/feedback','page.feedback.index');
     Route::post('/table/feedback','table@feedback');
+
+
 
 
 });

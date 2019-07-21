@@ -114,7 +114,87 @@
                         </div>
                     </div>
                 </div>
+                <div class="modal fade" id="show_products" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+                     aria-hidden="true">
+                    <div class="modal-dialog modal-lg" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="exampleModalLabel">List Produk Merchant <span
+                                            id="nama_merchant"></span></h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                </button>
+                            </div>
+                            <div class="modal-body">
+                                <div class="row">
+                                    <div class="col-lg-12">
+                                        <div class="progress">
+                                            <div class="progress-bar" id="modalprogress" role="progressbar" style="width: 0%;" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100">0%</div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-6">
+                                        <div class="kt-portlet kt-portlet--height-fluid">
+                                            <div class="kt-portlet__head">
+                                                <div class="kt-portlet__head-label">
+                                                    <h3 class="kt-portlet__head-title">
+                                                        List Produk Merchant
+                                                    </h3>
+                                                </div>
+                                            </div>
+                                            <input type="search" id="find_merchant" class="form-control"
+                                                   placeholder="Search Products...">
 
+                                            <div class="kt-portlet__body">
+                                                <div class="kt-widget6">
+                                                    <div class="kt-widget6__head">
+                                                        <div class="kt-widget6__item">
+                                                            <span>Produk</span>
+                                                            <span>&nbsp;</span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="kt-widget6__body dragdropproduk" style="min-height: 200px;" id="list_produk">
+
+                                                    </div>
+                                                    <div class="kt-widget6__foot">
+
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-6">
+                                        <div class="kt-portlet kt-portlet--height-fluid">
+                                            <div class="kt-portlet__head">
+                                                <div class="kt-portlet__head-label">
+                                                    <h3 class="kt-portlet__head-title">
+                                                        List Merchant Yang Tersedia (Belum Masuk Trending)
+                                                    </h3>
+                                                </div>
+                                            </div>
+                                            <input type="search" id="find_notmerchant" class="form-control"
+                                                   placeholder="Search Products...">
+                                            <div class="kt-portlet__body">
+                                                <div class="kt-widget6">
+                                                    <div class="kt-widget6__head">
+                                                        <div class="kt-widget6__item">
+                                                            <span>Produk</span>
+                                                            <span>&nbsp;</span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="kt-widget6__body dragdropproduk" style="min-height: 200px;" id="list_allproduk">
+
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
                 <!-- end:: Content -->
             </div>
 

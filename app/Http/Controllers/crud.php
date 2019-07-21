@@ -6,6 +6,7 @@ use App\Models\Admin;
 use App\Models\Banner;
 use App\Models\KategoriProduk;
 use App\Models\Merchant;
+use App\Models\MerchantProduct;
 use App\Models\Message;
 use App\Models\Product;
 use App\Models\Setting;
@@ -101,7 +102,7 @@ class crud extends Controller
 
     function tambahmerchants(Request $r)
     {
-        if (!filter_var($r->email, FILTER_VALIDATE_EMAIL)) {
+        if (!filter_var($r->email, FILTER_VALIDATE_EMAIL) && isset($r->email)) {
             return "Email Invalid";
         }
         $req = $r->all();
@@ -112,6 +113,14 @@ class crud extends Controller
             $filename = $this->insertimage('merchant', $r->foto);
             if ($filename) {
                 $req['foto'] = $filename;
+            } else {
+                return "Hanya Menerima ekstensi " . implode($this->ext, ',') . " extensi anda " . $r->file('foto')->getClientOriginalExtension();
+            }
+        }
+        if ($r->hasFile('banner')) {
+            $filename = $this->insertimage('banner_merchant', $r->banner);
+            if ($filename) {
+                $req['banner'] = $filename;
             } else {
                 return "Hanya Menerima ekstensi " . implode($this->ext, ',') . " extensi anda " . $r->file('foto')->getClientOriginalExtension();
             }
@@ -152,6 +161,14 @@ class crud extends Controller
             $filename = $this->insertimage('merchant', $r->foto);
             if ($filename) {
                 $req['foto'] = $filename;
+            } else {
+                return "Hanya Menerima ekstensi " . implode($this->ext, ',') . " extensi anda " . $r->file('foto')->getClientOriginalExtension();
+            }
+        }
+        if ($r->hasFile('banner')) {
+            $filename = $this->insertimage('banner_merchant', $r->banner);
+            if ($filename) {
+                $req['banner'] = $filename;
             } else {
                 return "Hanya Menerima ekstensi " . implode($this->ext, ',') . " extensi anda " . $r->file('foto')->getClientOriginalExtension();
             }
@@ -348,5 +365,31 @@ class crud extends Controller
             }
         }
         Message::find($r->id)->update($req);
+    }
+    function addmerchantproduk(Request $r,$action){
+        switch ($action) {
+            case "list_produk":
+                $cek = MerchantProduct::where([
+                    "merchant" => $r->merchant,
+                    "products" => $r->merchantproduk
+                ])->exists();
+                if (!$cek) {
+                    MerchantProduct::create([
+                        "merchant" => $r->merchant,
+                        "products" => $r->merchantproduk
+                    ]);
+                } else {
+                    return "merchant ".Merchant::find($r->merchant)['nickname']." sudah ada di memiliki produk ".Product::find($r->merchantproduk)['nama'];
+                }
+                break;
+            case "list_allproduk":
+                MerchantProduct::where([
+                    "merchant" => $r->merchant,
+                    "products" => $r->merchantproduk
+                ])->delete();
+                break;
+            default:
+                return response()->view('error.404', [], 404);
+        }
     }
 }

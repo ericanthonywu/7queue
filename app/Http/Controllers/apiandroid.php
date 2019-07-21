@@ -5,7 +5,9 @@ namespace App\Http\Controllers;
 use App\Models\Banner;
 use App\Models\Feedback;
 use App\Models\Merchant;
+use App\Models\MerchantProduct;
 use App\Models\Message;
+use App\Models\Product;
 use App\Models\Setting;
 use App\Models\Token;
 use App\Models\Trending;
@@ -26,17 +28,6 @@ use Storage;
 class apiandroid extends Controller
 {
     public $ext = ["jpg", "jpeg", "png", 'pneg'];
-
-    public function insertimage($disk, $file)
-    {
-        if (in_array(strtolower($file->getClientOriginalExtension()), $this->ext)) {
-            $filename = str_replace(' ', '_', Session::get('name')) . Str::random(100) . time() . "." . $file->getClientOriginalExtension();
-            Storage::disk($disk)->put($filename, File::get($file));
-            return $filename;
-        } else {
-            return false;
-        }
-    }
 
     function home(Request $r)
     {
@@ -133,7 +124,7 @@ class apiandroid extends Controller
             unset($data[$k]['distance']);
             unset($data[$k]['id']);
         }
-        return $this->response($r, 1, "List Merchant Terdekat", ["merchant"=>$data]);
+        return $this->response($r, 1, "List Merchant Terdekat", ["merchant" => $data]);
     }
 
     function settings(Request $r)
@@ -167,12 +158,25 @@ class apiandroid extends Controller
             return $this->response($r, 1, "Data User $user[nickname]", $user);
         }
     }
-    function feedback(Request $r){
-        if(!$r->comments){
-            return $this->response($r,0,'ada data kosong');
+
+    public function insertimage($disk, $file)
+    {
+        if (in_array(strtolower($file->getClientOriginalExtension()), $this->ext)) {
+            $filename = str_replace(' ', '_', Session::get('name')) . Str::random(100) . time() . "." . $file->getClientOriginalExtension();
+            Storage::disk($disk)->put($filename, File::get($file));
+            return $filename;
+        } else {
+            return false;
+        }
+    }
+
+    function feedback(Request $r)
+    {
+        if (!$r->comments) {
+            return $this->response($r, 0, 'ada data kosong');
         }
         $req = array_filter($r->all());
-        $user = Token::whereTokenNew($r->apiKey)->orWhere('token_old',$r->apiKey)->first()['user'];
+        $user = Token::whereTokenNew($r->apiKey)->orWhere('token_old', $r->apiKey)->first()['user'];
         $req['email'] = User::find($user)['email'];
         Feedback::create($req);
         return $this->response($r, 1, $r->lang == "en" ? "Feedback Received! Thank you for your response" : "Feedback telah di terima! Terima Kasih atas responsenya");
@@ -182,7 +186,7 @@ class apiandroid extends Controller
     {
         $user = Token::whereTokenNew($r->apiKey)->orWhere('token_old', $r->apiKey)->first()['user'];
         $data = Message::whereCustomer($user)->where('tipe', (int)$r->tipe)->get();
-        foreach ($data as $k => $v){
+        foreach ($data as $k => $v) {
             $data[$k]['urlgambar'] = url("uploads/message/$v[gambar]");
             unset($data[$k]['gambar']);
         }
@@ -193,5 +197,32 @@ class apiandroid extends Controller
         } else {
             return $this->response($r, 0, 'Tipe tidak tersedia');
         }
+    }
+
+    function merchant_detail(Request $r)
+    {
+        $data = Merchant::find($r->m_id);
+        foreach ($data as $k => $v) {
+            $data['url_banner'] = !empty($data['banner']) ? url("uploads/merchant_banner/$data[banner]") : asset('assets_user/images/logo-7queue.png');
+            $data['url_foto'] = !empty($data['foto']) ?  url("uploads/merchant/$data[foto]") : asset('assets_user/images/logo-7queue.png');
+            $m_prod = MerchantProduct::whereMerchant($r->m_id)
+                ->select(
+                    'products.id as product_id',
+                    'products.nama as name',
+                    'kategori_produk.kategori as category',
+                    'products.harga as price',
+                    'products.description as description'
+                )
+                ->join('products','products.id','=','merchant_products.products')
+                ->join('kategori_produk','products.kategori','=','kategori_produk.id')
+                ->get();
+            foreach ($m_prod as $kprod => $mprod){
+                $m_prod[$kprod]['price'] = "Rp. ".number_format($mprod['price']);
+            }
+            $data['produk'] = $m_prod;
+            unset($data['banner']);
+            unset($data['foto']);
+        }
+        return $this->response($r, 1, '', $data);
     }
 }

@@ -1,6 +1,6 @@
 $(document).ready(function () {
     function showphoto(dir, name) {
-        return `<a href="${base_image}${dir}/${name}" target="_blank"><img src="${base_image}${dir}/${name}" alt="" width="100%"></a>`
+        return name == "" || name == null ? `<a href="${base_url}assets_user/images/logo-7queue.png" target="_blank"><img src="${base_url}assets_user/images/logo-7queue.png" alt="${dir}" width="100%"></a>` :`<a href="${base_image}${dir}/${name}" target="_blank"><img src="${base_image}${dir}/${name}" alt="${dir}" width="100%"></a>`
     }
 
     function numberWithCommas(n) {
@@ -173,9 +173,16 @@ $(document).ready(function () {
             },
             {
                 field: 'foto',
-                title: 'Foto Merchant',
+                title: 'Logo Merchant',
                 template: t => {
-                    return t.foto ? showphoto('merchant', t.foto) : `${base_url}assets_user/images/logo-7queue.png`;
+                    return showphoto('merchant', t.foto);
+                }
+            },
+            {
+                field: 'banner',
+                title: 'banner Merchant',
+                template: t => {
+                    return showphoto('banner_merchant', t.banner);
                 }
             },
             {
@@ -184,6 +191,22 @@ $(document).ready(function () {
                 template: t => {
                     return `<a class="kt-link" href="mailto:${t.email}">${t.email} </a>`
                 }
+            },
+            {
+                field: 'nohp',
+                title: 'No Hp',
+            },
+            {
+                field: 'id',
+                title: 'Products',
+                template: t => {
+                    return `<button class="btn btn-primary show_products" data-toggle="modal" data-target="#show_products" data-id="${t.id}">Show Products</button>`
+                }
+            },
+
+            {
+                field: 'desc',
+                title: 'Desc',
             },
             {
                 field: 'location',

@@ -2,7 +2,7 @@
 
 /**
  * Created by Reliese Model.
- * Date: Fri, 19 Jul 2019 18:04:56 +0700.
+ * Date: Sun, 21 Jul 2019 17:27:20 +0700.
  */
 
 namespace App\Models;
@@ -17,6 +17,7 @@ use Reliese\Database\Eloquent\Model as Eloquent;
  * @property string $email
  * @property string $nohp
  * @property string $banner
+ * @property string $desc
  * @property string $password
  * @property string $lat
  * @property string $long
@@ -33,6 +34,7 @@ use Reliese\Database\Eloquent\Model as Eloquent;
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Merchant whereBanner($value)
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Merchant whereCreatedAt($value)
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Merchant whereCreatedBy($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Merchant whereDesc($value)
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Merchant whereEmail($value)
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Merchant whereFoto($value)
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Merchant whereId($value)
@@ -62,6 +64,7 @@ class Merchant extends Eloquent
 		'email',
 		'nohp',
 		'banner',
+		'desc',
 		'password',
 		'lat',
 		'long',

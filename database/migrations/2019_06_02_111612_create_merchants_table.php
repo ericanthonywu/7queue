@@ -19,6 +19,7 @@ class CreateMerchantsTable extends Migration
             $table->string('email')->unique()->index()->nullable();
             $table->string('nohp')->unique()->nullable();
             $table->string('banner');
+            $table->string('desc')->nullable();
             $table->string('password');
             $table->string('lat')->nullable();
             $table->string('long')->nullable();

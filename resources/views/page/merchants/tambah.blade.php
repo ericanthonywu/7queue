@@ -85,28 +85,52 @@
                                     <div class="form-group row">
                                         <label class="col-lg-3 col-form-label">Email:</label>
                                         <div class="col-lg-6">
-                                            <input type="email" aria-describedby="emailHelp" class="form-control" name="email" placeholder="Masukkan Email Merchants" required>
+                                            <input type="email" aria-describedby="emailHelp" class="form-control" name="email" placeholder="Masukkan Email Merchants">
                                             <span class="form-text text-muted">Masukkan Email</span>
                                         </div>
                                     </div>
                                     <div class="form-group row">
-                                        <label class="col-lg-3 col-form-label">Foto:</label>
+                                        <label class="col-lg-3 col-form-label">No Hp:</label>
+                                        <div class="col-lg-6">
+                                            <input type="tel" class="form-control number" name="nohp" placeholder="Masukkan No Hp Merchants">
+                                            <span class="form-text text-muted">Masukkan No Hp</span>
+                                        </div>
+                                    </div>
+                                    <div class="form-group row">
+                                        <label class="col-lg-3 col-form-label">Description:</label>
+                                        <div class="col-lg-6">
+                                            <textarea class="form-control" name="desc" placeholder="Masukkan Description Merchants" required></textarea>
+                                            <span class="form-text text-muted">Masukkan Description</span>
+                                        </div>
+                                    </div>
+                                    <div class="form-group row">
+                                        <label class="col-lg-3 col-form-label">Logo:</label>
                                         <div class="col-lg-6">
                                             <div class="custom-file">
-                                                <input type="file" name="foto" class="custom-file-input" id="customFile" required>
-                                                <label class="custom-file-label" for="customFile">Pilih Foto Merchant</label>
+                                                <input type="file" name="foto" class="custom-file-input" id="customFile">
+                                                <label class="custom-file-label" for="customFile">Pilih Logo Merchant</label>
                                             </div>
-                                            <span class="form-text text-muted">Masukkan Foto Merchant</span>
+                                            <span class="form-text text-muted">Masukkan Logo Merchant</span>
+                                        </div>
+                                    </div>
+                                    <div class="form-group row">
+                                        <label class="col-lg-3 col-form-label">Banner:</label>
+                                        <div class="col-lg-6">
+                                            <div class="custom-file">
+                                                <input type="file" name="banner" class="custom-file-input" id="customFile">
+                                                <label class="custom-file-label" for="customFile">Pilih Banner Merchant</label>
+                                            </div>
+                                            <span class="form-text text-muted">Masukkan Banner Merchant</span>
                                         </div>
                                     </div>
                                     <div class="form-group row">
                                         <label class="col-lg-3 col-form-label">Lokasi Merchants:</label>
                                         <div class="col-lg-6">
-                                            <input type="hidden" name="lat" id="lat">
-                                            <input type="hidden" name="long" id="long">
+                                            <input type="hidden" name="lat" id="lat" required>
+                                            <input type="hidden" name="long" id="long" required>
                                             <div class="input-group-append">
                                                 <input type="text" name="lokasi" class="form-control" id="search_map"
-                                                       placeholder="address...">
+                                                       placeholder="address..." required>
                                                 <button type="button" class="btn btn-primary" id="btn_search_map"><i
                                                             class="fa fa-search"></i></button>
                                             </div>

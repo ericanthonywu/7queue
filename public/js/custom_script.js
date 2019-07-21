@@ -30,4 +30,5 @@ $(document).ready(function () {
     $('#togglekonf').click(function () {
         $('#showconf').toggle(500);
     })
+
 });

@@ -8,6 +8,7 @@ use App\Models\Feedback;
 use App\Models\KategoriProduk;
 use App\Models\Manager;
 use App\Models\Merchant;
+use App\Models\MerchantProduct;
 use App\Models\Message;
 use App\Models\Product;
 use App\Models\Trending;
@@ -341,5 +342,24 @@ class table extends Controller
             "message.created_at"
         ])->join('users', 'users.id', '=', 'message.customer');
         return $this->serversidetable($r, $q, ["judul", "pesan"]);
+    }
+    function get_products_list(Request $r)
+    {
+        $product_merchant = MerchantProduct::whereMerchant($r->id)
+            ->select('products', 'created_at')->get();
+        foreach ($product_merchant as $k => $v) {
+            $product_merchant[$k]['merchant_name'] = Product::find($v['products'])['nama'];
+//            $trending_merchant[$k]['date_added'] = $v['created_at']->format('D, d M Y H:i');
+        }
+
+        $data_products = Product::whereNotIn('id', function ($q) use ($r) {
+            $q->select('products')
+                ->from('merchant_products')
+                ->where('merchant', $r->id);
+        })->select('id', 'nama')->get();
+        return response()->json([
+            1 => $product_merchant,
+            2 => $data_products
+        ]);
     }
 }

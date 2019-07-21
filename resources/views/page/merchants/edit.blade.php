@@ -85,25 +85,56 @@
                                     <div class="form-group row">
                                         <label class="col-lg-3 col-form-label">Email:</label>
                                         <div class="col-lg-6">
-                                            <input type="email" aria-describedby="emailHelp" value="{{$merchants['email']}}" class="form-control" name="email" placeholder="Masukkan Email Admin" required>
+                                            <input type="email" aria-describedby="emailHelp" value="{{$merchants['email']}}" class="form-control" name="email" placeholder="Masukkan Email Admin">
                                             <span class="form-text text-muted">Masukkan Email</span>
                                         </div>
                                     </div>
                                     <div class="form-group row">
-                                        <label class="col-lg-3 col-form-label">Preview Foto:</label>
+                                        <label class="col-lg-3 col-form-label">No Hp:</label>
                                         <div class="col-lg-6">
-                                            <a href="{{!empty($merchants["foto"]) ? asset("uploads/merchant/$merchants[foto]") : "#"}}" target="_blank"><img src="{{!empty($merchants["foto"])? asset("uploads/merchant/$merchants[foto]") : asset('assets_user/images/logo-7queue.png')}}" width="100%" alt=""></a>
-                                            <span class="form-text text-muted">Preview Foto Merchant</span>
+                                            <input type="tel" class="form-control number" name="nohp" placeholder="Masukkan No Hp Merchants" value="{{$merchants['nohp']}}">
+                                            <span class="form-text text-muted">Masukkan No Hp</span>
                                         </div>
                                     </div>
                                     <div class="form-group row">
-                                        <label class="col-lg-3 col-form-label">Foto:</label>
+                                        <label class="col-lg-3 col-form-label">Description:</label>
+                                        <div class="col-lg-6">
+                                            <textarea class="form-control" name="desc" placeholder="Masukkan Description Merchants" required>{{$merchants['desc']}}</textarea>
+                                            <span class="form-text text-muted">Masukkan Description</span>
+                                        </div>
+                                    </div>
+                                    <div class="form-group row">
+                                        <label class="col-lg-3 col-form-label">Preview Logo:</label>
+                                        <div class="col-lg-6">
+                                            <a href="{{!empty($merchants["foto"]) ? asset("uploads/merchant/$merchants[foto]") : "#"}}" target="_blank"><img src="{{!empty($merchants["foto"])? asset("uploads/merchant/$merchants[foto]") : asset('assets_user/images/logo-7queue.png')}}" width="100%" alt=""></a>
+                                            <span class="form-text text-muted">Preview Logo Merchant</span>
+                                        </div>
+                                    </div>
+                                    <div class="form-group row">
+                                        <label class="col-lg-3 col-form-label">Logo:</label>
                                         <div class="col-lg-6">
                                             <div class="custom-file">
                                                 <input type="file" name="foto" class="custom-file-input" id="customFile">
                                                 <label class="custom-file-label" for="customFile">Pilih Foto Merchant</label>
                                             </div>
                                             <span class="form-text text-muted">Masukkan Foto Merchant</span>
+                                        </div>
+                                    </div>
+                                    <div class="form-group row">
+                                        <label class="col-lg-3 col-form-label">Preview Banner:</label>
+                                        <div class="col-lg-6">
+                                            <a href="{{!is_null($merchants["banner"]) ? asset("uploads/banner_merchant/$merchants[banner]") : "#"}}" target="_blank"><img src="{{!is_null($merchants["banner"])? asset("uploads/banner_merchant/$merchants[banner]") : asset('assets_user/images/logo-7queue.png')}}" width="100%" alt=""></a>
+                                            <span class="form-text text-muted">Preview Banner Merchant</span>
+                                        </div>
+                                    </div>
+                                    <div class="form-group row">
+                                        <label class="col-lg-3 col-form-label">Banner:</label>
+                                        <div class="col-lg-6">
+                                            <div class="custom-file">
+                                                <input type="file" name="banner" class="custom-file-input" id="customFile" required>
+                                                <label class="custom-file-label" for="customFile">Pilih Banner Merchant</label>
+                                            </div>
+                                            <span class="form-text text-muted">Masukkan Banner Merchant</span>
                                         </div>
                                     </div>
                                     <div class="form-group row">

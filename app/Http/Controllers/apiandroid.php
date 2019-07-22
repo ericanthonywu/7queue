@@ -102,6 +102,7 @@ class apiandroid extends Controller
             ) AS distance,nickname,id,foto")->orderBy('distance')->limit(10)->get();
         foreach ($data as $k => $v) {
             $data[$k]['jarak'] = round($v['distance'], 2);
+            $data[$k]['id_merchant'] = $v['id'];
             $trending = DB::table('trending_merchant')->select(
                 'trending_merchant.id as id',
                 'trending_merchant.trending as trending',
@@ -201,6 +202,9 @@ class apiandroid extends Controller
 
     function merchant_detail(Request $r)
     {
+        if(empty($r->m_id) || !isset($r->m_id)){
+            return $this->response($r,0,'m_id needed');
+        }
         $data = Merchant::find($r->m_id);
         foreach ($data as $k => $v) {
             $data['url_banner'] = !empty($data['banner']) ? url("uploads/merchant_banner/$data[banner]") : asset('assets_user/images/logo-7queue.png');

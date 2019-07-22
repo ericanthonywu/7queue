@@ -347,6 +347,11 @@ class table extends Controller
     {
         $product_merchant = MerchantProduct::whereMerchant($r->id)
             ->select('products', 'created_at')->get();
+        /*
+         * const res = [
+         *    "key"=>"value"
+         * ]
+         */
         foreach ($product_merchant as $k => $v) {
             $product_merchant[$k]['merchant_name'] = Product::find($v['products'])['nama'];
 //            $trending_merchant[$k]['date_added'] = $v['created_at']->format('D, d M Y H:i');

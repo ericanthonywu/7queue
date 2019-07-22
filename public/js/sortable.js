@@ -274,6 +274,14 @@ $('#find_merchant').keyup(function (e) {
                 status: "list_merchant"
             },
             success: res => {
+                /*
+                const res = [
+                    "satu",
+                    "dua",
+                    "satu"
+                ]
+                res['angka1'] // satu
+                 */
                 let html_list_merchant = '';
                 res.forEach(data => {
                     html_list_merchant += `<div class="kt-widget6__item" style="cursor: pointer;" data-trending="${idglobal}" data-merchant="${data.merchant}">

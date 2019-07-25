@@ -244,7 +244,7 @@ $(document).on('click', '.show_products', function () {
             let html_list_merchant = '';
             listmerchant.forEach(data => {
                 html_list_merchant += `
-                    <div class="kt-widget6__item" style="cursor: pointer;" data-merchant="${id}" data-merchantproduk="${data.merchant}">
+                    <div class="kt-widget6__item" style="cursor: pointer;" data-merchant="${id}" data-merchantproduk="${data.products}">
                         <span>${data.merchant_name}</span>
                         <span></span>
                     </div>`

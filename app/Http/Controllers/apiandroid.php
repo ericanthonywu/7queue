@@ -99,7 +99,7 @@ class apiandroid extends Controller
                         + sin ( radians($r->lat) )
                                 * sin( radians( lat ) )
                 )
-            ) AS distance,nickname,id,foto")->orderBy('distance')->limit(10)->get();
+            ) AS distance,nickname,id,foto")->limit(10)->get();
         foreach ($data as $k => $v) {
             $data[$k]['jarak'] = round($v['distance'], 2);
             $data[$k]['id_merchant'] = $v['id'];
@@ -215,13 +215,16 @@ class apiandroid extends Controller
                     'products.nama as name',
                     'kategori_produk.kategori as category',
                     'products.harga as price',
-                    'products.description as description'
+                    'products.description as description',
+                    'products.foto as foto'
                 )
                 ->join('products','products.id','=','merchant_products.products')
                 ->join('kategori_produk','products.kategori','=','kategori_produk.id')
                 ->get();
             foreach ($m_prod as $kprod => $mprod){
                 $m_prod[$kprod]['price'] = "Rp. ".number_format($mprod['price']);
+                $m_prod[$kprod]['urlfoto'] = url("/uploads/products/$mprod[foto]");
+                unset($m_prod[$kprod]['foto']);
             }
             $data['produk'] = $m_prod;
             unset($data['banner']);

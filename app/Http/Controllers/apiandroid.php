@@ -7,20 +7,18 @@ use App\Models\Feedback;
 use App\Models\Merchant;
 use App\Models\MerchantProduct;
 use App\Models\Message;
+use App\Models\Order;
 use App\Models\Product;
 use App\Models\Setting;
 use App\Models\Token;
-use App\Models\Trending;
 use App\Models\TrendingCategory;
 use App\Models\TrendingMerchant;
 use App\Models\User;
-use Faker\Provider\Text;
 use File;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Str;
-use phpDocumentor\Reflection\Types\Integer;
 use Session;
 use stdClass;
 use Storage;
@@ -66,12 +64,12 @@ class apiandroid extends Controller
     /**
      * @param Request $r
      * @param int $status
-     * @param $message
+     * @param string $message
      * @param array $data
      * @param int $header
      * @return JsonResponse
      */
-    function response($r, $status, $message, $data = [], $header = null)
+    function response($r, $status = 1, $message = '', $data = [], $header = null)
     {
         $newtoken = bcrypt(Str::random(100) . time());
         $token = Token::whereTokenNew($r->apiKey)->orWhere('token_old', $r->apiKey)->first();
@@ -231,5 +229,38 @@ class apiandroid extends Controller
             unset($data['foto']);
         }
         return $this->response($r, 1, '', $data);
+    }
+    function order(Request $r){
+        if(empty($r->products) || !isset($r->products)){
+            return $this->response($r,0,'products needed');
+        }
+        if(empty($r->merchant_id) || !isset($r->merchant_id)){
+            return $this->response($r,0,'merchant needed');
+        }
+        $user = Token::whereTokenNew($r->apiKey)->orWhere('token_old', $r->apiKey)->first()['user'];
+        $sub = explode(',',$r->products);
+        if(!Merchant::find($r->merchant_id)){
+            return $this->response($r,0,"Merchant dengan id $r->merchantid tidak tersedia");
+        }
+        foreach ($sub as $value){
+            $expprod = explode('=',$value);
+            if((isset($expprod[0]) && isset($expprod[1]) && (!empty($expprod[0]) && !empty($expprod[1])))){
+                $prod_id = $expprod[0];
+                $num_order = $expprod[1];
+                if(Product::find($prod_id)){
+                    Order::create([
+                        "user"=>$user,
+                        "merchant" => $r->merchant_id,
+                        "num_order"=>$num_order,
+                        "products"=>$prod_id
+                    ]);
+                }else{
+                    return $this->response($r,0,"Produk id $prod_id tidak tersedia");;
+                }
+            }else{
+                return $this->response($r,0,'format salah');
+            }
+        }
+        return $this->response($r);
     }
 }

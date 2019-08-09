@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Banner;
+use App\Models\Bookmark;
 use App\Models\Feedback;
 use App\Models\Merchant;
 use App\Models\MerchantProduct;
@@ -133,6 +134,11 @@ class apiandroid extends Controller
 
     function profile(Request $r)
     {
+        if( isset($r->email) || !empty($r->email)) {
+            if (!filter_var($r->email, FILTER_VALIDATE_EMAIL)) {
+                return "Email Invalid";
+            }
+        }
         $userID = Token::whereTokenNew($r->apiKey)->orWhere('token_old', $r->apiKey)->first()['user'];
         $user = User::find($userID);
         if (count(array_filter($r->all())) > 1) {
@@ -246,21 +252,67 @@ class apiandroid extends Controller
             $expprod = explode('=',$value);
             if((isset($expprod[0]) && isset($expprod[1]) && (!empty($expprod[0]) && !empty($expprod[1])))){
                 $prod_id = $expprod[0];
-                $num_order = $expprod[1];
-                if(Product::find($prod_id)){
-                    Order::create([
-                        "user"=>$user,
-                        "merchant" => $r->merchant_id,
-                        "num_order"=>$num_order,
-                        "products"=>$prod_id
-                    ]);
+                $enum_order = $expprod[1];
+                $expnote = explode(':',$enum_order);
+                if((isset($expnote[0]) && isset($expnote[1]) && (!empty($expnote[0]) && !empty($expnote[1])))) {
+                    $num_order = $expnote[0];
+                    $note = $expnote[1];
+                    if (Product::find($prod_id)) {
+                        Order::create([
+                            "user" => $user,
+                            "merchant" => $r->merchant_id,
+                            "num_order" => $num_order,
+                            "products" => $prod_id,
+                            "note" => $note
+                        ]);
+                    } else {
+                        return $this->response($r, 0, "Produk id $prod_id tidak tersedia");;
+                    }
                 }else{
-                    return $this->response($r,0,"Produk id $prod_id tidak tersedia");;
+                    return $this->response($r,0,'format salah');
                 }
             }else{
                 return $this->response($r,0,'format salah');
             }
         }
         return $this->response($r);
+    }
+    function search(Request $r){
+        $data = Merchant::selectRaw("(
+                6371 *   (
+                            cos ( radians($r->lat) )
+                            * cos( radians( lat ) )
+                            * cos( radians( `long` ) - radians($r->long) )
+                        + sin ( radians($r->lat) )
+                                * sin( radians( lat ) )
+                )
+            ) AS distance,nickname,id,foto")->limit(10)->get();
+    }
+    function change_password(Request $r){
+        $user = Token::whereTokenNew($r->apiKey)->orWhere('token_old', $r->apiKey)->first()['user'];
+        $data = User::find($user);
+        if(\Hash::check($r->old_pass,$data['user'])){
+            $data->update([
+                "password"=>$r->new_pass
+            ]);
+        }else{
+            return $this->response($r,0,$r->lang == "en" ? "Password doesn't match" : "Password berbeda");
+        }
+    }
+    function bookmark(Request $r){
+        $user = Token::whereTokenNew($r->apiKey)->orWhere('token_old', $r->apiKey)->first()['user'];
+        if(strtolower($r->action) == "add") {
+            Bookmark::create([
+                "merchant_id" => $r->merchant_id,
+                "user" => $user
+            ]);
+            return $this->response($r);
+        }else if (strtolower($r->action) == "remove"){
+            Bookmark::where([
+                "merchant_id" => $r->merchant_id,
+                "user" => $user
+            ])->delete();
+            return $this->response($r);
+        }
     }
 }

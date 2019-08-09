@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateMessage extends Migration
+class CreateBookmark extends Migration
 {
     /**
      * Run the migrations.
@@ -13,14 +13,10 @@ class CreateMessage extends Migration
      */
     public function up()
     {
-        Schema::create('message', function (Blueprint $table) {
+        Schema::create('bookmark', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->unsignedBigInteger('customer');
-            $table->mediumText('judul');
-            $table->mediumText('pesan');
-            $table->string('gambar')->nullable();
-            $table->unsignedTinyInteger('push_notif');
-            $table->unsignedTinyInteger('tipe');
+            $table->unsignedBigInteger('merchant_id');
+            $table->unsignedBigInteger('user');
             $table->timestamps();
         });
     }
@@ -32,6 +28,6 @@ class CreateMessage extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('message');
+        Schema::dropIfExists('bookmark');
     }
 }

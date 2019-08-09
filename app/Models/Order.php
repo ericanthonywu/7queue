@@ -2,7 +2,7 @@
 
 /**
  * Created by Reliese Model.
- * Date: Tue, 30 Jul 2019 23:32:52 +0700.
+ * Date: Fri, 09 Aug 2019 07:15:33 +0700.
  */
 
 namespace App\Models;
@@ -19,6 +19,7 @@ use Reliese\Database\Eloquent\Model as Eloquent;
  * @property int $num_order
  * @property \Carbon\Carbon $created_at
  * @property \Carbon\Carbon $updated_at
+ * @property string $note
  * @package App\Models
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Order newModelQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Order newQuery()
@@ -26,6 +27,7 @@ use Reliese\Database\Eloquent\Model as Eloquent;
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Order whereCreatedAt($value)
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Order whereId($value)
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Order whereMerchant($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Order whereNote($value)
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Order whereNumOrder($value)
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Order whereProducts($value)
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Order whereUpdatedAt($value)
@@ -47,6 +49,7 @@ class Order extends Eloquent
 		'user',
 		'merchant',
 		'products',
-		'num_order'
+		'num_order',
+		'note'
 	];
 }

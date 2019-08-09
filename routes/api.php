@@ -27,5 +27,8 @@ Route::middleware('apicheck')->group(function (){
     Route::post('/inbox', 'apiandroid@inbox');
     Route::post('/merchant_detail', 'apiandroid@merchant_detail');
     Route::post('/order', 'apiandroid@order');
+    Route::post('/search', 'apiandroid@search');
+    Route::post('/change_password','oauthandroid@change_password');
+    Route::post('/bookmark','oauthandroid@bookmark');
 });
 

@@ -131,7 +131,7 @@
                                         <label class="col-lg-3 col-form-label">Banner:</label>
                                         <div class="col-lg-6">
                                             <div class="custom-file">
-                                                <input type="file" name="banner" class="custom-file-input" id="customFile" required>
+                                                <input type="file" name="banner" class="custom-file-input" id="customFile">
                                                 <label class="custom-file-label" for="customFile">Pilih Banner Merchant</label>
                                             </div>
                                             <span class="form-text text-muted">Masukkan Banner Merchant</span>

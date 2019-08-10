@@ -16,6 +16,7 @@ use App\Models\TrendingCategory;
 use App\Models\TrendingMerchant;
 use App\Models\User;
 use File;
+use Hash;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
@@ -72,14 +73,15 @@ class apiandroid extends Controller
      */
     function response($r, $status = 1, $message = '', $data = [], $header = null)
     {
-        $newtoken = bcrypt(Str::random(100) . time());
-        $token = Token::whereTokenNew($r->apiKey)->orWhere('token_old', $r->apiKey)->first();
-        $token->token_new = $newtoken;
-        $token->save();
+//        $newtoken = bcrypt(Str::random(100) . time());
+//        $token = Token::whereTokenNew($r->apiKey)->orWhere('token_old', $r->apiKey)->first();
+//        $token->token_new = $newtoken;
+//        $token->save();
         return response()->json([
             "status" => $status,
             "message" => $message,
-            "apiKey" => $newtoken,
+//            "apiKey" => $newtoken,
+            "apikey"=>$r->apiKey,
             "debug" => $r->all(),
             "data" => $data == [] ? new stdClass() : $data
         ], !is_null($header) ? (int)$header : 200);
@@ -134,7 +136,7 @@ class apiandroid extends Controller
 
     function profile(Request $r)
     {
-        if( isset($r->email) || !empty($r->email)) {
+        if (isset($r->email) || !empty($r->email)) {
             if (!filter_var($r->email, FILTER_VALIDATE_EMAIL)) {
                 return "Email Invalid";
             }
@@ -206,13 +208,14 @@ class apiandroid extends Controller
 
     function merchant_detail(Request $r)
     {
-        if(empty($r->m_id) || !isset($r->m_id)){
-            return $this->response($r,0,'m_id needed');
+        $user = Token::whereTokenNew($r->apiKey)->orWhere('token_old', $r->apiKey)->first()['user'];
+        if (empty($r->m_id) || !isset($r->m_id)) {
+            return $this->response($r, 0, 'm_id needed');
         }
         $data = Merchant::find($r->m_id);
         foreach ($data as $k => $v) {
             $data['url_banner'] = !empty($data['banner']) ? url("uploads/merchant_banner/$data[banner]") : asset('assets_user/images/logo-7queue.png');
-            $data['url_foto'] = !empty($data['foto']) ?  url("uploads/merchant/$data[foto]") : asset('assets_user/images/logo-7queue.png');
+            $data['url_foto'] = !empty($data['foto']) ? url("uploads/merchant/$data[foto]") : asset('assets_user/images/logo-7queue.png');
             $m_prod = MerchantProduct::whereMerchant($r->m_id)
                 ->select(
                     'products.id as product_id',
@@ -222,39 +225,49 @@ class apiandroid extends Controller
                     'products.description as description',
                     'products.foto as foto'
                 )
-                ->join('products','products.id','=','merchant_products.products')
-                ->join('kategori_produk','products.kategori','=','kategori_produk.id')
+                ->join('products', 'products.id', '=', 'merchant_products.products')
+                ->join('kategori_produk', 'products.kategori', '=', 'kategori_produk.id')
                 ->get();
-            foreach ($m_prod as $kprod => $mprod){
-                $m_prod[$kprod]['price'] = "Rp. ".number_format($mprod['price']);
+            foreach ($m_prod as $kprod => $mprod) {
+                $m_prod[$kprod]['price'] = "Rp. " . number_format($mprod['price']);
                 $m_prod[$kprod]['urlfoto'] = url("/uploads/products/$mprod[foto]");
+                $m_prod[$kprod]['bookmarked'] = Bookmark::where([
+                    "merchant_id"=>$mprod['id'],
+                    "user"=>$user
+                ])->count() ? true : false;
                 unset($m_prod[$kprod]['foto']);
             }
+            $data['bookmarked'] = Bookmark::where([
+                "user"=>$user,
+                "merchant_id"=>$r->m_id
+            ])->count() ? true : false;
             $data['produk'] = $m_prod;
             unset($data['banner']);
             unset($data['foto']);
         }
         return $this->response($r, 1, '', $data);
     }
-    function order(Request $r){
-        if(empty($r->products) || !isset($r->products)){
-            return $this->response($r,0,'products needed');
+
+    function order(Request $r)
+    {
+        if (empty($r->products) || !isset($r->products)) {
+            return $this->response($r, 0, 'products needed');
         }
-        if(empty($r->merchant_id) || !isset($r->merchant_id)){
-            return $this->response($r,0,'merchant needed');
+        if (empty($r->merchant_id) || !isset($r->merchant_id)) {
+            return $this->response($r, 0, 'merchant needed');
         }
         $user = Token::whereTokenNew($r->apiKey)->orWhere('token_old', $r->apiKey)->first()['user'];
-        $sub = explode(',',$r->products);
-        if(!Merchant::find($r->merchant_id)){
-            return $this->response($r,0,"Merchant dengan id $r->merchantid tidak tersedia");
+        $sub = explode(',', $r->products);
+        if (!Merchant::find($r->merchant_id)) {
+            return $this->response($r, 0, "Merchant dengan id $r->merchantid tidak tersedia");
         }
-        foreach ($sub as $value){
-            $expprod = explode('=',$value);
-            if((isset($expprod[0]) && isset($expprod[1]) && (!empty($expprod[0]) && !empty($expprod[1])))){
+        foreach ($sub as $value) {
+            $expprod = explode('=', $value);
+            if ((isset($expprod[0]) && isset($expprod[1]) && (!empty($expprod[0]) && !empty($expprod[1])))) {
                 $prod_id = $expprod[0];
                 $enum_order = $expprod[1];
-                $expnote = explode(':',$enum_order);
-                if((isset($expnote[0]) && isset($expnote[1]) && (!empty($expnote[0]) && !empty($expnote[1])))) {
+                $expnote = explode(':', $enum_order);
+                if ((isset($expnote[0]) && isset($expnote[1]) && (!empty($expnote[0]) && !empty($expnote[1])))) {
                     $num_order = $expnote[0];
                     $note = $expnote[1];
                     if (Product::find($prod_id)) {
@@ -266,48 +279,95 @@ class apiandroid extends Controller
                             "note" => $note
                         ]);
                     } else {
-                        return $this->response($r, 0, "Produk id $prod_id tidak tersedia");;
+                        return $this->response($r, 0, "Produk id $prod_id tidak tersedia");
                     }
-                }else{
-                    return $this->response($r,0,'format salah');
+                } else {
+                    return $this->response($r, 0, 'format salah');
                 }
-            }else{
-                return $this->response($r,0,'format salah');
+            } else {
+                return $this->response($r, 0, 'format salah');
             }
         }
         return $this->response($r);
     }
-    function search(Request $r){
-        $data = Merchant::selectRaw("(
+
+    function search(Request $r)
+    {
+        if(strlen($r->keyword) <= 2){
+            return $this->response($r,0,$r->lang == "ID" ? "Kurang 1 kata " : "Minus 1 word ");
+        }
+        if((isset($r->lat) && !empty($r->lat)) && (isset($r->long) && !empty($r->long))) {
+            $data = Merchant::selectRaw("(
                 6371 *   (
                             cos ( radians($r->lat) )
                             * cos( radians( lat ) )
                             * cos( radians( `long` ) - radians($r->long) )
                         + sin ( radians($r->lat) )
+                        + sin ( radians($r->lat) )
                                 * sin( radians( lat ) )
                 )
-            ) AS distance,nickname,id,foto")->limit(10)->get();
+            ) AS distance,nickname,id,foto")->whereRaw("match (nickname) AGAINST ('$r->keyword*' IN BOOLEAN MODE)")->get();
+        }else{
+            $data = Merchant::select([
+                "nickname",
+                "id",
+                "foto"
+            ])->whereRaw("match (nickname) AGAINST ('$r->keyword*' IN BOOLEAN MODE)")->get();
+        }
+        foreach ($data as $k => $v) {
+            if((isset($r->lat) && !empty($r->lat)) && (isset($r->long) && !empty($r->long))) {
+                $data[$k]['jarak'] = round($v['distance'], 2);
+            }
+            $data[$k]['id_merchant'] = $v['id'];
+            $trending = DB::table('trending_merchant')->select(
+                'trending_merchant.id as id',
+                'trending_merchant.trending as trending',
+                'trending_merchant.merchant as merchant',
+                'trending_category.kategori as kategori'
+            )->where('merchant', '=', $v['id'])
+                ->join('trending_category',
+                    'trending_merchant.trending',
+                    '=',
+                    'trending_category.id'
+                )
+                ->get();
+            $kategori = '';
+            foreach ($trending as $a => $b) {
+                $kategori .= $b->kategori . ", ";
+            }
+            $data[$k]['kategori'] = rtrim($kategori, ', ');
+            $data[$k]['urlfoto'] = asset("uploads/merchant/$v[foto]");
+            unset($data[$k]['foto']);
+            unset($data[$k]['distance']);
+            unset($data[$k]['id']);
+        }
+        return $this->response($r,1,'',$data);
     }
-    function change_password(Request $r){
+
+    function change_password(Request $r)
+    {
         $user = Token::whereTokenNew($r->apiKey)->orWhere('token_old', $r->apiKey)->first()['user'];
         $data = User::find($user);
-        if(\Hash::check($r->old_pass,$data['user'])){
+        if (Hash::check($r->old_pass, $data['password'])) {
             $data->update([
-                "password"=>$r->new_pass
+                "password" => bcrypt($r->new_pass)
             ]);
-        }else{
-            return $this->response($r,0,$r->lang == "en" ? "Password doesn't match" : "Password berbeda");
+            return $this->response($r,1);
+        } else {
+            return $this->response($r, 0, $r->lang == "en" ? "Password doesn't match" : "Password berbeda");
         }
     }
-    function bookmark(Request $r){
+
+    function bookmark(Request $r)
+    {
         $user = Token::whereTokenNew($r->apiKey)->orWhere('token_old', $r->apiKey)->first()['user'];
-        if(strtolower($r->action) == "add") {
+        if (strtolower($r->action) == "add") {
             Bookmark::create([
                 "merchant_id" => $r->merchant_id,
                 "user" => $user
             ]);
             return $this->response($r);
-        }else if (strtolower($r->action) == "remove"){
+        } else if (strtolower($r->action) == "remove") {
             Bookmark::where([
                 "merchant_id" => $r->merchant_id,
                 "user" => $user

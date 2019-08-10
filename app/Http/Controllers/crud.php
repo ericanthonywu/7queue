@@ -48,9 +48,6 @@ class crud extends Controller
 
     function tambahadmin(Request $r)
     {
-        if (!filter_var($r->email, FILTER_VALIDATE_EMAIL)) {
-            return "Email Invalid";
-        }
         $req = $r->all();
         if (Admin::where('email', $r->email)->exists()) {
             return "Email sudah tersedia";

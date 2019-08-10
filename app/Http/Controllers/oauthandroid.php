@@ -107,7 +107,10 @@ class oauthandroid extends Controller
             $this->response($r,0, $validator->fails(), [],null);
         }
         if(User::whereEmail($r->email)->exists()){
-            return $this->response($r,0, "Email $r->email sudah tersedia", [],null, [],null);
+            return $this->response($r,0, "Email $r->email sudah tersedia", [],null);
+        }
+        if(User::whereNickname($r->username)->exists()){
+            return $this->response($r,0, "Username $r->username sudah tersedia", [],null);
         }
         $input = $r->all();
         if($r->hasFile('foto')) {
@@ -161,7 +164,7 @@ class oauthandroid extends Controller
                 return $this->response($r,0, 'User tidak ditemukan', [],null);
             }
         } else {
-            return $this->response($r,0, 'Unauthorized', [],null);
+            return $this->response($r,0, 'Email / Password salah', [],null);
         }
     }
 
